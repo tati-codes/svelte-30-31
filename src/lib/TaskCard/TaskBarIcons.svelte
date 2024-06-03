@@ -3,7 +3,7 @@
   //18px left 4%
   //12px bottom
   //83px right 18%
-  import {IconRegistry} from "./IconComponent/icons/taskCardIcons/IconRegistry";
+  import {IconRegistry} from "./taskCardIcons/IconRegistry";
   export let type: TASKBAR_ITEM;
   let iconType = IconRegistry[type];
 </script>
