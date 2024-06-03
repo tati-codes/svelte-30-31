@@ -4,8 +4,6 @@
   import TaskName from "./TaskName.svelte"
   import Length from "./Length.svelte"
   export let btnType: TASKBAR_ITEM;
-  //TODO align buttons
-  //TODO we can test all icons by using {each or whatevr}
 </script>
 
 <div class="taskCard" >
