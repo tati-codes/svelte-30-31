@@ -13,8 +13,9 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["svelte"]
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/lib/TaskCard/IconComponent/icons/taskCardIcons/IconRegistry.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
