@@ -1,16 +1,15 @@
 <script lang="ts">
-  import ComputedTime from "../ComputedTime.svelte"
-  import Icon from "../Icon.svelte"
-  import TaskName from "../TaskName.svelte"
-  import Length from "../Length.svelte"
-  let count: number = 0
-  const increment = () => {
-    count += 1
-  }
+  import ComputedTime from "./ComputedTime.svelte"
+  import Icon from "./TaskBarIcons.svelte"
+  import TaskName from "./TaskName.svelte"
+  import Length from "./Length.svelte"
+  export let btnType: TASKBAR_ITEM;
+  //TODO align buttons
+  //TODO we can test all icons by using {each or whatevr}
 </script>
 
 <div class="taskCard" >
-  <Icon/>
+  <Icon type={btnType}/>
   <ComputedTime/>
   <TaskName/>
   <Length/>
@@ -18,7 +17,7 @@
 
 <style>
   .taskCard {
-    width: 472px;
+    width: 391px;
     height: 105px;
     border-radius: 25px;
 
@@ -32,6 +31,7 @@
     "icon taskName"
     "length cTimes";
 
+    /* padding: 12% 18% 12% 4%; */
     /* margin: 0 1.5fr 1.5fr 1.5fr;
     width: 10fr;
     height: 1fr; */
