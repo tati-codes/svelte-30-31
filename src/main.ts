@@ -1,5 +1,6 @@
 import './app.css'
 import App from './App.svelte'
+import './colors.css'
 import 'svelte';
 
 const app = new App({

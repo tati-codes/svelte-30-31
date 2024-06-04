@@ -23,6 +23,28 @@
 }
 
 
+.fadeIn {
+  animation: fadeInAnimation 0.325s linear;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
 body {
   display: flex;
   place-items: center;
