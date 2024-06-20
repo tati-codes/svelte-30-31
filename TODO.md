@@ -1,5 +1,7 @@
+- TODO add task
+- 
 - TODO Top BAR
-  - [ ] FOLDER ICON
-  - [ ] NAME BAR
-  - [ ] SETTIGS BUTTON
+  - [x] FOLDER ICON
+  - [x] NAME BAR
+  - [x] SETTIGS BUTTON
 - TODO TIMER CIRCLE
