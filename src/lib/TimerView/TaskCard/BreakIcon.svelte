@@ -15,8 +15,3 @@ height="100px"
   stroke-dasharray="10 10 200"
   stroke="#9aa3b0" />
 </svg>
-
-<style>
-
-
-</style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from "../Icons/Icon.svelte"
+  import Icon from "../../Icons/Icon.svelte"
   import TaskBarIcons from "./taskCardIcons/TaskBarIcons.svelte"
 
 // onClick={handleClick}
