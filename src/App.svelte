@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from './lib/TaskCard/Button.svelte'
+  import Button from './lib/TimerView/TaskCard/TaskCard.svelte'
   import CheckMarkIcon from './lib/Icons/icons/CheckMarkIcon.svelte'
   import ClockIcon from './lib/Icons/icons/ClockIcon.svelte'
   import FolderIcon from './lib/Icons/icons/FolderIcon.svelte'
@@ -16,15 +16,18 @@
   import SendToBottomIcon from './lib/Icons/icons/SendToBottomIcon.svelte'
   import TrashIcon from './lib/Icons/icons/TrashIcon.svelte'
   import VolumeIcon from './lib/Icons/icons/VolumeIcon.svelte'
-  import {IconRegistry} from "./lib/TaskCard/taskCardIcons/IconRegistry";
-  import TimerSpan from './lib/TimerSpan/TimerSpan.svelte'
-  import AddTaskCard from './lib/TaskCard/AddTaskCard.svelte'
+  import {IconRegistry} from "./lib/TimerView/TaskCard/taskCardIcons/IconRegistry";
+  import TimerSpan from './lib/TimerView/TimerSpan/TimerSpan.svelte'
+  import AddTaskCard from './lib/TimerView/TaskCard/AddTaskCard.svelte'
+  import BreakIcon from './lib/TimerView/TaskCard/BreakIcon.svelte'
+  import TopBar from './lib/TimerView/TopBar/TopBar.svelte'
   let keys: TASKBAR_ITEM[] = Object.keys(IconRegistry) as TASKBAR_ITEM[];
 </script>
 
 <main>
-  <h1>Vite + Svelte</h1>
-  <div class="card">
+  <TopBar/>
+  <!-- <div class="card">
+    <BreakIcon/>
     <AddTaskCard/>
     <LineIcon/>
     <ListIcon/>
@@ -41,7 +44,7 @@
     <TrashIcon/>
     <VolumeIcon/>
     <NoVolumeIcon/>
-  </div>
+  </div> -->
   <div class="card">
     {#each keys as key}
       <Button btnType={key} />
