@@ -5,3 +5,11 @@
   - [x] NAME BAR
   - [x] SETTIGS BUTTON
 - TODO TIMER CIRCLE
+  - [ ] ActiveCircle
+  - [ ] BGCircle
+  - [ ] Playback
+  - [ ] Pause
+  - [ ] Triangle
+  - [ ] ClassicTimerButtons
+  - [ ] TatiTimerButtons
+  - [ ] TimerBtn
