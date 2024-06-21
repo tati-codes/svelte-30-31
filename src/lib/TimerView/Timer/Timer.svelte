@@ -1,13 +1,22 @@
+<script lang="ts">
+  import ActiveCircle from "./ActiveCircle.svelte"
+  import BgCircle from "./BGCircle.svelte"
+  import Playback from "./Playback.svelte"
+  import ClassicTimerButtons from "./TimerButtons/ClassicTimerButtons.svelte"
+  import TimerText from "./TimerText.svelte"
+</script>
+
 <svg
 xmlns="http://www.w3.org/2000/svg"
 width="650"
 height="650"
-class="timerCircleDummy"
+class="timer"
 >
-<BGCircle />
+<BgCircle/>
 <ActiveCircle />
 <Playback />
 <TimerText />
+<ClassicTimerButtons/>
 <!-- {layout === "CLASSIC" && <ClassicTimerButtons />}
 {layout === "MODERN" && <TatiTimerButtons />} -->
 </svg>
