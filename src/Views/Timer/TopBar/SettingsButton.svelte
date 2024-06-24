@@ -1,5 +1,6 @@
 <script>
-  import GearIcon from "../../Icons/icons/GearIcon.svelte"
+  import GearIcon from "../../../lib/Icons/icons/GearIcon.svelte"
+
 
 </script>
 

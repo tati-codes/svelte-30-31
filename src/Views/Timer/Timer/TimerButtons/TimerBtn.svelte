@@ -34,7 +34,6 @@ let [x, y] = positions[position]
 </script>
 
 
-  return (
     <slot/>
     <circle
     fill="transparent"
@@ -46,5 +45,3 @@ let [x, y] = positions[position]
     stroke-width="8"
     on:click={cb}
   ></circle>
-  )
-}

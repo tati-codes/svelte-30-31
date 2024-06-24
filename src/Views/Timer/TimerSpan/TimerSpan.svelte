@@ -1,5 +1,6 @@
 <script>
-  import ClockIcon from "../../Icons/icons/ClockIcon.svelte"
+  import ClockIcon from "../../../lib/Icons/icons/ClockIcon.svelte"
+
 </script>
 <div class="topBar">
   <ClockIcon/>

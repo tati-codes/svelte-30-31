@@ -1,9 +1,9 @@
 <script lang="ts">
-  import CheckMarkIcon from "../../../Icons/icons/CheckMarkIcon.svelte"
-  import LockIcon from "../../../Icons/icons/LockIcon.svelte"
-  import OpenLockIcon from "../../../Icons/icons/OpenLockIcon.svelte"
-  import SendToBottomIcon from "../../../Icons/icons/SendToBottomIcon.svelte"
-  import TrashIcon from "../../../Icons/icons/TrashIcon.svelte"
+  import CheckMarkIcon from "../../../../lib/Icons/icons/CheckMarkIcon.svelte"
+  import LockIcon from "../../../../lib/Icons/icons/LockIcon.svelte"
+  import OpenLockIcon from "../../../../lib/Icons/icons/OpenLockIcon.svelte"
+  import SendToBottomIcon from "../../../../lib/Icons/icons/SendToBottomIcon.svelte"
+  import TrashIcon from "../../../../lib/Icons/icons/TrashIcon.svelte"
   import BtnLabel from "./BtnLabel.svelte"
   import TimerBtn from "./TimerBtn.svelte"
 

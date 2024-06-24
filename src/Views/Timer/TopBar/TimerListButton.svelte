@@ -1,6 +1,7 @@
 <script>
+  import FolderIcon from "../../../lib/Icons/icons/FolderIcon.svelte"
 
-  import FolderIcon from "../../Icons/icons/FolderIcon.svelte"
+
 
 </script>
 <div class="medium-background settingsBtn">
