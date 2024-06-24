@@ -5,11 +5,36 @@
   - [x] NAME BAR
   - [x] SETTIGS BUTTON
 - TODO TIMER CIRCLE
-  - [ ] ActiveCircle
-  - [ ] BGCircle
-  - [ ] Playback
-  - [ ] Pause
-  - [ ] Triangle
-  - [ ] ClassicTimerButtons
-  - [ ] TatiTimerButtons
-  - [ ] TimerBtn
+  - [x] ActiveCircle
+  - [x] BGCircle
+  - [x] Playback
+  - [x] Pause
+  - [x] Triangle
+  - [x] ClassicTimerButtons
+  - [x] TatiTimerButtons
+  - [x] TimerBtn
+- TODO Leftover
+  - [ ] NameBar functionality (toggle between editable and not)
+  - [ ] CurrentTaskCard
+  - [ ] Add Task Card
+- TODO Settings view
+  - [x] VolumeBtn
+  - [x] LayoutBtn
+  - [x] LoopBtn
+- TODO list view
+  - [x] Picker
+  - [x] PickerCard
+  - [x] AddTaskList
+- TODO edit task view
+  - [ ] modal
+  - [ ] NameEdit
+  - [ ] TimeEdit
+    - [ ] TimeDisplay
+    - [ ] NumpadBtn
+    - [ ] BackspaceBtn
+    - [ ] CheckmarkBtn
+    - [ ] TimePicker
+  - [ ] IconEdit
+    - [ ] IconItem
+  - [ ] ColorPicker
+  - [ ] BottomBar
