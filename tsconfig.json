@@ -16,6 +16,6 @@
     "isolatedModules": true,
     "types": ["svelte"]
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/lib/TimerView/TaskCard/IconComponent/icons/taskCardIcons/IconRegistry.ts"],
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/Views/TimerView/TaskCard/IconComponent/icons/taskCardIcons/IconRegistry.ts", "types.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
