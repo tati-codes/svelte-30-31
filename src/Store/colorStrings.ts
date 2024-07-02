@@ -3,6 +3,19 @@ import type { Color, cssColor } from "../../types";
 type colorStrigns = {
   [key in Color]: cssColor
 }
+const colors = [
+  "gray",
+  "orange",
+  "red",
+  "green",
+  "blue",
+  "forest",
+  "yellow",
+  "violet",
+  "purple",
+  "pink",
+  "aqua",
+] as Color[]
 
 export const colorStrings: colorStrigns = {
   gray: {

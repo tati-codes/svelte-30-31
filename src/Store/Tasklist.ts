@@ -1,5 +1,5 @@
 import { getUniqueID } from "../lib/Shared/getUniqueID"
-import { StopTask, type Task } from "./Task"
+import { StopTask, Task } from "./Task"
 const statusTypes = ["IDLE", "TIMER_ACTIVE"] as const
 export type TaskListStatus = typeof statusTypes[number]
 
@@ -39,4 +39,4 @@ export class TaskList implements TaskListI {
 //   }
 // }
 
-export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [])
+export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [new Task("default", 6000, "basket")])

@@ -54,8 +54,6 @@ export class StopTask implements TaskI {
   start_tick = null
   computed = null
 }
-
-
 export class Task implements TaskI {
   id: string = getUniqueID()
   name: string
@@ -76,7 +74,6 @@ export class Task implements TaskI {
     this.icon = icon ? icon : get_icon()
   }
 }
-
 export interface TaskI {
   name: string
   status: TaskStatus

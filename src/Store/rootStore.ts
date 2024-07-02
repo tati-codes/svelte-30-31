@@ -16,9 +16,10 @@ let tasklist = defaultTaskList();
 export let root: Writable<rootStore> = writable({
   muted: false,
   layout: "CLASSIC",
-  currentView: "TIMER",
+  currentView: "TASK_EDIT",
   taskLists: [tasklist],
   selected: 0
 })
 
 export let currentView = derived(root, ($root) => $root.currentView);
+export let currentTaskList = derived(root, ($root) => $root.taskLists[$root.selected])
