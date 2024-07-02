@@ -1,4 +1,5 @@
 import "svelte";
+import type { IconRegistryI } from "../../../../../types";
 import type { ComponentType, SvelteComponentTyped } from 'svelte';
 import  BackspaceIcon from "./BackspaceIcon.svelte"
 import  AddIcon from "./AddIcon.svelte"
@@ -25,7 +26,7 @@ import  UtensilIcon from "./UtensilIcon.svelte"
 import  WrenchIcon from "./WrenchIcon.svelte"
 import type TvIcon from "./TVIcon.svelte";
 
-export const IconRegistry: IconRegistry<AddIcon|
+export const IconRegistry: IconRegistryI<AddIcon|
 KeyboardIcon|
 MailIcon|
 LineChartIcon|
