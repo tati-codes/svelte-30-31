@@ -18,6 +18,7 @@
   - [ ] CurrentTaskCard
   - [ ] Add Task Card
   - [ ] play sounds
+    - [ ] alert sound longer
 - TODO Settings view
   - [x] VolumeBtn
   - [x] LayoutBtn
@@ -28,14 +29,14 @@
   - [x] AddTaskList
 - TODO edit task view
   - [ ] modal
-  - [ ] NameEdit
-  - [ ] TimeEdit
-    - [ ] TimeDisplay
-    - [ ] NumpadBtn
+  - [x] NameEdit
+  - [x] TimeEdit
+    - [x] TimeDisplay
+    - [x] NumpadBtn
     - [ ] BackspaceBtn
     - [ ] CheckmarkBtn
-    - [ ] TimePicker
-  - [ ] IconEdit
-    - [ ] IconItem
-  - [ ] ColorPicker
+    - [x] TimePicker
+  - [x] IconEdit
+    - [x] IconItem
+  - [x] ColorPicker
   - [ ] BottomBar
