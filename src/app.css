@@ -22,9 +22,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.innerSettings {
+  display: flex;
+  justify-content: center;
+}
 .fadeIn {
   animation: fadeInAnimation 0.325s linear;
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: left;
+  margin-top: 25px;
+  margin-left: 25px;
+  width: 480px;
+}
+
+.innerTask {
+  -webkit-transition: 0.2s -webkit-filter linear;
+  -moz-transition: 0.2s -moz-filter linear;
+  -moz-transition: 0.2s filter linear;
+  transition: 0.2s filter linear;
 }
 
 @keyframes fadeInAnimation {

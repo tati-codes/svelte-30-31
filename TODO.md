@@ -17,6 +17,7 @@
   - [ ] NameBar functionality (toggle between editable and not)
   - [ ] CurrentTaskCard
   - [ ] Add Task Card
+  - [ ] play sounds
 - TODO Settings view
   - [x] VolumeBtn
   - [x] LayoutBtn

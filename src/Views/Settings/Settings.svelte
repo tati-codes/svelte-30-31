@@ -25,10 +25,7 @@
   margin-top: 25px;
 }
 
-.innerSettings {
-  display: flex;
-  justify-content: center;
-}
+
 
 :global(.pickerBtn) {
   width: 100px;

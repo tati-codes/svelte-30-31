@@ -22,7 +22,7 @@ declare type TASKBAR_ITEM = "add" |
 "close"|
 "backspace"
 
-declare type IconRegistry <T> = { [Key in TASKBAR_ITEM as string]: ComponentType<SvelteComponentTyped<{ record: T }>> };
+declare type IconRegistryI<T> = { [Key in TASKBAR_ITEM as string]: ComponentType<SvelteComponentTyped<{ record: T }>> };
 
 export type colors = [
   "gray",

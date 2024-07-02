@@ -4,13 +4,14 @@
   import TimerView from "./Views/Timer/TimerView.svelte"
   import List from "./Views/List/List.svelte"
   import {bg, light} from "./Store/color"
-  import {currentView} from "./Store/rootStore"
+  import {currentTaskList, currentView, root} from "./Store/rootStore"
+  import TaskEdit from "./Views/TaskEdit/TaskEdit.svelte"
   // "TIMER", "PICKER", "SETTINGS", "TASK_EDIT"
   // $: cssVarStyles = Object.entries(styles)
 	// 	.map(([key, value]) => `--${key}:${value}`)
 	// 	.join(';');
-  // $: bsg = bg($light);
-  // style={bsg}
+  import { setEditID } from "./Store/taskEdit"
+  setEditID($currentTaskList.tasks[0].id);
 </script>
 
 <main class="bgt">
@@ -19,8 +20,9 @@
 {:else if $currentView == "PICKER"}
 <TimerView/>
 {:else if $currentView == "SETTINGS"}
-  <Settings/>
-<!-- {:else if $currentView == "TASK_EDIT"} -->
+<Settings/>
+{:else if $currentView == "TASK_EDIT"}
+<TaskEdit/>
 {/if}
 </main>
 
