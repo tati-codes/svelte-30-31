@@ -1,30 +1,31 @@
-<script>
+<script lang="ts">
 
-  import Name from "./Name.svelte"
-  import Time from "./TimePicker/ModalTime.svelte"
-  import { editStore } from "../../Store/taskEdit"
-  import Tabs from "./Tabs.svelte"
+  import Name from "./TaskEdit/Name.svelte"
+  import Time from "./TaskEdit/Time.svelte"
+  import { editingTask, editStore } from "../../Store/taskEdit"
+  import Tabs from "./TaskEdit/Tabs.svelte"
   import ColorPicker from "./ColorPicker.svelte"
   import TimePicker from "./TimePicker/TimePicker.svelte"
-  import BottomBar from "./BottomBar.svelte"
+  import BottomBar from "./TaskEdit//BottomBar.svelte"
   import IconGrid from "./IconPicker/IconGrid.svelte"
-  import RealTabs from "./RealTabs.svelte"
+  import { seconds_to_hhmmss } from "../../lib/Shared/time"
+  import { onNumPress } from "../../lib/Shared/onNumPress"
+  let len = seconds_to_hhmmss($editingTask!.length)
 </script>
 
-<div class="modal">
-  <div class="modalTopBar">
+<div class="modal" on:keypress={(e) => (len = onNumPress(e, len))}>
+  <div class="modalTopBar" tabindex="0" >
     <Name/>
-    <Time/>
+    <Time {len}/>
   </div>
   <Tabs/>
-  <RealTabs/>
-  <!-- {#if $editStore.editView === "COLOR"}
-  <ColorPicker/>
+  {#if $editStore.editView === "COLOR"}
+  <ColorPicker/>    
   {:else if $editStore.editView === "ICON"}
   <IconGrid/>
   {:else if $editStore.editView === "NUMPAD"}
-  <TimePicker/>b 
-  {/if} -->
+  <TimePicker bind:len/> 
+  {/if}
   <BottomBar/>
 </div>
   
