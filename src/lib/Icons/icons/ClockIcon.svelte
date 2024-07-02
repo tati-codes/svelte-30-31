@@ -1,6 +1,9 @@
 <script lang="ts">
-  export let x = 55, y = 55, hue="medium";
-
+  import {stroke, dark, fill } from "../../../Store/color"
+  export let x = 55, y = 55, hue: Hue = "dark";
+  type Hue = "light" | "medium" | "dark"
+  $: st = stroke($dark)
+  $: fl = fill($dark)
 </script>
     <svg
       viewBox="0 0 100 412"
@@ -12,30 +15,35 @@
     >
       <g transform="scale(12), translate(-105, -104)">
         <circle
-          class={`stubbornClock ${hue}-stroke sT`}
+          style={st}
+          class={`stubbornClock sT`}
           cx="109.21608"
           cy="121.23831"
           r="8.6356897" />
         <rect
-          class={`clock ${hue}-fill fillT`}
+          class={`clock fillT`}
+          style={fl}
           id="rect2461"
           width="8.4906425"
           height="2.225534"
           x="104.97075"
           y="110.21989" />
         <rect
-          class={`clock ${hue}-fill fillT`}
+          class={`clock fillT`}
+          style={fl}
           id="rect2461-7"
           width="8.4906425"
           height="2.225534"
           x="104.97076"
           y="129.77719" />
         <path
-          class={`stubbornClock ${hue}-stroke sT`}
+          class={`stubbornClock sT`}
+          style={st}
           d="m 108.39248,115.50054 v 6.50945"
           id="path2667" />
         <path
-          class={`stubbornClock ${hue}-stroke sT`}
+          class={`stubbornClock sT`}
+          style={st}
           d="m 108.44257,121.94957 4.75003,3.32155"
           id="path2673" />
       </g>
