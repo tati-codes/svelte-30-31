@@ -3,7 +3,7 @@ import { root } from "../../rootStore";
 import { editStore, editingTask } from "../../taskEdit";
 import type { taskIcon } from "../../typeValidators/taskIcon";
 
-const editIcon = (newIcon: taskIcon) => root.update($root => {
+export const editIcon = (newIcon: taskIcon) => root.update($root => {
   let taskList = $root.taskLists[$root.selected]
   let id = get(editStore).id;
   let taskIndex = taskList.tasks.findIndex(task => task.id === id)
