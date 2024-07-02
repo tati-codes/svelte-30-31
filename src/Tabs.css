@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.marginright {
+  margin-right: 2%;
+}
+.tabs {
+  width: 700px;
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 0px 0 0 10px;
+  text-align: left;
+}
+
+.tab-li {
+  float: left;
+  display: block;
+  width: 100%;
+}
+.tab-input {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.2s -webkit-filter linear;
+  -moz-transition: 0.2s -moz-filter linear;
+  -moz-transition: 0.2s filter linear;
+  transition: 0.2s filter linear;
+  transition: all 0.2s linear;
+
+}
+
+.tab-content {
+  margin-top: -1%; /* chrome fix*/
+  z-index: 2;
+  opacity: 0%;
+  width: 100%;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+}
+.default + label {
+  top: 0;
+  padding-top: 17px;
+}
+.tab-visible {
+  display: block;
+  opacity: 100%;
+}
+p.link {
+  clear: both;
+  margin: 380px 0 0 15px;
+  /* a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: darken($tabs-base-color, 15);
+    @include transition(all 0.2s ease-in);
+    &:hover {
+      background-color: darken($tabs-base-color, 20);
+    } */
+}
+
+.tatiTab {
+  transition: background-color 0.325s linear;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  z-index: 0;
+  font-size:30px;
+  font-weight: bolder;
+}
+
+.inactive {
+  filter: brightness(80%);
+  font-weight:lighter;
+}
+
+.inactive:hover {
+  filter: brightness(110%)
+}
