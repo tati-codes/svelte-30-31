@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { bg, medium } from "../../Store/color"
-  import { editView, swapEditView as swap } from "../../Store/taskEdit"
+  import { onEnter } from "../../../lib/Shared/onEnter"
+import { bg, medium } from "../../../Store/color"
+  import { editView, swapEditView as swap } from "../../../Store/taskEdit"
   $: bsg = bg($medium);
 
 </script>
 
 <div class="bottomBar">
-  <li class="tab-li marginright" tabindex="0"on:click={() => swap("ICON")}
-  on:keyup={() => swap("ICON")}
+  <li class="tab-li marginright" tabindex="2"on:click={() => swap("ICON")}
+  on:keyup={onEnter(() => swap("ICON"))}
   >
     <div
     style={bsg}
@@ -20,8 +21,8 @@
     Icon
     </div>
   </li>
-  <li class="tab-li" tabindex="1"       on:click={() => swap("COLOR")}
-    on:keyup={() => swap("COLOR")}>
+  <li class="tab-li" tabindex="3"  on:click={() => swap("COLOR")}
+    on:keyup={onEnter(() => swap("COLOR"))}>
     
     <div
     style={bsg}
@@ -29,7 +30,7 @@
       $editView === "COLOR" ? "" : "inactive"
     }`}
     role="tab"
-    aria-controls={"icon-panel"}
+    aria-controls={"color-panel"}
     >
     Color
     </div>

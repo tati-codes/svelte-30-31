@@ -1,8 +1,8 @@
 <script>
-  import Icon from "../../lib/Icons/Icon.svelte"
-  import ReplySolidIcon from "../../lib/Icons/icons/ReplySolidIcon.svelte"
-  import TrashIcon from "../../lib/Icons/icons/TrashIcon.svelte"
-  import { bg, medium } from "../../Store/color"
+  import Icon from "../../../lib/Icons/Icon.svelte"
+  import ReplySolidIcon from "../../../lib/Icons/icons/ReplySolidIcon.svelte"
+  import TrashIcon from "../../../lib/Icons/icons/TrashIcon.svelte"
+  import { bg, medium } from "../../../Store/color"
   $: bsg = bg($medium);
 //       on:click={swap}
 // on:click={() => (swap(), dispatch("delete", {id, changes: null}))}
@@ -20,7 +20,7 @@
       role="tab"
       aria-selected="true"
       aria-controls={"icon-panel"}
-      tabIndex={0}
+      tabIndex={60}
     >
       <TrashIcon x={0} y={0} height={35} width={40}/>
     </label>
@@ -33,7 +33,7 @@
       role="tab"
       aria-selected="true"
       aria-controls={"icon-panel"}
-      tabIndex={0}
+      tabIndex={61}
     >
       <ReplySolidIcon x={0} y={0} height={35}/>
     </label>

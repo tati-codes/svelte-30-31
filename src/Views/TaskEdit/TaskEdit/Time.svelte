@@ -1,14 +1,18 @@
 <script lang="ts">
   import Icon from "../../../lib/Icons/Icon.svelte"
   import ClockIcon from "../../../lib/Icons/icons/ClockIcon.svelte"
+  import { onEnter } from "../../../lib/Shared/onEnter"
   import { seconds_to_hhmmss } from "../../../lib/Shared/time"
   import { bg, medium } from "../../../Store/color"
   import { editingTask } from "../../../Store/taskEdit";
+  import { editView, swapEditView as swap } from "../../../Store/taskEdit"
   $: bsg = bg($medium);
-  $: len = seconds_to_hhmmss($editingTask!.length)
+  export let len: string;
+  let go = () => swap("NUMPAD")
+  let keygo = onEnter(go)
 </script>
 
-<div class="timeBtn innerTask" tabindex="1" style={bsg}>
+<div class="timeBtn innerTask" role="button" tabindex="2" style={bsg} on:click={go} on:keyup={keygo}>
   <div class="deep" >
       <ClockIcon x={20} y={-100}/>
   </div>

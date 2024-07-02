@@ -1,13 +1,18 @@
 <script lang="ts">
-import { bg, medium } from "../../Store/color"
+import { editName } from "../../../Store/actions/taskEdit/editName"
+import { bg, medium } from "../../../Store/color"
+import { editingTask } from "../../../Store/taskEdit"
 $: bsg = bg($medium);
+let name = $editingTask?.name || ""
 </script>
 
 <input
   style={bsg}
   type="text"
+  tabindex="1"
   class="nameEditField fadeIn"
-  tabIndex="0"
+  bind:value={name}
+  on:change={() => editName(name)}
 />  
 
 <style>
