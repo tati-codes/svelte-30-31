@@ -5,14 +5,18 @@
   import { editingTask } from "../../../Store/taskEdit";
   import type { TASKBAR_ITEM } from "../../../../types"
   import Icon from "../../../lib/Icons/Icon.svelte"
+  import { onEnter } from "../../../lib/Shared/onEnter"
+  import { editIcon } from "../../../Store/actions/taskEdit/editIcon"
+  import type { taskIcon } from "../../../Store/typeValidators/taskIcon"
 
   $: bsg = bg($medium);
   $: lightstroke = stroke($light);
   $: fillg = fill("transparent")
   $: stg = `${lightstroke};${fillg}`
-  let keys: TASKBAR_ITEM[] = Object.keys(IconRegistry).filter(
+  let keys: taskIcon[] = Object.keys(IconRegistry).filter(
   (item) => item !== "close" && item !== "backspace" && item !== "add" 
-) as TASKBAR_ITEM[]
+) as taskIcon[]
+
 </script>
   
   
@@ -20,7 +24,7 @@
 style={bsg}
 class="iconPicker">
 {#each keys as key, i}
-  <IconItem selected={key == $editingTask?.icon} icon={key} change={() => null} tabIndex={i+2}>
+  <IconItem selected={key == $editingTask?.icon} icon={key} tabIndex={i+3}>
     <Icon style={stg}  width={18} height={18} viewbox="0 0 24 24">
       <svelte:component this={IconRegistry[key]}/>
     </Icon>
