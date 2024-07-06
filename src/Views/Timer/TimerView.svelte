@@ -3,15 +3,16 @@
   import {IconRegistry} from "./TaskCard/taskCardIcons/IconRegistry";
   import TopBar from "./TopBar/TopBar.svelte"
   import Button from './TaskCard/TaskCard.svelte'
-  let keys: TASKBAR_ITEM[] = Object.keys(IconRegistry) as TASKBAR_ITEM[];
+  import { currentTaskList } from "../../Store/rootStore"
+  $: tasks = $currentTaskList.tasks
 </script>
 
 <TopBar/>
 <Timer/>
 <div class="card">
-{#each keys as key}
+{#each tasks as key}
   <Button btnType={key} />
-  {/each}
+{/each}
 </div>
 
 
