@@ -10,8 +10,8 @@
 <TopBar/>
 <Timer/>
 <div class="card">
-{#each tasks as key}
-  <Button btnType={key} />
+{#each tasks as task}
+  <Button {task}/>
 {/each}
 </div>
 

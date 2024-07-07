@@ -1,11 +1,12 @@
 <script lang="ts">
+  import type { taskIcon } from "../../../../Store/typeValidators/taskIcon"
   //12px top 12%
   //18px left 4%
   //12px bottom
   //83px right 18%
   import {IconRegistry} from "./IconRegistry";
   export let width = 55, height= 55, x = 8, y = 5;
-  export let type: TASKBAR_ITEM;
+  export let type: taskIcon;
   export let _class = "icon";
   export let stroke = "white";
   let iconType = IconRegistry[type];

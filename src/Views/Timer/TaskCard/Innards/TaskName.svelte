@@ -1,4 +1,7 @@
-<div class="taskName">Focused WorH</div>
+<script lang="ts">
+  export let name:string;
+</script>
+<div class="taskName">{name}</div>
 
 <style>
   .taskName {

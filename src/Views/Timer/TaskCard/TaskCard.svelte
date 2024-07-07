@@ -3,14 +3,15 @@
   import Icon from "./taskCardIcons/TaskBarIcons.svelte"
   import TaskName from "./Innards/TaskName.svelte"
   import Length from "./Innards/Length.svelte"
-  export let btnType: TASKBAR_ITEM;
+  import type { Task } from "../../../Store/Task"
+  export let task: Task;
 </script>
 
 <div class="taskCard" >
-  <Icon type={btnType}/>
-  <ComputedTime/>
-  <TaskName/>
-  <Length/>
+  <Icon type={task.icon || "book"}/>
+  <ComputedTime computed={task.computed}/>
+  <TaskName name={task.name}/>
+  <Length length={task.length}/>
 </div>
 
 <style>

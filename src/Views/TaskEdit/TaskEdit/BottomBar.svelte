@@ -6,10 +6,11 @@
   import { setView } from "../../../Store/actions/root/setView"
   import { deleteTask } from "../../../Store/actions/taskEdit/deleteTask"
   import { bg, medium } from "../../../Store/color"
+  import { editingTask } from "../../../Store/taskEdit"
   $: bsg = bg($medium);
   const handleGoBackKey = onEnter(() => setView("TIMER"))
-  const handleDeleteKey = onEnter(deleteTask)
-  //       on:click={swap}
+  const handleDeleteKey = onEnter(() => deleteTask($editingTask?.id || "missing"))
+//  on:click={swap}
 // on:click={() => (swap(), dispatch("delete", {id, changes: null}))}
 
 //swap should set rootStore view to TIMER
@@ -25,7 +26,7 @@
       role="tab"
       aria-selected="true"
       aria-controls={"icon-panel"}
-      on:click={deleteTask}
+      on:click={() => deleteTask($editingTask?.id || "missing")}
       on:keypress={handleDeleteKey}
       tabIndex={60}
     >

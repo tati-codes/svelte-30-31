@@ -1,4 +1,9 @@
-<div class="length">12:12</div>
+<script lang="ts">
+import { formatSeconds } from "../../../../lib/Shared/time"
+export let length = 0
+</script>
+
+<div class="length">{formatSeconds(length)}</div>
 
 <style>
   .length {
