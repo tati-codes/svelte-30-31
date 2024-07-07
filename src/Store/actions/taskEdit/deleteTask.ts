@@ -1,11 +1,13 @@
 import { get } from "svelte/store";
-import { root } from "../../rootStore";
+import { currentTaskList, root } from "../../rootStore";
 import { editStore, editingTask } from "../../taskEdit";
 import type { taskIcon } from "../../typeValidators/taskIcon";
 
-export const deleteTask = () => root.update($root => {
-  let tasks= $root.taskLists[$root.selected].tasks
-  let id = get(editStore).id;
+export const deleteTask = (id: string) => root.update($root => {
+  let tasklist = $root.taskLists[$root.selected];
+  let tasks = tasklist.tasks
+  if (tasks.length < 3) return $root;
+  if (tasklist.timer) clearInterval(tasklist.timer)
   let taskIndex = tasks.findIndex(task => task.id === id)
   tasks.splice(taskIndex, 1)
   return $root
