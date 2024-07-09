@@ -13,19 +13,19 @@
   import { takeTime } from "../../../../Store/actions/task/takeTime"
   import { deleteTask } from "../../../../Store/actions/taskEdit/deleteTask"
   import { sendToBottom } from "../../../../Store/actions/taskList/sendBottom"
+  import { markDone } from "../../../../Store/actions/taskList/markDone"
 
 $: fillg = fill($light)
 let isLocked = true;
 const toggleLock = () => {
   isLocked = !isLocked
 };
-const done = () => sendToBottom(true);
 $: del = () => deleteTask($currentTask.id);
 $: label = labelMaker($currentTask.remaining_seconds)
 </script>
 
 
-<TimerBtn position="top" cb={done}>
+<TimerBtn position="top" cb={markDone}>
   <CheckMarkIcon fill={$light} x={300} y={45} />
 </TimerBtn>
 
