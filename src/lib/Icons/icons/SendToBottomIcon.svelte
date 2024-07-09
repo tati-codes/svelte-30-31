@@ -5,14 +5,17 @@
   export let height = 55;
   export let x = 8;
   export let y = 5;
+  export let style: string = "";
+
 </script>
 
 <svg
-  class="fadeIn icon light-fill"
+  class="fadeIn icon fillT"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 700 700"
   x={x}
   y={y}
+  {style}
   width="80"
   height="80"
 >

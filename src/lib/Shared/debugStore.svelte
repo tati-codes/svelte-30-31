@@ -1,9 +1,8 @@
 <script lang="ts">
   import { isPrimitive } from "./isPrimitive"
   export let obj, title;
-  console.log(obj)
-  let keys = Object.keys(obj)
-  let values = Object.values(obj)
+  $: keys = Object.keys(obj)
+  $: values = Object.values(obj)
 </script>
 <div>
   <h2>{title}</h2>

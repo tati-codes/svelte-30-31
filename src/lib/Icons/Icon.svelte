@@ -3,6 +3,7 @@
   export let height = 55;
   export let x = 8;
   export let y = 5;
+  export let stroke: string = "";
   export let style: string = "";
   export let classNames = ""
   export let viewbox = "0 0 500 500"
@@ -14,6 +15,7 @@ xmlns="http://www.w3.org/2000/svg"
 {height}
 {x}
 {y}
+{stroke}
 {style}
 viewBox={viewbox}
 stroke-width="2"
