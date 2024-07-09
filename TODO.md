@@ -19,6 +19,8 @@
   - [ ] Add Task Card
   - [ ] play sounds
     - [ ] alert sound longer
+  - [ ] FIXME
+    - [ ] COLOR TRANSITIONS
 - TODO Settings view
   - [x] VolumeBtn
   - [x] LayoutBtn

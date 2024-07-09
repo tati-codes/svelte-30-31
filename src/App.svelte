@@ -3,20 +3,18 @@
   import Settings from "./Views/Settings/Settings.svelte"
   import TimerView from "./Views/Timer/TimerView.svelte"
   import List from "./Views/List/List.svelte"
-  import {bg, light} from "./Store/color"
   import {currentTask, currentTaskList, currentView, root} from "./Store/rootStore"
   import TaskEdit from "./Views/TaskEdit/TaskEdit.svelte"
-  
+  import {bg, light} from "./Store/color"
+  $: bsg = bg($light)
   // "TIMER", "PICKER", "SETTINGS", "TASK_EDIT"
   // $: cssVarStyles = Object.entries(styles)
 	// 	.map(([key, value]) => `--${key}:${value}`)
 	// 	.join(';');
-  import { setEditID } from "./Store/taskEdit"
   import DebugStore from "./lib/Shared/debugStore.svelte"
-  setEditID($currentTaskList.tasks[0].id);
 </script>
 
-<div class="container">
+<div class="container" style={bsg} >
 
   <main class="bgt">
     {#if $currentView == "TIMER"}
@@ -29,23 +27,40 @@
     <TaskEdit/>
     {/if}
   </main>
-    <aside>
+  <div class="asidecontainer">
+
+    <aside class="first">
       <DebugStore obj={$root} title="root"/>
       <DebugStore obj={$currentTaskList} title="tasklist"/>
-      <DebugStore obj={$currentTask} title="task"/>
     </aside>
+    <aside class="second">
+      {#each $currentTaskList.tasks as task}
+      <DebugStore obj={task} title="tasks"/>
+      {/each}
+    </aside>
+  </div>
 </div>
 <style>
-
-  aside {
+  .asidecontainer {
+    display: inline-flex;
+height:fit-content;
+flex-shrink: 1;
+  }
+  .first {
     background: rgba(0, 0, 0, 0.8);
-    margin: 20px;
+    height:fit-content;
     padding: 20px;
     z-index: 0;
-    position: absolute;
-    margin-left: 50%;
+    font-family: Helvetica;
+    border-right: 3px dashed whitesmoke;
+  }
+  .second {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    z-index: 0;
     font-family: Helvetica;
   }
+
 .bgt{
   transition: background-color 0.325s linear;
 }
