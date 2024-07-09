@@ -16,7 +16,7 @@ let tasklist = defaultTaskList();
 export let root: Writable<rootStore> = writable({
   muted: false,
   layout: "CLASSIC",
-  currentView: "TASK_EDIT",
+  currentView: "TIMER",
   taskLists: [tasklist],
   selected: 0
 })

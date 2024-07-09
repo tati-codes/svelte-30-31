@@ -20,7 +20,9 @@ export class TaskList implements TaskListI {
   looping = false // ignore StopTask or not
   timer: ReturnType<typeof setTimeout> | null = null
   status: TaskListStatus = "IDLE"
-  isPlaying: boolean = false
+  get isPlaying(): boolean  {
+    return this.status === "TIMER_ACTIVE"
+  }
   constructor(_name: string, _tasks: Task[]) {
     this.name = _name
     this.tasks = [..._tasks.slice(), new StopTask()]
@@ -39,4 +41,4 @@ export class TaskList implements TaskListI {
 //   }
 // }
 
-export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [new Task("default", 6000, "basket")])
+export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [new Task("default", 90, "basket"), new Task("different", 1, "book")])
