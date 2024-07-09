@@ -1,6 +1,7 @@
+import type { Moment } from "moment"
 import { getUniqueID } from "../lib/Shared/getUniqueID"
 import { StopTask, Task } from "./Task"
-const statusTypes = ["IDLE", "TIMER_ACTIVE"] as const
+const statusTypes = ["IDLE", "TIMER_ACTIVE", "PAUSED", "DONE"] as const
 export type TaskListStatus = typeof statusTypes[number]
 
 export interface TaskListI {
@@ -11,6 +12,7 @@ export interface TaskListI {
   looping: boolean
   timer: ReturnType<typeof setTimeout> | null
   isPlaying: boolean
+  start_tick: moment.Moment | null
 }
 
 export class TaskList implements TaskListI {
@@ -20,6 +22,7 @@ export class TaskList implements TaskListI {
   looping = false // ignore StopTask or not
   timer: ReturnType<typeof setTimeout> | null = null
   status: TaskListStatus = "IDLE"
+  start_tick: Moment | null = null
   get isPlaying(): boolean  {
     return this.status === "TIMER_ACTIVE"
   }
