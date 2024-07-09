@@ -20,12 +20,12 @@ stroke-width="90"
 ></circle>
 
 <style>
+  .circle {
+    stroke: transparent;
+    transition: stroke 0.325s linear;
+  }
   .innerCircle {
   transform: rotate(45);
   transition: all 1.325s linear;
-}
-.circle {
-  stroke: transparent;
-  transition: stroke 0.325s linear;
 }
 </style>
