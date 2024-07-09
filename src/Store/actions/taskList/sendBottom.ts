@@ -3,45 +3,34 @@ import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
 
-export const sendToBottom = (preserve: boolean = false) => {
+export const sendToBottom = () => {
   root.update($root => {
-  let taskList = $root.taskLists[$root.selected]
-  if (taskList.timer) clearInterval(taskList.timer)
-  let tasks = taskList.tasks
-
-  if (preserve) {
+    let taskList = $root.taskLists[$root.selected]
+    clearInterval(taskList.timer || undefined)
+    taskList.timer = null
+    let tasks = taskList.tasks
+    let breakIndex = taskList.tasks.findIndex(task => task.name === "_BREAK")
     let currentTask = tasks.shift()!
-    currentTask.status = "INACTIVE"
-    tasks.push(currentTask)
-  } else {
-    let currentTask = tasks.shift()!
-    currentTask.status = "INACTIVE"
-    currentTask.remaining_seconds = currentTask?.length
-    tasks.push(currentTask)
-  }
+    tasks.splice(breakIndex - 1,0, currentTask)
 
-  if (tasks[0].name === "_BREAK") {
-    tasks.push(tasks.shift()!)
-    if (!taskList.looping) {
-      pause()
-      // playClear()
+    if (tasks[0].name === "_BREAK") {
+      tasks.push(tasks.shift()!)
+      if (!taskList.looping) {
+        // playClear()
+        taskList.status = "DONE"
+      }
+      return $root
     }
-    tasks = tasks.map((task => ({...task, computed: null})))
-    taskList.status = "IDLE"
-    return $root
-  }
 
-  if (taskList.status === "TIMER_ACTIVE") {
-    //playTaskDone
-    return $root
-  }
+    if (taskList.status === "TIMER_ACTIVE") {
+      //playTaskDone
+      return $root
+    }
 
-  taskList.timer = null
-  taskList.tasks = tasks.map((task => ({...task, computed: null})))
-  return $root
-})
+    return $root
+
+  })
   if (get(currentTaskList).status == "TIMER_ACTIVE") {
-    //play sound
     start();
   }
 }
