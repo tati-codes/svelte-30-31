@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { stroke, light } from "../../../../Store/color"
+
+  $: style = stroke($light)
+
 type TimerPositions =
   | "bottom"
   | "bottomLeft"
@@ -22,23 +26,19 @@ let positions: { [key in TimerPositions]: [number, number] } = {
 
 export let position: TimerPositions;
 export let classes: string = "";
-export let cb = () => null;
-interface TimerBtnProps {
-  pos: TimerPositions
-  cb: () => void
-  class: string
-}
+export let cb: () => void
+
 
 let [x, y] = positions[position]
 
 </script>
 
 
-    <slot/>
+    <slot />
     <circle
+    {style}
     fill="transparent"
-    stroke="#53b8e0"
-    class={`light-stroke circle ${classes}`}
+    class={`circle ${classes}`}
     r="62.5"
     cx={x}
     cy={y}

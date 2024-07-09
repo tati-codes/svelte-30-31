@@ -4,10 +4,14 @@
   import TaskName from "./Innards/TaskName.svelte"
   import Length from "./Innards/Length.svelte"
   import type { Task } from "../../../Store/Task"
+  import { bg, dark, fromStr } from "../../../Store/color"
   export let task: Task;
+  
+  $: bsg = bg(fromStr(task.color).dark);
+
 </script>
 
-<div class="taskCard" >
+<div class="taskCard" style={bsg} >
   <Icon type={task.icon || "book"}/>
   <ComputedTime computed={task.computed}/>
   <TaskName name={task.name}/>

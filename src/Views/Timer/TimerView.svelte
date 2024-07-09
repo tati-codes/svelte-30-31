@@ -2,7 +2,7 @@
   import Timer from "./Timer/Timer.svelte"
   import {IconRegistry} from "./TaskCard/taskCardIcons/IconRegistry";
   import TopBar from "./TopBar/TopBar.svelte"
-  import Button from './TaskCard/TaskCard.svelte'
+  import TaskCard from './TaskCard/TaskCard.svelte'
   import { currentTaskList } from "../../Store/rootStore"
   $: tasks = $currentTaskList.tasks
 </script>
@@ -11,7 +11,7 @@
 <Timer/>
 <div class="card">
 {#each tasks as task}
-  <Button {task}/>
+  <TaskCard {task}/>
 {/each}
 </div>
 

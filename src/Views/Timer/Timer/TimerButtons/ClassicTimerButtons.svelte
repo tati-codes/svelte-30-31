@@ -6,43 +6,51 @@
   import TrashIcon from "../../../../lib/Icons/icons/TrashIcon.svelte"
   import BtnLabel from "./BtnLabel.svelte"
   import TimerBtn from "./TimerBtn.svelte"
+  import { stroke, light, fill } from "../../../../Store/color"
+  import { labelMaker } from "../../../../lib/Shared/label_maker"
+  import { currentTask } from "../../../../Store/rootStore"
+  import { addTime } from "../../../../Store/actions/task/addTime"
+  import { takeTime } from "../../../../Store/actions/task/takeTime"
+  import { deleteTask } from "../../../../Store/actions/taskEdit/deleteTask"
+  import { sendToBottom } from "../../../../Store/actions/taskList/sendBottom"
 
-const isLocked = true;
-const done = () => null;
-const send_to_bottom = done;
-const toggleLock = done;
-const  del = done;
-const  add = done
-const  take = done;
-// let label = labelMaker(remaining)
-let label = 30;
+$: fillg = fill($light)
+let isLocked = true;
+const toggleLock = () => {
+  isLocked = !isLocked
+};
+const done = () => sendToBottom(true);
+$: del = () => deleteTask($currentTask.id);
+$: label = labelMaker($currentTask.remaining_seconds)
 </script>
 
 
 <TimerBtn position="top" cb={done}>
-  <CheckMarkIcon x={300} y={45} />
+  <CheckMarkIcon fill={$light} x={300} y={45} />
 </TimerBtn>
-<TimerBtn position="topLeft" cb={send_to_bottom}>
-  <SendToBottomIcon x={115} y={97} />
+
+<TimerBtn position="topLeft" cb={sendToBottom}>
+  <SendToBottomIcon  style={fillg} x={115} y={97} />
 </TimerBtn>
 
 {#if isLocked}
   <TimerBtn position="topRight" cb={del}>
-    <TrashIcon x={462} y={110}  />
+    <TrashIcon style={fillg}  x={462} y={110}  />
   </TimerBtn>
 {/if}
-<TimerBtn position="bottom" cb={toggleLock}>
 
+
+<TimerBtn position="bottom" cb={toggleLock}>
 {#if isLocked}
-  <LockIcon x={300} y={537} height={70}/>
+  <LockIcon x={300} style={fillg} y={537} height={70}/>
 {:else}
-  <OpenLockIcon x={295} y={537} height={70}/>
+  <OpenLockIcon x={295} style={fillg} y={537} height={70}/>
 {/if}
 </TimerBtn>
 
-<TimerBtn position="bottomRight" cb={add}>
-  <BtnLabel label={`+${label}m`} x={label > 5 ? 522.5 : 525} y={label > 5 ? 415 : 420} size={label > 5 ? "40px" : "48px"}/>
+<TimerBtn position="bottomRight" cb={addTime}>
+  <BtnLabel style={fillg} label={`+${label}m`} x={label > 5 ? 522.5 : 525} y={label > 5 ? 415 : 420} size={label > 5 ? "40px" : "48px"}/>
 </TimerBtn>
-<TimerBtn position="bottomLeft" cb={take}>
-  <BtnLabel x={label > 5 ? 45 : 50} y={label > 5 ? 415 : 420} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
+<TimerBtn position="bottomLeft" cb={takeTime}>
+  <BtnLabel style={fillg} x={label > 5 ? 45 : 50} y={label > 5 ? 415 : 420} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
 </TimerBtn>

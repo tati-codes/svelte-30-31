@@ -4,6 +4,7 @@
   import Playback from "./Playback.svelte"
   import ClassicTimerButtons from "./TimerButtons/ClassicTimerButtons.svelte"
   import TimerText from "./TimerText.svelte"
+
 </script>
 
 <svg

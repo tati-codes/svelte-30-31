@@ -1,14 +1,16 @@
 <script lang="ts">
-  // stroke={colorStrings.gray.light}
+  import { medium, stroke } from "../../../Store/color"
+  $: bsg = stroke($medium)
+
 </script>
 
 <circle
 fill="none"
-class="circle medium-stroke"
+style={bsg}
+class="circle"
 r="250"
 cx="325"
 cy="325"
 stroke-width="90"
 stroke="#d0d5db"
-
 ></circle>

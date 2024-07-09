@@ -1,7 +1,8 @@
 <script>
+  import { currentTaskList } from "../../../Store/rootStore"
   import Pause from "./Playback/Pause.svelte"
   import Triangle from "./Playback/Triangle.svelte"
-  const isPlaying = true;
+  $: isPlaying = $currentTaskList.isPlaying;
 </script>
 
 {#if isPlaying}

@@ -1,11 +1,13 @@
 <script lang="ts">
   export let size = "48px";
+  export let style = ""
   export let x:number, y:number, label: string;
 </script>
 <text
-class="fadeIn light-fill fillT"
+class="fadeIn  fillT"
 {x}
 {y}
+{style}
 font-size={size}
 font-weight="bolder"
 >
