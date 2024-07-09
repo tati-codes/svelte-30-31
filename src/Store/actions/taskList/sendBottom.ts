@@ -1,15 +1,21 @@
-import { root } from "../../rootStore";
+import { get } from "svelte/store";
+import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
 
-export const sendToBottom = (preserve: boolean = false) => root.update($root => {
+export const sendToBottom = (preserve: boolean = false) => {
+  root.update($root => {
   let taskList = $root.taskLists[$root.selected]
   if (taskList.timer) clearInterval(taskList.timer)
   let tasks = taskList.tasks
 
-  if (preserve) tasks.push(tasks.pop()!)
-  else {
-    let currentTask = tasks.pop()!
+  if (preserve) {
+    let currentTask = tasks.shift()!
+    currentTask.status = "INACTIVE"
+    tasks.push(currentTask)
+  } else {
+    let currentTask = tasks.shift()!
+    currentTask.status = "INACTIVE"
     currentTask.remaining_seconds = currentTask?.length
     tasks.push(currentTask)
   }
@@ -27,11 +33,15 @@ export const sendToBottom = (preserve: boolean = false) => root.update($root => 
 
   if (taskList.status === "TIMER_ACTIVE") {
     //playTaskDone
-    start()
     return $root
   }
 
   taskList.timer = null
-  tasks = tasks.map((task => ({...task, computed: null})))
+  taskList.tasks = tasks.map((task => ({...task, computed: null})))
   return $root
 })
+  if (get(currentTaskList).status == "TIMER_ACTIVE") {
+    //play sound
+    start();
+  }
+}
