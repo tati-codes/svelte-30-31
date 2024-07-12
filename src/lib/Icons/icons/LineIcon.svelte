@@ -21,3 +21,9 @@
     stroke-linecap="round"
     stroke="#9aa3b0"/>
 </svg>
+
+<style>
+  .lineStroke {
+    stroke-dasharray: 10 10 200;
+  }
+</style>
