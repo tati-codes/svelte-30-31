@@ -13,7 +13,7 @@
 
 <div class="taskCard" style={bsg} >
   <Icon type={task.icon || "book"}/>
-  <ComputedTime computed={task.computed}/>
+  <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
   <Length length={task.length}/>
 </div>

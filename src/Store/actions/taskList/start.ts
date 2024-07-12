@@ -1,6 +1,7 @@
 import moment from "moment";
 import { root } from "../../rootStore";
 import { set_timer } from "./set_timer";
+import { start_tick } from "../../computed";
 
 export const start = () => root.update($root => {
   let taskList = $root.taskLists[$root.selected]
@@ -8,7 +9,7 @@ export const start = () => root.update($root => {
   else {
     let start = moment([])
     taskList.status = "TIMER_ACTIVE"
-    taskList.start_tick = start
+    start_tick.set(start)
     taskList.timer = set_timer()
     return $root
   }

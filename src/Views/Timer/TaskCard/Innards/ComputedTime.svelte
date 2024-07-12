@@ -1,11 +1,18 @@
 <script lang="ts">
-  import type { Task } from "../../../../Store/Task"
-
-  export let computed: Task["computed"];
-  let [cStart, cEnd] = computed ? [computed[0].format("HH:mm:ss"), computed[1].format("HH:mm:ss")] : ["00:00:00", "00:00:00"]
+  import moment from "moment"
+  import { computedTimes } from "../../../../Store/computed";
+  export let id: string;
+  export let len: number
+  $: task = $computedTimes.length ? $computedTimes.find(tsk => tsk?.id === id) : null
 </script>
 
-<div class="cTimes"> {cStart} -> {cEnd} </div>
+<div class="cTimes"> 
+{#if task}
+  {task.computed[0].format("HH:mm:ss")} -> {task.computed[1].format("HH:mm:ss")} 
+{:else}
+  {moment().startOf("day").format("HH:mm:ss")} -> { moment().startOf("day").add(len, "seconds").format("HH:mm:ss")} 
+{/if}
+</div>
 
 <style>
   .cTimes {
