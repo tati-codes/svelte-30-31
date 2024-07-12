@@ -1,44 +1,56 @@
 <script lang="ts">
+  import { setView } from "../../../Store/actions/root/setView"
+  import { addTask } from "../../../Store/actions/taskList/add"
+  import { Task } from "../../../Store/Task"
+  import { setEditID } from "../../../Store/taskEdit"
   import TaskBarIcons from "./taskCardIcons/TaskBarIcons.svelte"
-
-// onClick={handleClick}
-
+  const addTaskHandler = () => {
+    let newTask = new Task("New Task", 5)
+    addTask(newTask)
+    setEditID(newTask.id)
+    setView("TASK_EDIT")
+  }
 </script>
-<svg
-xmlns="http://www.w3.org/2000/svg"
-version="1.1"
-viewBox="0 0 138 38"
-xml:space="preserve"
-width="490"
-class="addTaskCard fadeIn innerAdd"
->
-<g class={"innerAdd"}>
-  <TaskBarIcons stroke="gray" _class="light-gray" width={22} height={22} x={60} y={7} type="add"></TaskBarIcons>
-  <path
-    class={`medium-gray-fill fillT innerAdd`}
-    stroke-width="0.265"
-    d="M3.532 9.05v19.426c.758 2.18 1.973 4.14 5.496 4.985l121.881-.226c2.946-.65 4.572-2.51 5.205-5.278l.073-19.16c-.494-2.822-2.342-4.415-4.953-5.313L9.051 3.412c-3.263.646-5.148 2.486-5.519 5.638z"
-  >
 
-  </path>
-</g>
-</svg>
-
-<!-- color={"gray"} -->
-//addTaskCard
-//fadeIn
-//innerAdd
+<div id="addTask" class="taskCard light-gray-background fillT innerAdd" on:click={addTaskHandler}>
+  <TaskBarIcons stroke="gray" _class="light-gray"  type="add"></TaskBarIcons>
+</div>
 
 <style>
 
   .innerAdd{
-    -webkit-transition: 0.2s -webkit-filter linear;
-    -moz-transition: 0.2s -moz-filter linear;
-    -moz-transition: 0.2s filter linear;
-    transition: 0.2s filter linear;
     opacity: 70%;
   }
-  .addTaskCard {
-  margin-right: 0.5%;
-}
+.taskCard {
+    width: 391px;
+    height: 105px;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  div.taskCard {
+    border: 1px solid transparent;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    transition: 0.27s filter linear;
+  }
+  :global(#addTask > svg) {
+    margin-top: 6.5%;
+    transition: 0.27s transform linear;
+
+  }
+  :global(#addTask:hover > svg) {
+  transform: scale(1.2);
+  }
+  div.taskCard:hover {
+    border-color: #646cff;
+    filter: brightness(90%);
+  }
+  div.taskCard:focus,
+  budiv.taskCard:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 </style>
