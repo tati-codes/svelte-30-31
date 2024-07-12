@@ -23,7 +23,6 @@
     width: 391px;
     height: 105px;
     border-radius: 25px;
-
     display: grid;
     grid-template-columns: 20% 80%;
     grid-column-gap: 2vw;
