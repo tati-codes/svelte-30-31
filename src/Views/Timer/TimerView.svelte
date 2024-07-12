@@ -1,28 +1,24 @@
 <script lang="ts">
   import Timer from "./Timer/Timer.svelte"
-  import {IconRegistry} from "./TaskCard/taskCardIcons/IconRegistry";
   import TopBar from "./TopBar/TopBar.svelte"
-  import TaskCard from './TaskCard/TaskCard.svelte'
   import { currentTaskList } from "../../Store/rootStore"
-  import AddTaskCard from "./TaskCard/AddTaskCard.svelte"
-  $: tasks = $currentTaskList.tasks
+  import Tasks from "./TaskCard/Tasks.svelte"
 </script>
 
 <TopBar/>
 <Timer/>
-<div class="card">
-{#each tasks as task}
-  <TaskCard {task}/>
-{/each}
-<AddTaskCard/>
-</div>
-
+<Tasks/>
 
 <style>
   .card{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-left: 20%;
+  }
+  :global(.card > .lineStroke) {
+    margin: -10%
+  
   }
   .logo {
     height: 6em;
