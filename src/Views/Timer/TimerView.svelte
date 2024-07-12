@@ -4,6 +4,7 @@
   import TopBar from "./TopBar/TopBar.svelte"
   import TaskCard from './TaskCard/TaskCard.svelte'
   import { currentTaskList } from "../../Store/rootStore"
+  import AddTaskCard from "./TaskCard/AddTaskCard.svelte"
   $: tasks = $currentTaskList.tasks
 </script>
 
@@ -13,6 +14,7 @@
 {#each tasks as task}
   <TaskCard {task}/>
 {/each}
+<AddTaskCard/>
 </div>
 
 
