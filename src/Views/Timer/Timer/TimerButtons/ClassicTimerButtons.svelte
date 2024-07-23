@@ -30,7 +30,7 @@ $: label = labelMaker($currentTask.remaining_seconds)
 </TimerBtn>
 
 <TimerBtn position="topLeft" cb={sendToBottom}>
-  <SendToBottomIcon  style={fillg} x={115} y={97} />
+  <SendToBottomIcon  style={$light} x={115} y={97} />
 </TimerBtn>
 
 {#if isLocked}
