@@ -1,11 +1,14 @@
 <script>
   import GearIcon from "../../../lib/Icons/icons/GearIcon.svelte"
-
+  import { setView } from "../../../Store/actions/root/setView"
+  import { medium, bg, light } from "../../../Store/color";
+  $: bgT = bg($medium);
+  const goSettings = () => setView("SETTINGS");
 
 </script>
 
-<div class="medium-background settingsBtn">
-  <GearIcon/>
+<div class="settingsBtn" style={bgT} on:click={goSettings}>
+  <GearIcon fill={$light}/>
 </div>
 
 <style>
