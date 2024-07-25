@@ -34,7 +34,7 @@ class={`taskListNameEditField `}
 <div style={bg($medium)} class="tName bgT fadeIn" on:click={toggleEditing}>
   <span>{$currentTaskList.name}</span>
 </div>
-  {/if}
+{/if}
     
 <style>
 .cT {

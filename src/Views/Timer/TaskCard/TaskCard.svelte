@@ -5,13 +5,17 @@
   import Length from "./Innards/Length.svelte"
   import type { Task } from "../../../Store/Task"
   import { bg, dark, fromStr } from "../../../Store/color"
+  import { setEditID } from "../../../Store/taskEdit"
+  import { setView } from "../../../Store/actions/root/setView"
   export let task: Task;
-  
   $: bsg = bg(fromStr(task.color).dark);
-
+  let handleClick = () => {
+    setEditID(task.id);
+    setView("TASK_EDIT");
+  }
 </script>
 
-<div class="taskCard" style={bsg} >
+<div class="taskCard" style={bsg} on:click={handleClick}>
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
