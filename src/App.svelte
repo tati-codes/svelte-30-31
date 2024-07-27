@@ -12,6 +12,7 @@
 	// 	.map(([key, value]) => `--${key}:${value}`)
 	// 	.join(';');
   import DebugStore from "./lib/Shared/debugStore.svelte"
+  import TopBar from "./Views/Timer/TopBar/TopBar.svelte"
 </script>
 
 <div class="container" style={bsg} >
@@ -22,6 +23,7 @@
     {:else if $currentView == "PICKER"}
     <List/>
     {:else if $currentView == "SETTINGS"}
+    <TopBar/>
     <Settings/>
     {:else if $currentView == "TASK_EDIT"}
     <TaskEdit/>
@@ -43,8 +45,8 @@
 <style>
   .asidecontainer {
     display: inline-flex;
-height:fit-content;
-flex-shrink: 1;
+    height:fit-content; 
+    flex-shrink: 1;
   }
   .first {
     background: rgba(0, 0, 0, 0.8);
@@ -68,5 +70,6 @@ flex-shrink: 1;
   display: grid; 
   grid-template-columns: 5fr 5fr; 
   gap: 0px 0px; 
+  padding-bottom: 1%;
 }
 </style>
