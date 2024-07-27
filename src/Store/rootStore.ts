@@ -25,3 +25,4 @@ export let currentView = derived(root, ($root) => $root.currentView);
 export let currentTaskList = derived(root, ($root) => $root.taskLists[$root.selected])
 export let isLooping = derived(currentTaskList, ($tasklist) => $tasklist.looping)
 export let currentTask = derived(root, ($root) => $root.taskLists[$root.selected].tasks[0])
+export let tasklists = derived(root, ($root) => $root.taskLists)
