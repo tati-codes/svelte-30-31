@@ -1,6 +1,7 @@
 <script lang="ts">
   import ClassicLayoutBtn from "./ClassicLayoutBtn.svelte"
   import ModernLayoutBtn from "./ModernLayoutBtn.svelte"
+  import PickerBtn from "./PickerBtn.svelte"
 
   // let {layout, dispatch} = useSettingsStore(state => state)
   // let setModern = () => dispatch("setLayout", "MODERN")
@@ -15,12 +16,12 @@
   // {layout === "MODERN" && <MODERN/>}
 </script>
 
-<div class="fadeIn dark-background pickerBtn settings" on:click={toggle}>
-  <svg>
+<PickerBtn> 
+   <svg>
     {#if layout == "CLASSIC"}
       <ClassicLayoutBtn/>
     {:else if  layout == "MODERN"}
       <ModernLayoutBtn/>
     {/if}
   </svg>
-</div>
+</PickerBtn>

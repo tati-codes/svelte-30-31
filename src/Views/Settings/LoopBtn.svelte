@@ -1,6 +1,7 @@
 <script lang="ts">
   import LoopIcon from "../../lib/Icons/icons/LoopIcon.svelte"
   import NoLoopIcon from "../../lib/Icons/icons/NoLoopIcon.svelte"
+  import PickerBtn from "./PickerBtn.svelte"
 
 
   let looping = false
@@ -9,12 +10,12 @@
   // let toggleLoop = () => dispatch("toggleLoop", null)
 </script>
 
-<div class="fadeIn dark-background pickerBtn settings" on:click={toggleLoop}>
+<PickerBtn>
   <svg>
     {#if looping}
-      <NoLoopIcon x={15} y={6}/> 
+    <NoLoopIcon x={15} y={6}/> 
     {:else}
-      <LoopIcon x={15} y={6} />
+    <LoopIcon x={15} y={6} />
     {/if}
   </svg>
-</div>
+</PickerBtn>  

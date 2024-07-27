@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { medium, bg } from "../../Store/color"
   import LayoutBtn from "./LayoutBtn.svelte"
   import LoopBtn from "./LoopBtn.svelte"
   import VolumeBtn from "./VolumeBtn.svelte"
-
-
+//TODO
+//add functionality to buttons
+//add lightcolor to the inside of the icons
 </script>
 
-<div class="fadeIn settingsView medium-background">
+<div class="fadeIn settingsView" style={bg($medium)}>
   <div class="innerSettings">
     <VolumeBtn />
     <LayoutBtn />
@@ -18,7 +20,6 @@
 .settingsView {
   border-radius: 10px;
   text-align: center;
-  max-width: 465px;
   margin-left: 24px;
   padding-bottom: 30px;
   padding-top: 30px;
