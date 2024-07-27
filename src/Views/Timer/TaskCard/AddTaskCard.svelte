@@ -36,6 +36,8 @@
     cursor: pointer;
     transition: border-color 0.25s;
     transition: 0.27s filter linear;
+    border: 1px solid darkslategrey;
+
   }
   :global(#addTask > svg) {
     margin-top: 6.5%;
