@@ -1,13 +1,6 @@
 <script lang="ts">
+  import { light, dark } from "../../Store/color"
   import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
-
-
-  // className={`light-${color} ${className}`}
-  export let x = 110, y = 9;
-  let onClick = () => null
-  let color = "#000000"
-  let del = onClick
-  // <CloseIcon color={"stroke"} x="110" y="9" />
 
 </script>
 
@@ -15,27 +8,39 @@
 xmlns="http://www.w3.org/2000/svg"
 width="18"
 height="18"
-x={x}
-y={y}
 viewBox="0 0 24 24"
 fill="none"
-stroke={color}
 stroke-width="2"
 stroke-linecap="round"
 stroke-linejoin="round"
-on:click={onClick}
 >
-<g class="innerButton" on:click={del}>
+<g class="innerButton">
   <rect
     stroke-width="1"
-    stroke="transparent"
-    class={`light-stroke dark-fill circle `}
+    stroke={$light}
+    fill={$dark}
+    class={` circle `}
     width="18"
     height="18"
-    x="110"
-    y="9"
     rx="2"
   ></rect>
-  <CloseIcon/>
-</g>
+  <rect x="2" y="2" width="18" height="18" rx="2" ry="2"></rect>
+  <line      stroke={$light}
+  x1="7" y1="7" x2="15" y2="15"></line>
+  <line     stroke={$light}
+  x1="15" y1="7" x2="7" y2="15"></line>
+  </g>
 </svg>
+
+<style>
+  .innerButton {
+  -webkit-transition: 0.2s -webkit-filter ease-in;
+  -moz-transition: 0.2s -moz-filter ease-in;
+  -moz-transition: 0.2s filter ease-in;
+  transition: 0.2s filter ease-in;
+  transition: 0.2s all ease-in;
+  fill:rgba(265,265,265,0.1);
+  opacity: 0%;
+}
+
+</style>
