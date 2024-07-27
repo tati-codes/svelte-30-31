@@ -42,4 +42,4 @@ export class TaskList implements TaskListI {
 //   }
 // }
 
-export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [new Task("default", 90, "basket"), new Task("different", 1, "book")])
+export let defaultTaskList: () => TaskList = () => new TaskList("Classic Pomo", [new Task("default", 5, "basket"), new Task("different", 1, "book")])
