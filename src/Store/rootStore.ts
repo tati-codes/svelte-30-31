@@ -8,7 +8,7 @@ export interface rootStore {
   layout: Layout
   currentView: Views
   taskLists: TaskList[]
-  selected: number
+  selectedId: string
 }
 
 let tasklist = defaultTaskList();
@@ -18,11 +18,11 @@ export let root: Writable<rootStore> = writable({
   layout: "CLASSIC",
   currentView: "TIMER",
   taskLists: [tasklist],
-  selected: 0
+  selectedId: tasklist.id
 })
 
 export let currentView = derived(root, ($root) => $root.currentView);
-export let currentTaskList = derived(root, ($root) => $root.taskLists[$root.selected])
+export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)
 export let isLooping = derived(currentTaskList, ($tasklist) => $tasklist.looping)
-export let currentTask = derived(root, ($root) => $root.taskLists[$root.selected].tasks[0])
+export let currentTask = derived(currentTaskList, ($list) => $list.tasks[0])
 export let tasklists = derived(root, ($root) => $root.taskLists)
