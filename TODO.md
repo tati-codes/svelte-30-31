@@ -1,18 +1,6 @@
 - TODO add task
-- 
-- TODO Top BAR
-  - [x] FOLDER ICON
-  - [x] NAME BAR
-  - [x] SETTIGS BUTTON
-- TODO TIMER CIRCLE
-  - [x] ActiveCircle
-  - [x] BGCircle
-  - [x] Playback
-  - [x] Pause
-  - [x] Triangle
-  - [x] ClassicTimerButtons
-  - [x] TatiTimerButtons
-  - [x] TimerBtn
+-  [ ] perofrmance mode (turns off dasharray animation)
+-  [ ] 350 width mode
 - TODO Leftover
   - [ ] NameBar functionality (toggle between editable and not)
   - [ ] CurrentTaskCard
@@ -21,9 +9,6 @@
     - [ ] alert sound longer
   - [ ] FIXME
     - [ ] COLOR TRANSITIONS
-- TODO Settings view
-  - [x] VolumeBtn
-  - [x] LayoutBtn
   - [x] LoopBtn
 - TODO list view
   - [x] Picker
