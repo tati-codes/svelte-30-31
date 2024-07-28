@@ -13,6 +13,8 @@
 	// 	.join(';');
   import DebugStore from "./lib/Shared/debugStore.svelte"
   import TopBar from "./Views/Timer/TopBar/TopBar.svelte"
+  import Debug from "./lib/Debug.svelte"
+  let checked = false;
 </script>
 
 <div class="container" style={bsg} >
@@ -30,37 +32,23 @@
     {/if}
   </main>
   <div class="asidecontainer">
-
-    <aside class="first">
-      <DebugStore obj={$root} title="root"/>
-      <DebugStore obj={$currentTaskList} title="tasklist"/>
-    </aside>
-    <aside class="second">
-      {#each $currentTaskList.tasks as task}
-      <DebugStore obj={task} title="tasks"/>
-      {/each}
-    </aside>
+    <input class="float" type="checkbox" bind:checked={checked}/>
+    {#if checked}
+      <Debug/>  
+    {/if}
   </div>
 </div>
 <style>
+  .float {
+    float: left;
+    margin-left: 5%;
+    z-index: 2;
+    position:absolute;
+  }
   .asidecontainer {
     display: inline-flex;
     height:fit-content; 
     flex-shrink: 1;
-  }
-  .first {
-    background: rgba(0, 0, 0, 0.8);
-    height:fit-content;
-    padding: 20px;
-    z-index: 0;
-    font-family: Helvetica;
-    border-right: 3px dashed whitesmoke;
-  }
-  .second {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    z-index: 0;
-    font-family: Helvetica;
   }
 
 .bgt{
