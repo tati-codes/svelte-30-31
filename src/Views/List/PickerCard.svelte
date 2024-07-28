@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { deleteList } from "../../Store/actions/root/deleteList"
+  import { selectTasklist } from "../../Store/actions/root/selectTasklist"
+  import { setView } from "../../Store/actions/root/setView"
+  import type { deleteTask } from "../../Store/actions/taskEdit/deleteTask"
   import { dark, bg, light, colorp, combineStyles, medium } from "../../Store/color"
   import CloseIconWrapped from "../../lib/Icons/icons/CloseIconWrapped.svelte"
 
@@ -6,9 +10,17 @@
   import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import PickerLabel from "./PickerLabel.svelte"
+  
   export let name = ""
-  export let index: number;
-  let select = () => null
+  export let id: string = "";
+  let select = () => { 
+    selectTasklist(id)
+    setView("TIMER")
+  }
+  let pollo = (e: Event) =>{
+    deleteList(id)
+    e.stopPropagation();
+  }
   //TODO get rid of this svg bs and just make it flex
   //FIXME pickerlabel -> span
   //FIXME listicon -> give it an svg thing
@@ -16,10 +28,12 @@
   
 </script>
 
-<div style={combineStyles(bg($dark),`border: 2px solid ${$medium};`)} class="taskListCard fillT" on:click={() => console.log(index)} >
+<div style={combineStyles(bg($dark),`border: 2px solid ${$medium};`)} class="taskListCard fillT" on:click={select} >
   <ListIcon/>
   <span style={colorp($light)}>{name}</span>
-  <CloseIconWrapped/>
+  <div class="iconWrap" on:click={pollo}>
+    <CloseIconWrapped/>
+  </div>
 </div>
 
 <style>
@@ -46,9 +60,10 @@
     margin-top:7.5%;
     margin-left:10%;
     }  
-    :global(.taskListCard > .deleteIcon) {
+    :global(.taskListCard > .iconWrap) {
     margin-top:6%;
     margin-right:10%;
+    z-index: 1;
     }  
 
     .taskListCard > span {
@@ -62,13 +77,13 @@
     filter: brightness(90%);
   }
 
-  :global(.taskListCard > .deleteIcon) {
+  :global(.taskListCard > div > .deleteIcon) {
     opacity: 30%;
     rotate: 0;
     stroke: white;
     transition: filter 0.325s linear, rotate 0.325s linear, opacity 1s linear;
   }
-  :global(.taskListCard:hover > .deleteIcon) {
+  :global(.taskListCard:hover > div > .deleteIcon) {
     /* animation: big 1s linear both; */
     rotate: 90deg;
     scale: 1.2;
