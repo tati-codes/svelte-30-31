@@ -5,7 +5,7 @@ import { start } from "./start";
 
 export const markDone = () => {
   root.update($root => {
-  let taskList = $root.taskLists[$root.selected]
+  let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
   clearInterval(taskList.timer || undefined)
   taskList.timer = null
   let tasks = taskList.tasks

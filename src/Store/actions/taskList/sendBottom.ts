@@ -2,10 +2,10 @@ import { get } from "svelte/store";
 import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
-
+//FIXME doesnt work with only three things
 export const sendToBottom = () => {
   root.update($root => {
-    let taskList = $root.taskLists[$root.selected]
+    let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
     clearInterval(taskList.timer || undefined)
     taskList.timer = null
     let tasks = taskList.tasks

@@ -1,7 +1,7 @@
 import { root } from "../../rootStore";
 
 export const end = () => root.update($root => {
-  let taskList = $root.taskLists[$root.selected]
+  let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;  if (taskList.timer) clearInterval(taskList.timer)
   if (taskList.timer) clearInterval(taskList.timer)
   taskList.timer = null
   taskList.status = "IDLE"

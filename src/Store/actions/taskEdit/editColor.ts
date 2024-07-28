@@ -5,7 +5,7 @@ import type { taskIcon } from "../../typeValidators/taskIcon";
 import type { Color } from "../../../../types";
 
 export const editColor = (newColor: Color) => root.update($root => {
-  let taskList = $root.taskLists[$root.selected]
+  let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
   let id = get(editStore).id;
   let taskIndex = taskList.tasks.findIndex(task => task.id === id)
   if (taskIndex != undefined) {
