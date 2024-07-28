@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-left: 20%;
+    margin-left: 17%;
   }
   :global(.card > .lineStroke) {
     margin: -10%
