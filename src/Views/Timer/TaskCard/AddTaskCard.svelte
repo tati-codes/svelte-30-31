@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setView } from "../../../Store/actions/root/setView"
   import { addTask } from "../../../Store/actions/taskList/add"
+  import CoolAddButton from "../../../lib/Shared/CoolAddButton.svelte"
   import { Task } from "../../../Store/Task"
   import { setEditID } from "../../../Store/taskEdit"
   import TaskBarIcons from "./taskCardIcons/TaskBarIcons.svelte"
@@ -12,9 +13,7 @@
   }
 </script>
 
-<div id="addTask" class="taskCard light-gray-background fillT innerAdd" on:click={addTaskHandler}>
-  <TaskBarIcons stroke="gray" _class="light-gray"  type="add"></TaskBarIcons>
-</div>
+<CoolAddButton cb={addTaskHandler}/>
 
 <style>
 
