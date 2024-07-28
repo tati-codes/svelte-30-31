@@ -24,7 +24,7 @@
 
 <style>
   .taskCard {
-    width: 391px;
+    width: 400px;
     height: 105px;
     border-radius: 25px;
     display: grid;
