@@ -13,7 +13,7 @@
 <TopBarTaskListPicker/>
 <div class="pickerView dark-background fadeIn"  style={bg($dark)}>
   {#each $tasklists as list, i}
-    <PickerCard name={list.name} index={i} />
+    <PickerCard name={list.name} id={list.id} />
   {/each}
     <AddListBtn/>
 </div>
@@ -30,6 +30,11 @@
   flex-direction: column;
   gap: 25px;
   padding-bottom: 25px;
+}
+
+:global(.pickerView > :last-child) {
+  margin: auto;
+
 }
 
 </style>
