@@ -11,7 +11,7 @@
 xmlns="http://www.w3.org/2000/svg"
 width="650"
 height="650"
-class="timer"
+class="timer fadeIn"
 >
 <BgCircle/>
 <ActiveCircle />

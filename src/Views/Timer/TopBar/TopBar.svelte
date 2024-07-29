@@ -6,7 +6,7 @@
 
 
 
-<div class="topBar">
+<div class="topBar fadeIn">
   <TimerListButton/>
   <NameBar/>
   <SettingsButton/>

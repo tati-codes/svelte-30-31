@@ -3,7 +3,7 @@
   import { combineStyles, dark, stroke } from "../../../Store/color"
   import { currentTask } from "../../../Store/rootStore"
   const MAX = 1600
-  $: fLen = Math.floor(MAX - solve_for_y($currentTask.length, $currentTask.remaining_seconds, MAX))
+  $: fLen = MAX - solve_for_y($currentTask.length, $currentTask.remaining_seconds, MAX)
   // $: console.log(fLen);
   $: bsg = combineStyles(stroke($dark), `stroke-dasharray: ${fLen}, ${MAX}`)
 </script>
@@ -28,6 +28,6 @@
   }
   .innerCircle {
   transform: rotate(45);
-  transition: stroke-dasharray 1.250s linear;
+  transition: stroke-dasharray 1.325s linear;
 }
 </style>
