@@ -1,24 +1,12 @@
 <script lang="ts">
   import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
-  import ClassicLayoutBtn from "./ClassicLayoutBtn.svelte"
-  import ModernLayoutBtn from "./ModernLayoutBtn.svelte"
-  import PickerBtn from "./PickerBtn.svelte"
-
-  // let {layout, dispatch} = useSettingsStore(state => state)
-  // let setModern = () => dispatch("setLayout", "MODERN")
-  // let setClassic = () => dispatch("setLayout", "CLASSIC")
-  let layout = "CLASSIC"
-  let toggle = () => null
-  //{
-  //   if (layout === "MODERN") setClassic()
-  //   else if (layout === "CLASSIC") setModern() 
-  // }
-  // {layout === "CLASSIC" && <CLASSIC/>}
-  // {layout === "MODERN" && <MODERN/>}
+  import { toggleLayout } from "../../Store/actions/root/toggleLayout"
+  import { currentLayout } from "../../Store/settingStore"
+  $: opposite = $currentLayout === "CLASSIC" ? "MODERN" : "CLASSIC"
 </script>
 
-<SettingsBtn cb={toggle} caption={"button layout"}> 
-  <h1>{layout}</h1>
+<SettingsBtn cb={toggleLayout} caption={"button layout"}> 
+  <h1 class="fadeIn">{opposite}</h1>
 </SettingsBtn >
 
 <style>
