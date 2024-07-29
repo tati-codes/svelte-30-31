@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dark, bg } from "../../Store/color"
+  import { dark, bg, medium } from "../../Store/color"
   import { tasklists } from "../../Store/rootStore"
   import AddListBtn from "./AddListBtn.svelte"
   import PickerCard from "./PickerCard.svelte"
@@ -11,7 +11,7 @@
 </script>
 
 <TopBarTaskListPicker/>
-<div class="pickerView dark-background fadeIn"  style={bg($dark)}>
+<div class="pickerView dark-background fadeIn"  style={bg($medium)}>
   {#each $tasklists as list, i}
     <PickerCard name={list.name} id={list.id} />
   {/each}
@@ -22,7 +22,6 @@
 .pickerView {
   border-radius: 10px;
   text-align: center;
-  max-width: 465px;
   margin-left: 24px;
   margin-top: 25px;
   padding-top: 25px;

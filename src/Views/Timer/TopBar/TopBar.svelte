@@ -1,14 +1,14 @@
 <script lang="ts">
   import NameBar from "./NameBar.svelte"
-  import SettingsButton from "./SettingsButton.svelte"
-  import TimerListButton from "./TimerListButton.svelte"
+  import GoSettings from "./GoSettings.svelte"
+  import GoListPicker from "./GoListPicker.svelte"
 </script>
 
 
 
 <div class="topBar fadeIn">
-  <TimerListButton/>
+  <GoListPicker/>
   <NameBar/>
-  <SettingsButton/>
+  <GoSettings/>
 </div>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import {bg, medium } from "../../Store/color"
-  import SettingsButton from "../Timer/TopBar/SettingsButton.svelte"
-  import TimerListButton from "../Timer/TopBar/TimerListButton.svelte"
+  import SettingsButton from "../Timer/TopBar/GoSettings.svelte"
+  import TimerListButton from "../Timer/TopBar/GoListPicker.svelte"
 
 </script>
 
