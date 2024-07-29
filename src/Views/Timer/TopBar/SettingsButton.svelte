@@ -7,7 +7,7 @@
 
 </script>
 
-<div class="settingsBtn" style={bgT} on:click={goSettings}>
+<div class="settingsBtn fadeIn" style={bgT} on:click={goSettings}>
   <GearIcon fill={$light}/>
 </div>
 

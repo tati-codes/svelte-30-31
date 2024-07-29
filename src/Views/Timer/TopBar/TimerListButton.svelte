@@ -7,7 +7,7 @@
 
 
 </script>
-<div class="settingsBtn" style={bgT} on:click={goPicker}>
+<div class="settingsBtn fadeIn" style={bgT} on:click={goPicker}>
   <FolderIcon fill={$light}/>
 </div>
 

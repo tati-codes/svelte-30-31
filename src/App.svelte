@@ -25,7 +25,6 @@
     {:else if $currentView == "PICKER"}
     <List/>
     {:else if $currentView == "SETTINGS"}
-    <TopBar/>
     <Settings/>
     {:else if $currentView == "TASK_EDIT"}
     <TaskEdit/>

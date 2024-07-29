@@ -11,8 +11,8 @@
   let label = $currentTaskList.name
   const change = (e: Event) => {
     let input = e.target as HTMLInputElement;
-    changeName(input.value.slice(0,12))
-    console.log(input.value.slice(0,12))
+    changeName(input.value.slice(0,18))
+    console.log(input.value.slice(0,18))
   }
 </script>
 
@@ -24,7 +24,7 @@ autofocus
 bind:value={label}
 on:change={change}
 on:blur={toggleEditing}
-on:keyup={() => onEnter(() => { changeName(label.slice(0,12)); toggleEditing(); })}
+on:keyup={() => onEnter(() => { changeName(label.slice(0,18)); toggleEditing(); })}
 style={combineStyles(bg($medium), colorp($light))}
 class={`taskListNameEditField `}
 />

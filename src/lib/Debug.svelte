@@ -11,12 +11,12 @@
 </aside>
 <aside class="second">
   {#each $root.taskLists as list}
-  <DebugStore obj={list} title="lists"/>
+  <DebugStore obj={list} title={list.name}/>
   {/each}
 </aside>
 <aside class="third">
   {#each $currentTaskList.tasks as task}
-  <DebugStore obj={task} title="tasks"/>
+  <DebugStore obj={task} title={task.name}/>
   {/each}
 </aside>
 <style>
