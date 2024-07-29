@@ -6,7 +6,7 @@
   export let cb: Function;
 </script>
 
-<div style={combineStyles(bg($dark),`border: 2px solid ${$medium};`)} class="taskListCard fillT" on:click={() => cb()} >
+<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={() => cb()} >
   <Icon x={0} y={0} width={48} height={48} viewbox={"0 0 24 24"} classNames="addIcon">
     <rect fill={"transparent"} x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
     <line x1="12" y1="8" x2="12" y2="16"></line>
