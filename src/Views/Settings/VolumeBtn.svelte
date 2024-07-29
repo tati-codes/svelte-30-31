@@ -3,14 +3,15 @@
   import VolumeIcon from "../../lib/Icons/icons/VolumeIcon.svelte"
   import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
   import { toggleMute } from "../../Store/actions/root/toggleMute"
+  import { light } from "../../Store/color"
   import { isMuted } from "../../Store/settingStore"
 </script>
 
 <SettingsBtn cb={toggleMute} caption={"mute"}>
   {#if $isMuted}
-  <VolumeIcon x={10} y={10}/>
+  <VolumeIcon x={10} y={10} fill={$light}/>
   {:else}
-  <NoVolumeIcon x={10} y={10}/>
+  <NoVolumeIcon x={10} y={10} fill={$light}/>
   {/if}
 </SettingsBtn>
 
