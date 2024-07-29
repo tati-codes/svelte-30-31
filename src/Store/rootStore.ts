@@ -21,8 +21,6 @@ export let root: Writable<rootStore> = writable({
   selectedId: tasklist.id
 })
 
-export let currentView = derived(root, ($root) => $root.currentView);
 export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)
-export let isLooping = derived(currentTaskList, ($tasklist) => $tasklist.looping)
 export let currentTask = derived(currentTaskList, ($list) => $list.tasks[0])
 export let tasklists = derived(root, ($root) => $root.taskLists)
