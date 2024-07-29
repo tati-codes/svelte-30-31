@@ -28,9 +28,9 @@
   
 </script>
 
-<div style={combineStyles(bg($dark),`border: 2px solid ${$medium};`)} class="taskListCard fillT" on:click={select} >
+<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={select} >
   <ListIcon/>
-  <span style={colorp($light)}>{name}</span>
+  <span style={colorp("white")}>{name}</span>
   <div class="iconWrap" on:click={pollo}>
     <CloseIconWrapped/>
   </div>
