@@ -3,7 +3,8 @@
   import TaskCard from '.././TaskCard/TaskCard.svelte'
   import AddTaskCard from ".././TaskCard/AddTaskCard.svelte"
   import LineIcon from "../../../lib/Icons/icons/LineIcon.svelte"
-  import { currentTaskList, isLooping } from "../../../Store/rootStore"
+  import { currentTaskList } from "../../../Store/rootStore"
+  import { isLooping } from "../../../Store/settingStore"
   $: tasks = $currentTaskList.tasks
 </script>
 

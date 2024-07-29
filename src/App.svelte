@@ -3,7 +3,7 @@
   import Settings from "./Views/Settings/Settings.svelte"
   import TimerView from "./Views/Timer/TimerView.svelte"
   import List from "./Views/List/List.svelte"
-  import {currentTask, currentTaskList, currentView, root} from "./Store/rootStore"
+  import {currentTask, currentTaskList, root} from "./Store/rootStore"
   import TaskEdit from "./Views/TaskEdit/TaskEdit.svelte"
   import {bg, light} from "./Store/color"
   $: bsg = bg($light)
@@ -14,6 +14,7 @@
   import DebugStore from "./lib/Shared/debugStore.svelte"
   import TopBar from "./Views/Timer/TopBar/TopBar.svelte"
   import Debug from "./lib/Debug.svelte"
+  import { currentView } from "./Store/settingStore"
   let checked = false;
 </script>
 
