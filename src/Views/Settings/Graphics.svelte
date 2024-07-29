@@ -1,11 +1,12 @@
 <script>
 
   import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
-  let toggle = () => null
+  import { toggleFX } from "../../Store/actions/root/toggleFX"
+  import { FXOn } from "../../Store/settingStore"
 </script>
 
-<SettingsBtn cb={toggle}> 
-  <h1>HIGH FX</h1>
+<SettingsBtn cb={toggleFX}> 
+  <h1>{$FXOn ? "LOW" : "HIGH"} FX</h1>
 </SettingsBtn >
 
 <style>

@@ -2,6 +2,7 @@
   import { solve_for_y } from "../../../lib/Shared/solve_for_y"
   import { combineStyles, dark, stroke } from "../../../Store/color"
   import { currentTask } from "../../../Store/rootStore"
+  import { FXOn } from "../../../Store/settingStore"
   const MAX = 1600
   $: fLen = MAX - solve_for_y($currentTask.length, $currentTask.remaining_seconds, MAX)
   // $: console.log(fLen);
@@ -13,7 +14,7 @@
   fill="none"
   style={bsg}
   transform="rotate(-90 325 325)"
-  class="innerCircle circle"
+  class={$FXOn ? "innerCircle circle" : "circle"}
   id="innerCircle"
   r="250"
   cx="325"
