@@ -8,10 +8,11 @@
   let toggleHover = () => isHovered = !isHovered
   $: bgT = bg($medium);
   $: darkbgT = bg(`#${LightenDarkenColor($medium, -25)}`);
+  let onEnter = () => { isHovered = true;}
+  let onOut = () => { isHovered = false;}
 </script>
 
-{isHovered}
-<div class="settingsBtn fadeIn" style={isHovered ? darkbgT : bgT} on:click={cb}  on:mouseenter={toggleHover} on:mouseout={toggleHover}>
+<div class="settingsBtn fadeIn" style={isHovered ? darkbgT : bgT} on:click={cb}  on:mouseenter={onEnter} on:mouseleave={onOut}>
   <slot />
 </div>
 
