@@ -1,7 +1,5 @@
 <script lang="ts">
   import { light, dark } from "../../Store/color"
-  import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
-
 </script>
 
 <svg
