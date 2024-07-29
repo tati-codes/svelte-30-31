@@ -12,8 +12,8 @@ viewBox="0 0 512 512"
 class="gearIcon"
 x={x}
 y={y}
-width={"70"}
-height={"70"}
+width={"60"}
+height={"60"}
 >
 <path
   class="icon light-fill fillT"
@@ -23,6 +23,6 @@ height={"70"}
 
 <style>
   .gearIcon{
-  margin: 5px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
   }
 </style>

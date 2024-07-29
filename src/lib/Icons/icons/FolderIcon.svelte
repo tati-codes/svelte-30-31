@@ -8,8 +8,8 @@
   class="folderIcon"
   x={55}
   y={55}
-  width={"80"}
-  height={"80"}
+  width={"60"}
+  height={"60"}
 >
   <path
     class="icon"
@@ -19,6 +19,6 @@
 
 <style>
     .folderIcon {
-  margin: 0px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
 }
 </style>

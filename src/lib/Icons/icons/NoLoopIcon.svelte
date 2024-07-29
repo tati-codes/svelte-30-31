@@ -14,8 +14,8 @@ xmlns="http://www.w3.org/2000/svg"
 viewBox="0 0 640 512"
 x={x}
 y={y}
-width="70"
-height="70"
+width="80"
+height="80"
 >
 <line
   x1="100"
