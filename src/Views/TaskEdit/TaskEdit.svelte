@@ -31,14 +31,9 @@
   
 <style>
   .modal {
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 140%;
     z-index: 0;
-    position: absolute;
   }
   :global(.background-darken) {
-  background-color: rgba(0, 0, 0, 0);
   -webkit-transition: 0.2s -webkit-filter linear;
   -moz-transition: 0.2s -moz-filter linear;
   -moz-transition: 0.2s filter linear;
@@ -51,6 +46,7 @@
     margin-left: 25px;
     padding-top: 1%;
     width: 893px;
+    height:100%;
   }
 
 </style>
