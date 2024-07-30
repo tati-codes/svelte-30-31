@@ -5,7 +5,7 @@
   import List from "./Views/List/List.svelte"
   import {currentTask, currentTaskList, root} from "./Store/rootStore"
   import TaskEdit from "./Views/TaskEdit/TaskEdit.svelte"
-  import {bg, light} from "./Store/color"
+  import {bg, light, medium} from "./Store/color"
   $: bsg = bg($light)
   // "TIMER", "PICKER", "SETTINGS", "TASK_EDIT"
   // $: cssVarStyles = Object.entries(styles)
@@ -16,6 +16,8 @@
   import Debug from "./lib/Debug.svelte"
   import { currentView } from "./Store/settingStore"
   let checked = false;
+  //@ts-ignore
+  // $: window.document.getElementById("app").style = bg($light)
 </script>
 
 <div class="container" style={bsg} >
@@ -39,6 +41,10 @@
   </div>
 </div>
 <style>
+  main{
+    max-width: 650px;
+    background-size: 100%; 
+    }
   .float {
     float: left;
     margin-left: 5%;
