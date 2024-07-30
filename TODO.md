@@ -1,14 +1,14 @@
 - TODO add task
--  [ ] perofrmance mode (turns off dasharray animation)
+-  [x] perofrmance mode (turns off dasharray animation)
 -  [ ] 350 width mode
 - TODO Leftover
-  - [ ] NameBar functionality (toggle between editable and not)
-  - [ ] CurrentTaskCard
-  - [ ] Add Task Card
+  - [x] NameBar functionality (toggle between editable and not)
+  - [x] CurrentTaskCard
+  - [x] Add Task Card
   - [ ] play sounds
     - [ ] alert sound longer
-  - [ ] FIXME
-    - [ ] COLOR TRANSITIONS
+  - [x] FIXME
+    - [x] COLOR TRANSITIONS
   - [x] LoopBtn
 - TODO list view
   - [x] Picker
@@ -20,10 +20,10 @@
   - [x] TimeEdit
     - [x] TimeDisplay
     - [x] NumpadBtn
-    - [ ] BackspaceBtn
-    - [ ] CheckmarkBtn
+    - [x] BackspaceBtn
+    - [x] CheckmarkBtn
     - [x] TimePicker
   - [x] IconEdit
     - [x] IconItem
   - [x] ColorPicker
-  - [ ] BottomBar
+  - [x] BottomBar

@@ -8,7 +8,7 @@
 //TODO add audio
 </script>
 
-<SettingsBtn cb={toggleMute} caption={"mute"} anim>
+<SettingsBtn cb={toggleMute} anim>
   {#if $isMuted}
   <VolumeIcon x={10} y={10} fill={$light}/>
   {:else}
