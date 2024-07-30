@@ -31,3 +31,16 @@ export let root: Writable<rootStore> = writable({
 export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)
 export let currentTask = derived(currentTaskList, ($list) => $list.tasks[0])
 export let tasklists = derived(root, ($root) => $root.taskLists)
+
+currentTaskList.subscribe((taskList) => {
+  if (taskList.isPlaying) {
+    document.title = "TaTimer - " + seconds_to_mmss(taskList.tasks[0].remaining_seconds)
+  } else if (taskList.status == "PAUSED") {
+    document.title = "TaTimer - Paused"
+  } else if (taskList.status == "DONE" || taskList.status == "IDLE") {
+    document.title = "TaTimer"
+  }
+  return () => {
+    document.title = "TaTimer"
+  }
+})
