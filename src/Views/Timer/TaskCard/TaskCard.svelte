@@ -15,7 +15,7 @@
   }
 </script>
 
-<div class="taskCard" style={bsg} on:click={handleClick}>
+<div class="taskCard fadeIn" style={bsg} on:click={handleClick}>
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>

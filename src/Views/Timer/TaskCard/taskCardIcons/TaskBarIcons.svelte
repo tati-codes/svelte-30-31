@@ -9,7 +9,7 @@
   export let type: taskIcon;
   export let _class = "icon";
   export let stroke = "white";
-  let iconType = IconRegistry[type];
+  $: iconType = IconRegistry[type];
 </script>
 
 <svg

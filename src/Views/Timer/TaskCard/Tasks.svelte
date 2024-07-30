@@ -11,7 +11,7 @@
 <div class="card fadeIn">
   {#each tasks as task}
   {#if task.name === "_BREAK"}
-    {#if !isLooping}
+    {#if !$isLooping}
       <LineIcon/>
     {/if}
   {:else}
