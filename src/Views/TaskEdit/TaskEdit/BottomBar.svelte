@@ -31,7 +31,7 @@
       <TrashIcon x={0} y={0} height={35} width={40}/>
     </div>
   </li>
-  <li class="tab-li background-darken ">
+  <li class="tab-li  ">
     <div
       style={bsg}
       class={` background-darken innerSettings`}
