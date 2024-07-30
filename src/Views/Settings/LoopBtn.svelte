@@ -10,7 +10,7 @@
   // let toggleLoop = () => dispatch("toggleLoop", null)
 </script>
 
-<SettingsBtn cb={toggleLoop}>
+<SettingsBtn cb={toggleLoop} anim>
     {#if $isLooping}
     <NoLoopIcon x={15} y={6}  fill={$light}/> 
     {:else}
