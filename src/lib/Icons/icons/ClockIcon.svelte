@@ -1,11 +1,11 @@
 <script lang="ts">
-  import {stroke, dark, fill } from "../../../Store/color"
-  export let x = 55, y = 55, hue: Hue = "dark";
-  type Hue = "light" | "medium" | "dark"
-  $: st = stroke($dark)
-  $: fl = fill($dark)
+  import {stroke, medium, fill } from "../../../Store/color"
+  export let x = 55, y = 55, hue: string = "";
+  $: st = stroke(hue || $medium)
+  $: fl = fill(hue || $medium)
 </script>
     <svg
+    class="clockIcon"
       viewBox="0 0 100 412"
       x={x}
       y={y}
@@ -37,12 +37,12 @@
           x="104.97076"
           y="129.77719" />
         <path
-          class={`stubbornClock sT`}
+          class={`stubbornClock sT fadeIn`}
           style={st}
           d="m 108.39248,115.50054 v 6.50945"
           id="path2667" />
         <path
-          class={`stubbornClock sT`}
+          class={`stubbornClock sT fadeIn`}
           style={st}
           d="m 108.44257,121.94957 4.75003,3.32155"
           id="path2673" />
