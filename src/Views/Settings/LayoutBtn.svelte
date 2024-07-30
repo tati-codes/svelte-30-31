@@ -1,11 +1,11 @@
 <script lang="ts">
   import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
-  import { toggleLayout } from "../../Store/actions/root/toggleLayout"
+  import { toggleLayout } from "../../Store/actions/root/setLayout"
   import { currentLayout } from "../../Store/settingStore"
   $: opposite = $currentLayout === "CLASSIC" ? "MODERN" : "CLASSIC"
 </script>
 
-<SettingsBtn cb={toggleLayout} caption={"button layout"}> 
+<SettingsBtn cb={toggleLayout} caption={"button layout"} anim> 
   <h1 class="fadeIn">{opposite}</h1>
 </SettingsBtn >
 
