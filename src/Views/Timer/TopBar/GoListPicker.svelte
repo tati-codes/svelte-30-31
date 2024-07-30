@@ -8,7 +8,7 @@
 </script>
 
 
-<SettingsBtn cb={goPicker}>
+<SettingsBtn cb={goPicker} >
   <FolderIcon fill={$light}/>
 </SettingsBtn>
 
