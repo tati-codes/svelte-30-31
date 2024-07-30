@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { currentLayout } from "../../../Store/settingStore"
   import ActiveCircle from "./ActiveCircle.svelte"
   import BgCircle from "./BGCircle.svelte"
   import Playback from "./Playback.svelte"
   import ClassicTimerButtons from "./TimerButtons/ClassicTimerButtons.svelte"
+  import TatiTimerButtons from "./TimerButtons/TatiTimerButtons.svelte"
   import TimerText from "./TimerText.svelte"
 
 </script>
@@ -17,9 +19,11 @@ class="timer fadeIn"
 <ActiveCircle />
 <Playback />
 <TimerText />
-<ClassicTimerButtons/>
-<!-- {layout === "CLASSIC" && <ClassicTimerButtons />}
-{layout === "MODERN" && <TatiTimerButtons />} -->
+{#if $currentLayout === "CLASSIC"}
+  <ClassicTimerButtons/>
+{:else}
+  <TatiTimerButtons/>
+{/if}
 </svg>
 
 <style>

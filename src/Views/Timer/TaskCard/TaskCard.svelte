@@ -7,15 +7,18 @@
   import { bg, dark, fromStr } from "../../../Store/color"
   import { setEditID } from "../../../Store/taskEdit"
   import { setView } from "../../../Store/actions/root/setView"
+  import { currentTask } from "../../../Store/rootStore"
+  import { currentLayout } from "../../../Store/settingStore"
   export let task: Task;
   $: bsg = bg(fromStr(task.color).dark);
+  $: currentbsg = bg(fromStr($currentTask.color).dark);
   let handleClick = () => {
     setEditID(task.id);
     setView("TASK_EDIT");
   }
 </script>
 
-<div class="taskCard fadeIn" style={bsg} on:click={handleClick}>
+<div class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} on:click={handleClick}>
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
