@@ -10,6 +10,7 @@ export interface rootStore {
   currentView: Views
   taskLists: TaskList[]
   selectedId: string
+  showClockIcon: boolean
   FX: boolean
 }
 
@@ -21,7 +22,8 @@ export let root: Writable<rootStore> = writable({
   currentView: "TIMER",
   taskLists: [tasklist],
   FX: true,
-  selectedId: tasklist.id
+  selectedId: tasklist.id,
+  showClockIcon: false
 })
 
 export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)

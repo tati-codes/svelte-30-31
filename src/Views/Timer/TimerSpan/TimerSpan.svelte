@@ -1,29 +1,36 @@
 <script>
   import ClockIcon from "../../../lib/Icons/icons/ClockIcon.svelte"
-
+  import { colorp, medium } from "../../../Store/color"
+  import { clockOn } from "../../../Store/settingStore"
 </script>
+
+{#if $clockOn}
 <div class="topBar">
   <ClockIcon/>
-  <div class="totalLength">
-    01:20:00
-  </div>
+  <span class="totalLength" style={colorp($medium)}>
+        01:20:00
+  </span>
 </div>
+{/if}
   <style>
   .totalLength {
+  
   letter-spacing: -4px;
   font-weight: bolder;
-  height: 80px;
   padding-top: 1px;
-  padding-left: -2.5%;
-  font-size: 3rem;
+  padding-top: 0.5vmax;
+  font-size: 2.5rem;
   transition: color 0.325s linear;
   color: black;
   user-select: none;
   }
   .topBar {
-  display: flex;
-  justify-content: left;
-  margin-left: 25px;
-  padding-top: 1%;
+  scale: 0.9;
+  position: absolute;
+  top: 3vmax;
+}
+ :global(.topBar > .clockIcon) {
+  margin-right: -5%;
+
 }
 </style>

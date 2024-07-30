@@ -6,3 +6,4 @@ export let currentView = derived(root, ($root) => $root.currentView);
 export let currentLayout = derived(root, ($root) => $root.layout);
 export let isMuted = derived(root, ($root) => $root.muted)
 export let FXOn = derived(root, $root => $root.FX)
+export let clockOn = derived(root, $root => $root.showClockIcon)

@@ -1,8 +1,10 @@
 <script lang="ts">
   import { medium, bg } from "../../Store/color"
+  import { clockOn, FXOn, isLooping, isMuted } from "../../Store/settingStore"
   import Graphics from "./Graphics.svelte"
   import LayoutBtn from "./LayoutBtn.svelte"
   import LoopBtn from "./LoopBtn.svelte"
+  import SecondaryClock from "./SecondaryClock.svelte"
   import SettingsTopBar from "./SettingsTopBar.svelte"
   import VolumeBtn from "./VolumeBtn.svelte"
 //TODO
@@ -13,16 +15,22 @@
 <SettingsTopBar/>
 <div class="fadeIn settingsView" style={bg($medium)}>
   <div class="innerSettings">
-    <span>mute</span>
+    <span>{$isMuted ? "unmute" : "mute" }</span>
     <span>button layout</span>
-    <span>loop tasks</span>
-    <span>graphics</span>
+    <span>{$isLooping ?  "don't loop tasks" : "loop tasks" }</span>
+    <span>{$FXOn ? "turn off smoothing" : "turn on smoothing"}</span>
   </div>
   <div class="innerSettings">
     <VolumeBtn />
     <LayoutBtn />
     <LoopBtn />
     <Graphics />
+  </div>
+  <div class="innerSettings "> 
+    <span>{$clockOn ? "hide duration" : "show duration"}</span>
+  </div>
+  <div class="innerSettings singleColumn">
+    <SecondaryClock />
   </div>
 </div>
 
@@ -50,5 +58,9 @@
   margin-right: 1%;
   height: 80px;
   border-radius: 1rem;
+}
+
+:global(.singleColumn > .settingsBtn) {
+  max-width: 25%;
 }
 </style>
