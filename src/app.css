@@ -111,11 +111,15 @@ html > * {
 }
 
 
-
+body {
+  min-height: auto;
+  height: 100%;
+}
 #app {
   font-family: "Oswald";
   min-height: 100%;
   height: 100%;
+  
 }
 
 
