@@ -2,6 +2,7 @@ import { get } from "svelte/store";
 import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
+import { playClearSound, playTaskDoneSound } from "../task/playAudio";
 
 export const markDone = () => {
   root.update($root => {
@@ -16,13 +17,13 @@ export const markDone = () => {
     tasks.push(tasks.shift()!)
     if (!taskList.looping) {
       taskList.status = "DONE"
+      playClearSound()
       return $root
-      // playClear()
     }
   }
 
   if (taskList.status === "TIMER_ACTIVE") {
-    //playTaskDone
+    playTaskDoneSound()
     return $root
   }
 
@@ -30,7 +31,7 @@ export const markDone = () => {
   return $root
 })
   if (get(currentTaskList).status == "TIMER_ACTIVE") {
-    //play sound
+    playTaskDoneSound()
     start();
   }
 }
