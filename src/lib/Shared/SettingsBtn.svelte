@@ -5,7 +5,6 @@
   import { bg, light, medium } from "../../Store/color"
   import { LightenDarkenColor } from "./lightenColor"
   export let cb;
-  export let caption: string = "";
   //anim handler
   export let anim: boolean = false;
   let playAnim = false;
