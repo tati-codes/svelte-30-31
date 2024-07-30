@@ -7,7 +7,7 @@ export const editLength = (nLen: number, remaining: number = -1) => root.update(
   let id = get(editStore).id;
   let taskIndex = taskList.tasks.findIndex(task => task.id === id)
   if (taskIndex != undefined) {
-    taskList.tasks[taskIndex].length = nLen
+    taskList.tasks[taskIndex].length = nLen < 60 ? 60 : nLen
   }
   if (remaining > -1) {
     taskList.tasks[taskIndex].remaining_seconds = remaining
