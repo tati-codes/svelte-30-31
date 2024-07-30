@@ -56,7 +56,22 @@
     height:fit-content; 
     flex-shrink: 1;
   }
+/*
+360x700
+scale: 0.5;
+translate: -23% -24%;
+}
 
+424x736
+scale: 0.6;
+translate: -19% -20%;
+
+375x812 
+scale: 0.58;
+translate: -22% -20%;
+}
+
+*/
 .bgt{
   transition: background-color 0.325s linear;
 }
