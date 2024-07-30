@@ -65,5 +65,7 @@
   grid-template-columns: 5fr 5fr; 
   gap: 0px 0px; 
   padding-bottom: 1%;
+  min-height: 100%;
+  height:auto;
 }
 </style>
