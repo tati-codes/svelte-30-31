@@ -7,16 +7,20 @@
   export let style: string = "";
   export let classNames = ""
   export let viewbox = "0 0 500 500"
+  export let fill = "transparent"
+  export let cb: () => void = () => null
 </script>
 
 <svg
 xmlns="http://www.w3.org/2000/svg"
+on:click={cb}
 {width}
 {height}
 {x}
 {y}
 {stroke}
 {style}
+{fill}
 viewBox={viewbox}
 stroke-width="2"
 stroke-linecap="round"

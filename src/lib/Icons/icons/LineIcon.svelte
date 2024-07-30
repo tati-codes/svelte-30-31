@@ -15,7 +15,7 @@
   <line
     x1="-98"
     y1="25"
-    x2="148"
+    x2="180"
     y2="25"
     stroke-width="6"
     stroke-linecap="round"
@@ -24,6 +24,6 @@
 
 <style>
   .lineStroke {
-    stroke-dasharray: 10 10 200;
+    stroke-dasharray: 10 10 210;
   }
 </style>

@@ -5,7 +5,7 @@
   import { onEnter } from "../../../lib/Shared/onEnter"
   import { setView } from "../../../Store/actions/root/setView"
   import { deleteTask } from "../../../Store/actions/taskEdit/deleteTask"
-  import { bg, medium } from "../../../Store/color"
+  import { bg, dark, medium, stroke } from "../../../Store/color"
   import { editingTask } from "../../../Store/taskEdit"
   $: bsg = bg($medium);
   const doDelete = () => {
@@ -28,7 +28,7 @@
       on:keypress={handleDeleteKey}
       tabIndex={60}
     >
-      <TrashIcon x={0} y={0} height={35} width={40}/>
+      <TrashIcon x={0} y={0} height={35} width={40} stroke={$dark} fill={$dark}/>
     </div>
   </li>
   <li class="tab-li  ">
@@ -42,7 +42,7 @@
       on:click={doBack}
       on:keypress={handleGoBackKey}
     >
-      <ReplySolidIcon x={0} y={0} height={35}/>
+      <ReplySolidIcon x={0} y={0} height={35} stroke={$dark} fill={$dark}/>
     </div>
   </li>
 </div>

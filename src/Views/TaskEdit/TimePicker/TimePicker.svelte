@@ -49,5 +49,7 @@
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* border: 3px solid rgba(0, 0, 0, 0.2); */
+
 }
 </style>

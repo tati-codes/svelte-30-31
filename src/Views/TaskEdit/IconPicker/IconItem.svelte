@@ -47,8 +47,12 @@ on:click={editIcon(icon)}
 
 }
 
+.iconItem:hover {
+  filter: brightness(80%) drop-shadow(1px 1px rgba(0,0,0,0.5));
+}
+
 .selectedIcon {
-  filter: brightness(110%) drop-shadow(2px 2px rgba(0,0,0,0.5));
+  filter: brightness(110%) drop-shadow(4px 4px rgba(0,0,0,0.5));
 }
 
 
