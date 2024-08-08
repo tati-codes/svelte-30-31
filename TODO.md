@@ -1,30 +1,9 @@
-- TODO add task
--  [x] perofrmance mode (turns off dasharray animation)
 -  [ ] 350 width mode
-- TODO Leftover
-  - [x] NameBar functionality (toggle between editable and not)
-  - [x] CurrentTaskCard
-  - [x] Add Task Card
-  - [ ] play sounds
-    - [ ] alert sound longer
-  - [x] FIXME
-    - [x] COLOR TRANSITIONS
-  - [x] LoopBtn
-- TODO list view
-  - [x] Picker
-  - [x] PickerCard
-  - [x] AddTaskList
-- TODO edit task view
-  - [ ] modal
-  - [x] NameEdit
-  - [x] TimeEdit
-    - [x] TimeDisplay
-    - [x] NumpadBtn
-    - [x] BackspaceBtn
-    - [x] CheckmarkBtn
-    - [x] TimePicker
-  - [x] IconEdit
-    - [x] IconItem
-  - [x] ColorPicker
-  - [x] BottomBar
-  - [ ] let this https://cohost.org/haraiva person know its done
+-  [ ] MOVE THE DRAG HANDLE
+   -  [ ] STYLE IT RIGHT
+-  [ ] ADD GESTURES
+   -  [ ] pinch
+   -  [ ] swipe
+   -  [ ] long press
+   -  [ ] multitap
+s://cohost.org/haraiva person know its done
