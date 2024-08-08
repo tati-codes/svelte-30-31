@@ -5,7 +5,6 @@
   import { toggleMute } from "../../Store/actions/root/toggleMute"
   import { light } from "../../Store/color"
   import { isMuted } from "../../Store/settingStore"
-//TODO add audio
 </script>
 
 <SettingsBtn cb={toggleMute} anim>
