@@ -3,14 +3,16 @@ import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
 //FIXME doesnt work with only three things
-export const sendToBottom = () => {
+export const sendToBottom = (id: string) => {
   root.update($root => {
     let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
     clearInterval(taskList.timer || undefined)
     taskList.timer = null
     let tasks = taskList.tasks
+    let currentIndex = taskList.tasks.findIndex(task => task.id === id)
+    if (!tasks[currentIndex]) return $root
     let breakIndex = taskList.tasks.findIndex(task => task.name === "_BREAK")
-    let currentTask = tasks.shift()!
+    let [currentTask] = tasks.splice(currentIndex, 1) 
     tasks.splice(breakIndex - 1,0, currentTask)
 
     if (tasks[0].name === "_BREAK") {

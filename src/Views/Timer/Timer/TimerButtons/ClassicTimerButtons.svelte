@@ -22,6 +22,7 @@ const toggleLock = () => {
 };
 $: del = () => deleteTask($currentTask.id);
 $: label = labelMaker($currentTask.remaining_seconds)
+$: sendtobot = () => sendToBottom($currentTask.id)
 </script>
 
 
@@ -29,7 +30,7 @@ $: label = labelMaker($currentTask.remaining_seconds)
   <CheckMarkIcon fill={$light} x={300} y={45} />
 </TimerBtn>
 
-<TimerBtn position="topLeft" cb={sendToBottom}>
+<TimerBtn position="topLeft" cb={sendtobot}>
   <SendToBottomIcon  style={$light} x={115} y={97} />
 </TimerBtn>
 

@@ -11,6 +11,7 @@
   import TimerBtn from "./TimerBtn.svelte"
   $: fillg = fill($light)
   $: label = labelMaker($currentTask.remaining_seconds)
+  $: sendtobot = () => sendToBottom($currentTask.id)
 </script>
 
 <TimerBtn position="midLeft" cb={addTime}>
@@ -20,6 +21,6 @@
   <BtnLabel style={fillg} x={48} y={262} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
 </TimerBtn>
 
-<TimerBtn position="bottom" cb={sendToBottom}>
+<TimerBtn position="bottom" cb={sendtobot}>
   <SendToBottomIcon style={$light} x={284} y={534} />
 </TimerBtn>
