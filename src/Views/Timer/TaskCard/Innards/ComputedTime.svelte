@@ -16,7 +16,7 @@
 
 <style>
   .cTimes {
-    grid-area: cTimes;
+    grid-area: 2 / 2 / 3 / 4; 
     font-size: 25px;
     text-align: right;
     margin-right: 23.5%;

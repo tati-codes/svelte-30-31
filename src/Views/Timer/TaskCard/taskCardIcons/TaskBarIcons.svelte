@@ -31,7 +31,7 @@ class={_class}
 
 <style>
   .icon {
-    grid-area: icon;
+    grid-area: 1 / 1 / 2 / 2;
     margin-top: 12%;
     margin-left: 20%;
   }

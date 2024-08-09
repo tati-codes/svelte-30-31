@@ -8,6 +8,9 @@
   import { dndzone, SOURCES, TRIGGERS	 } from 'svelte-dnd-action';
 	import { flip } from 'svelte/animate';
   import { reorder } from "../../../Store/actions/taskList/reorder"
+  import Icon from "../../../lib/Icons/Icon.svelte"
+  import DragHandle from "../../../lib/Icons/icons/DragHandle.svelte"
+  import { fromStr, fill } from "../../../Store/color"
 
 	const flipDurationMs = 200;
 	let dragDisabled = true;
@@ -37,6 +40,8 @@
 	function handleKeyDown(e) {
 		if ((e.key === "Enter" || e.key === " ") && dragDisabled) dragDisabled = false;
 	}
+
+
   $: tasks = $currentTaskList.tasks
 </script>
 
@@ -46,21 +51,29 @@ on:consider="{handleConsider}"
 on:finalize="{handleFinalize}"
 >
   {#each tasks as task (task.id)}
-  <div animate:flip={{duration: 200}}>
+  <div class="taskcardContainer" animate:flip={{duration: 200}}>
     {#if task.name === "_BREAK"}
     {#if !$isLooping}
     <LineIcon/>
     {/if}
     {:else}
-    <div tabindex={dragDisabled? 0 : -1} 
-    aria-label="drag-handle"
-    class="handle" 
-    style={dragDisabled ? 'cursor: grab' : 'cursor: grabbing'}
-    on:mousedown={startDrag} 
-    on:touchstart={startDrag}
-    on:keydown={handleKeyDown}
-    />
-    <TaskCard {task}/>
+
+    <TaskCard {task}>
+      <svg tabindex={dragDisabled? 0 : -1} 
+      aria-label="drag-handle"
+      viewBox="0 0 25 25" 
+      width="55"
+      height="55"
+      fill="none"
+      class="handle" 
+      style={dragDisabled ? 'cursor: grab' : 'cursor: grabbing'}
+      on:mousedown={startDrag} 
+      on:touchstart={startDrag}
+      on:keydown={handleKeyDown}
+      >
+      <DragHandle fill={fromStr(task.color).light}/>
+     </svg>
+    </TaskCard>
     {/if}
   </div>
   {/each}
@@ -68,23 +81,23 @@ on:finalize="{handleFinalize}"
 <!-- <AddTaskCard/> -->
 
 <style>
+  .taskcardContainer {
+    height: fit-content;
+    width:  fit-content;
+  }
   .card{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-left: 17%;
+    align-items: center;
+    gap:30px;
   }
-  :global(.card > .lineStroke) {
-    margin: -10%
-  
+  :global(.taskcardContainer > .lineStroke) {
+    /* margin: -10%; */
   }
-
-  .handle {
+  :global(svg.handle ) {
 		position: relative;
-		width: 2em;
-    right:0;
-    top: 20px;
-		height: 2em;
-		background-color: grey;
-	}
+    top: 25%;
+    right: -40%;
+    grid-area: 1 / 3 / 3 / 4; 
+}
 </style>

@@ -23,6 +23,7 @@
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
   <Length length={task.length}/>
+  <slot/>
 </div>
 
 <style>
@@ -31,16 +32,17 @@
     height: 105px;
     border-radius: 25px;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 20% 57% 23%; 
+    grid-template-rows: 70% 30%; 
     grid-column-gap: 2vw;
 
-    grid-template-rows: 70% 30%;
     gap: 0px 0px;
+    /* 
     grid-template-areas:
-    "icon taskName"
+    "icon taskName "
     "length cTimes";
 
-    /* padding: 12% 18% 12% 4%; */
+    padding: 12% 18% 12% 4%; */
     /* margin: 0 1.5fr 1.5fr 1.5fr;
     width: 10fr;
     height: 1fr; */

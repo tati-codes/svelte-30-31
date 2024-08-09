@@ -7,7 +7,7 @@ export let length = 0
 
 <style>
   .length {
-    grid-area: length;
+    grid-area: 2 / 1 / 3 / 2; 
     font-size: 22px;
     margin-top: -9%;
     margin-left: 25%;
