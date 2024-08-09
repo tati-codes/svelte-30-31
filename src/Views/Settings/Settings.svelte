@@ -7,9 +7,6 @@
   import SecondaryClock from "./SecondaryClock.svelte"
   import SettingsTopBar from "./SettingsTopBar.svelte"
   import VolumeBtn from "./VolumeBtn.svelte"
-//TODO
-//add functionality to buttons
-//add lightcolor to the inside of the icons
 </script>
 
 <SettingsTopBar/>

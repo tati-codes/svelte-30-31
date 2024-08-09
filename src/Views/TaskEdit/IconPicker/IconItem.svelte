@@ -5,7 +5,6 @@
   import type { taskIcon } from "../../../Store/typeValidators/taskIcon"
 
 export let selected: boolean, icon: taskIcon, tabIndex: number;
-//TODO [x] make this not a label
 </script>
 
 <div
