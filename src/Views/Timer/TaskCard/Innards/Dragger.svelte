@@ -28,3 +28,12 @@ on:keydown={handleKeyDown}
 >
 <DragHandle fill={fromStr(color).light}/>
 </svg>
+
+<style>
+	.handle  {
+		position: relative;
+    top: 25%;
+    right: -10%;
+    grid-area: 1 / 3 / 3 / 4;
+	}
+</style>

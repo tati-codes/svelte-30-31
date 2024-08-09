@@ -75,10 +75,4 @@ on:finalize="{handleFinalize}"
   :global(.taskcardContainer > .lineStroke) {
     /* margin: -10%; */
   }
-  :global(svg.handle ) {
-		position: relative;
-    top: 25%;
-    right: -40%;
-    grid-area: 1 / 3 / 3 / 4; 
-}
 </style>

@@ -32,7 +32,7 @@
     height: 105px;
     border-radius: 25px;
     display: grid;
-    grid-template-columns: 20% 57% 23%; 
+    grid-template-columns: 20% 65% 15%; 
     grid-template-rows: 70% 30%; 
     grid-column-gap: 2vw;
 

@@ -7,7 +7,7 @@ export const editName = (newName: string) => root.update($root => {
   let id = get(editStore).id;
   let taskIndex = taskList.tasks.findIndex(task => task.id === id)
   if (taskIndex != undefined) {
-    taskList.tasks[taskIndex].name = newName
+    taskList.tasks[taskIndex].name = newName.slice(0,16)
   }
   return $root
 })
