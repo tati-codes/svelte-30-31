@@ -35,7 +35,7 @@
 	}
 
   $: tasks = $currentTaskList.tasks
-  //TODO add on:pinch={pinchh}
+  //TODO [ ] add on:pinch={pinchh}
   // here
 </script>
 

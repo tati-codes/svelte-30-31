@@ -11,7 +11,7 @@
 	function handleKeyDown(e) {
 		if ((e.key === "Enter" || e.key === " ") && dragDisabled) $dragDisabled = false;
 	}
-  //TODO modern layout
+  //TODO [ ] modern layout
 </script>
 
 <svg tabindex={dragDisabled? 0 : -1} 
