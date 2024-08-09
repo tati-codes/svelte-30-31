@@ -21,10 +21,6 @@
     deleteList(id)
     e.stopPropagation();
   }
-  //TODO [x] get rid of this svg bs and just make it flex
-  //TODO  [x] pickerlabel -> span
-  //TODO  [x] listicon -> give it an svg thing
-  //TODO [x] deletebutton -> same
   
 </script>
 

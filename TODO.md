@@ -1,9 +1,13 @@
 -  [ ] 350 width mode
--  [ ] MOVE THE DRAG HANDLE
-   -  [ ] STYLE IT RIGHT
--  [ ] ADD GESTURES
-   -  [ ] pinch
-   -  [ ] swipe
-   -  [ ] long press
-   -  [ ] multitap
+-  [ ] CENTER ON IPAD
+   -  [ ] CHECK ROTATION?
+-  [ ] PWA
+-  [x] MOVE THE DRAG HANDLE
+   -  [x] STYLE IT RIGHT
+-  [x] ADD GESTURES
+   -  [x] pinch
+   -  [x] swipe
+   -  [x] long press
+   -  [x] multitap
+   -  [ ] ANIMATE SWIPES
 s://cohost.org/haraiva person know its done
