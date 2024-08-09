@@ -35,21 +35,24 @@
 	}
 
   $: tasks = $currentTaskList.tasks
+  //TODO add on:pinch={pinchh}
+  // here
 </script>
 
 <div class="card fadeIn"
 use:dndzone="{{ items: $currentTaskList.tasks, dragDisabled: $dragDisabled, flipDurationMs, zoneItemTabIndex: -1 }}"
 on:consider="{handleConsider}"
 on:finalize="{handleFinalize}"
+
 >
-  {#each tasks as task (task.id)}
+  {#each tasks as task, i (task.id)}
   <div class="taskcardContainer" animate:flip={{duration: 300}}>
     {#if task.name === "_BREAK"}
     {#if !$isLooping}
     <LineIcon/>
     {/if}
     {:else}
-    <TaskCard {task}>
+    <TaskCard {task} >
       <Dragger color={task.color}/>
     </TaskCard>
     {/if}

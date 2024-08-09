@@ -10,15 +10,54 @@
   import { currentTask } from "../../../Store/rootStore"
   import { currentLayout } from "../../../Store/settingStore"
   export let task: Task;
+  import {
+    composedGesture,
+  } from './Innards/gestures';
+  import { combined } from "./Innards/gestures/combinedTaskCard"
+  import type { hSwipeCustomEvent } from "./Innards/gestures/hSwipe"
+  import { sendToBottom } from "../../../Store/actions/taskList/sendBottom"
+  import { deleteTask } from "../../../Store/actions/taskEdit/deleteTask"
+  import type { multiTapCustomEvent } from "./Innards/gestures/multiTap"
+  import { sendToTop } from "../../../Store/actions/taskList/sendToTop"
+  import { copy } from "../../../Store/actions/taskList/copy"
+  import { type PressCustomEvent } from "./Innards/gestures"
+
   $: bsg = bg(fromStr(task.color).dark);
   $: currentbsg = bg(fromStr($currentTask.color).dark);
-  let handleClick = () => {
+
+  let longPressHandler = (e: PressCustomEvent) => {
     setEditID(task.id);
     setView("TASK_EDIT");
   }
+  function swipeh(e: hSwipeCustomEvent) {
+    switch (e.detail.direction) {
+      case "left":
+        sendToBottom(task.id)
+        break
+      case "right":
+        deleteTask(task.id)
+        break
+    }
+  }
+  function multih(e: multiTapCustomEvent) {
+    switch (e.detail.touchCount) {
+      case 2:
+        sendToTop(task.id) //working
+        break
+      case 3:
+        copy(task.id)
+        break
+    }
+  }
+
 </script>
 
-<div class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} on:click={handleClick}>
+<div 
+use:composedGesture={combined}
+on:press={longPressHandler}
+on:swipe={swipeh}
+on:multi={multih}
+class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} >
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
