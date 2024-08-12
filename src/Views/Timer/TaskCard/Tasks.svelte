@@ -35,8 +35,6 @@
 	}
 
   $: tasks = $currentTaskList.tasks
-  //TODO [ ] add on:pinch={pinchh}
-  // here
 </script>
 
 <div class="card fadeIn"
@@ -52,7 +50,7 @@ on:finalize="{handleFinalize}"
     <LineIcon/>
     {/if}
     {:else}
-    <TaskCard {task} >
+    <TaskCard {task}>
       <Dragger color={task.color}/>
     </TaskCard>
     {/if}

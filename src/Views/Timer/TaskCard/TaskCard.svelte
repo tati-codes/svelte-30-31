@@ -30,6 +30,7 @@
     setView("TASK_EDIT");
   }
   function swipeh(e: hSwipeCustomEvent) {
+    if (e.detail.isSwiping) return;
     switch (e.detail.direction) {
       case "left":
         sendToBottom(task.id)
@@ -62,7 +63,7 @@ class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} 
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
   <Length length={task.length}/>
-  <slot/>
+  <slot />
 </div>
 
 <style>

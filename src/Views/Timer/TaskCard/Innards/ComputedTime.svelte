@@ -21,5 +21,7 @@
     text-align: right;
     margin-right: 23.5%;
     margin-top: -3%;
+    user-select: none;
+    -webkit-user-select: none;
   }
 </style>

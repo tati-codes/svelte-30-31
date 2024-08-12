@@ -12,5 +12,7 @@ export let length = 0
     margin-top: -9%;
     margin-left: 25%;
     margin-bottom: 12%;
+    user-select: none;
+    -webkit-user-select: none;
   }
 </style>

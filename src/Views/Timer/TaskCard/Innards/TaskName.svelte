@@ -9,5 +9,7 @@
     font-size: 40px;
     margin-top: 3%;
     margin-left: 1%;
+    user-select: none;
+    -webkit-user-select: none;
   }
 </style>
