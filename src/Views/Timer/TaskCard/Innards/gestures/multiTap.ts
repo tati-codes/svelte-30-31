@@ -13,7 +13,6 @@ export function multiTouch(node, parameters = { touchCount: 2, timeframe: DEFAUL
   let startTime: number;
 
   function onUp(activeEvents, event) {
-		console.log("OnUp: ", activeEvents.length)
     if (
       Date.now() - startTime < parameters.timeframe && pointers
     ){
