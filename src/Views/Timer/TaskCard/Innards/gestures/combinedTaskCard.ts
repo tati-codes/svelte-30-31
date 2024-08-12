@@ -13,11 +13,12 @@ export const combined = (register) => {
     triggerBeforeFinished: false,
     timeframe: 350,
   });
-  const hswipeh = register(hswipe, { timeframe: 600, minSwipeDistance:30, swipingBuffer: 25 });
+  const hswipeh = register(hswipe, { timeframe: 600, minSwipeDistance:60, swipingBuffer: 25 });
   const multis = register(multiTouch, {touchCount: 2, timeframe: 100})
   return (activeEvents, event) => {
-    (activeEvents.length > 1)  && pressFns.onMove(activeEvents, event)
-      ? hswipeh.onMove(activeEvents, event)
-      : pinchs.onMove(activeEvents, event);
+    if (!pressFns.onMove(activeEvents, event))
+      {
+        hswipeh.onMove(activeEvents, event)
+      }
   };
 };
