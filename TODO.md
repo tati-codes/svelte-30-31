@@ -2,12 +2,7 @@
 -  [ ] CENTER ON IPAD
    -  [ ] CHECK ROTATION?
 -  [ ] PWA
--  [x] MOVE THE DRAG HANDLE
-   -  [x] STYLE IT RIGHT
--  [x] ADD GESTURES
-   -  [x] pinch
-   -  [x] swipe
-   -  [x] long press
-   -  [x] multitap
-   -  [ ] ANIMATE SWIPES
+-  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
+-  [ ] SAVE STATE
+   -  [ ] RELOAD ON OPEN
 s://cohost.org/haraiva person know its done

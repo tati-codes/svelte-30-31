@@ -15,7 +15,7 @@
   import Dragger from "./Innards/Dragger.svelte"
 
 	const flipDurationMs = 200;
-	
+
   function handleConsider(e) {
 		const {items: newItems, info: {source, trigger}} = e.detail;
     reorder(newItems)
@@ -33,24 +33,26 @@
 			$dragDisabled = true;
 		}
 	}
+  let width;
+  let height;
+
 
   $: tasks = $currentTaskList.tasks
 </script>
 
 <div class="card fadeIn"
-use:dndzone="{{ items: $currentTaskList.tasks, dragDisabled: $dragDisabled, flipDurationMs, zoneItemTabIndex: -1 }}"
+use:dndzone="{{ items: $currentTaskList.tasks, dragDisabled: $dragDisabled, flipDurationMs, zoneItemTabIndex: -1, dropTargetStyle: {}}}"
 on:consider="{handleConsider}"
 on:finalize="{handleFinalize}"
-
 >
-  {#each tasks as task, i (task.id)}
-  <div class="taskcardContainer" animate:flip={{duration: 300}}>
+{#each tasks as task, i (task.id)}
+  <div class="taskcardContainer" animate:flip={{duration: 300}} bind:clientWidth={width} bind:clientHeight={height}>
     {#if task.name === "_BREAK"}
     {#if !$isLooping}
     <LineIcon/>
     {/if}
     {:else}
-    <TaskCard {task}>
+    <TaskCard {task} >
       <Dragger color={task.color}/>
     </TaskCard>
     {/if}

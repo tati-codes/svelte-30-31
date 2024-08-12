@@ -104,4 +104,5 @@ class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} 
   budiv.taskCard:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
+
 </style>
