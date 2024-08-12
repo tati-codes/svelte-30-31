@@ -1,8 +1,12 @@
 <script>
   import DragHandle from "../../../../lib/Icons/icons/DragHandle.svelte"
   import { fromStr } from "../../../../Store/color"
+  import { currentTask } from "../../../../Store/rootStore"
+  import { currentLayout } from "../../../../Store/settingStore"
   import { dragDisabled } from "../../dragStore"
   export let color;
+	$: modern = fromStr($currentTask.color).light;
+	$: classic = fromStr(color).light;
 	function startDrag(e) {
 		// preventing default to prevent lag on touch devices (because of the browser checking for screen scrolling)
 		e.preventDefault();
@@ -11,7 +15,7 @@
 	function handleKeyDown(e) {
 		if ((e.key === "Enter" || e.key === " ") && dragDisabled) $dragDisabled = false;
 	}
-  //TODO [ ] modern layout
+  //TODO [x] modern layout
 </script>
 
 <svg tabindex={dragDisabled? 0 : -1} 
@@ -26,7 +30,7 @@ on:mousedown={startDrag}
 on:touchstart={startDrag}
 on:keydown={handleKeyDown}
 >
-<DragHandle fill={fromStr(color).light}/>
+<DragHandle fill={$currentLayout === "CLASSIC" ? classic : modern}/>
 </svg>
 
 <style>
