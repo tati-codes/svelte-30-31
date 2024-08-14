@@ -2,7 +2,9 @@ import { get } from "svelte/store";
 import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
-//FIXME doesnt work with only three things
+//TODO 
+//[ ] add persist 
+
 export const sendToBottom = (id: string) => {
   root.update($root => {
     let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
@@ -31,7 +33,7 @@ export const sendToBottom = (id: string) => {
 
     return $root
 
-  })
+  }, true)
   if (get(currentTaskList).status == "TIMER_ACTIVE") {
     start();
   }

@@ -12,4 +12,4 @@ export const editColor = (newColor: Color) => root.update($root => {
     taskList.tasks[taskIndex].color = newColor
   }
   return $root
-})
+}, true)

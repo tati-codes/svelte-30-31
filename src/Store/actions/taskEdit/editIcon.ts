@@ -11,4 +11,4 @@ export const editIcon = (newIcon: taskIcon) => root.update($root => {
     taskList.tasks[taskIndex].icon = newIcon
   }
   return $root
-})
+}, true)

@@ -8,4 +8,4 @@ export let pause = () => root.update(($root) => {
   taskList.timer = null
   taskList.status = "PAUSED"
   return $root
-});
+}, true);

@@ -13,4 +13,4 @@ export const editLength = (nLen: number, remaining: number = -1) => root.update(
     taskList.tasks[taskIndex].remaining_seconds = remaining
   }
   return $root
-})
+}, true)

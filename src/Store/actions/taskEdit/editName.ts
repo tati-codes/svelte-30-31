@@ -10,4 +10,4 @@ export const editName = (newName: string) => root.update($root => {
     taskList.tasks[taskIndex].name = newName.slice(0,16)
   }
   return $root
-})
+}, true)

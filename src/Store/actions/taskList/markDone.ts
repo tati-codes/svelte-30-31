@@ -4,6 +4,9 @@ import { pause } from "../task/pause";
 import { start } from "./start";
 import { playClearSound, playTaskDoneSound } from "../task/playAudio";
 
+//TODO 
+//[ ] add persist 
+
 export const markDone = () => {
   root.update($root => {
   let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
@@ -29,7 +32,7 @@ export const markDone = () => {
 
   taskList.timer = null
   return $root
-})
+}, true)
   if (get(currentTaskList).status == "TIMER_ACTIVE") {
     playTaskDoneSound()
     start();
