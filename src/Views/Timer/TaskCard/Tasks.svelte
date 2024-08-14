@@ -1,5 +1,4 @@
 <script >
-  import {IconRegistry} from ".././TaskCard/taskCardIcons/IconRegistry";
   import TaskCard from '.././TaskCard/TaskCard.svelte'
   import AddTaskCard from ".././TaskCard/AddTaskCard.svelte"
   import LineIcon from "../../../lib/Icons/icons/LineIcon.svelte"
@@ -8,9 +7,6 @@
   import { dndzone, SOURCES, TRIGGERS	 } from 'svelte-dnd-action';
 	import { flip } from 'svelte/animate';
   import { reorder } from "../../../Store/actions/taskList/reorder"
-  import Icon from "../../../lib/Icons/Icon.svelte"
-  import DragHandle from "../../../lib/Icons/icons/DragHandle.svelte"
-  import { fromStr, fill } from "../../../Store/color"
   import { dragDisabled } from "../dragStore"
   import Dragger from "./Innards/Dragger.svelte"
 
@@ -25,7 +21,6 @@
 		}
 	}
 	function handleFinalize(e) {
-
 		const {items: newItems, info: {source}} = e.detail;
     reorder(newItems)
 		// Ensure dragging is stopped on drag finish via pointer (mouse, touch)
@@ -33,10 +28,6 @@
 			$dragDisabled = true;
 		}
 	}
-  let width;
-  let height;
-
-
   $: tasks = $currentTaskList.tasks
 </script>
 
@@ -46,7 +37,7 @@ on:consider="{handleConsider}"
 on:finalize="{handleFinalize}"
 >
 {#each tasks as task, i (task.id)}
-  <div class="taskcardContainer" animate:flip={{duration: 300}} bind:clientWidth={width} bind:clientHeight={height}>
+  <div class="taskcardContainer" animate:flip={{duration: 300}} >
     {#if task.name === "_BREAK"}
     {#if !$isLooping}
     <LineIcon/>
