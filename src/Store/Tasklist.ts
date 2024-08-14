@@ -10,8 +10,7 @@ export interface TaskListI {
   status: TaskListStatus
   tasks: Task[]
   looping: boolean
-  timer: ReturnType<typeof setTimeout> | null
-  isPlaying: boolean
+  timer: number | null
 }
 
 export class TaskList implements TaskListI {
@@ -19,11 +18,8 @@ export class TaskList implements TaskListI {
   name: string
   tasks: Task[] = [new StopTask()]
   looping = false // ignore StopTask or not
-  timer: ReturnType<typeof setTimeout> | null = null
+  timer: number | null = null
   status: TaskListStatus = "IDLE"
-  get isPlaying(): boolean  {
-    return this.status === "TIMER_ACTIVE"
-  }
   constructor(_name: string, _tasks: Task[]) {
     this.name = _name
     this.tasks = [..._tasks.slice(), new StopTask()]
