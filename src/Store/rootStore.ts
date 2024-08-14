@@ -1,9 +1,10 @@
-import { derived, writable, type Writable } from "svelte/store"
+import { derived, get, writable, type Writable } from "svelte/store"
 import type { TaskList } from "./Tasklist"
 import type { Layout } from "./typeValidators/Layout"
 import type { Views } from "./typeValidators/Views"
 import { defaultTaskList } from "./Tasklist"
 import { seconds_to_mmss } from "../lib/Shared/time"
+import {storage, type PersistentWritable} from "../lib/Shared/storage"
 export interface rootStore {
   muted: boolean
   layout: Layout
@@ -17,7 +18,15 @@ export interface rootStore {
 
 let tasklist = defaultTaskList();
 
-export let root: Writable<rootStore> = writable({
+let conditionalSetter = ($root: rootStore) => $root.taskLists.find(tl => tl.id === $root.selectedId)!.status !== "TIMER_ACTIVE" && !$root.taskLists.find(tl => tl.id === $root.selectedId)!.timer
+let hydrationSanitizer = (newVal: rootStore) => {
+  newVal.currentView = "TIMER"
+  newVal.taskLists.map(list => list.status = "IDLE")
+  newVal.taskLists.map(list => list.timer = null)
+  return newVal;
+}
+
+export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   muted: false,
   layout: "CLASSIC",
   currentView: "TIMER",
@@ -26,14 +35,21 @@ export let root: Writable<rootStore> = writable({
   selectedId: tasklist.id,
   showClockIcon: false,
   oldPlayback: false
-})
+}, 
+conditionalSetter,
+hydrationSanitizer)
+
 
 export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)
 export let currentTask = derived(currentTaskList, ($list) => $list.tasks[0])
 export let tasklists = derived(root, ($root) => $root.taskLists)
+export let onAddedTaskList = derived(tasklists, t => t.length)
+export let onAddedTask = derived(currentTaskList, list => list.tasks.length)
 
+onAddedTask.subscribe(root.persist)
+onAddedTaskList.subscribe(root.persist)
 currentTaskList.subscribe((taskList) => {
-  if (taskList.isPlaying) {
+  if (taskList.status == "TIMER_ACTIVE") {
     document.title = "TaTimer - " + seconds_to_mmss(taskList.tasks[0].remaining_seconds)
   } else if (taskList.status == "PAUSED") {
     document.title = "TaTimer - Paused"
