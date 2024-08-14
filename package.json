@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "moment": "^2.30.1",
-    "svelte-dnd-action": "^0.9.49"
+    "svelte-dnd-action": "^0.9.49",
+    "worker-timers": "^8.0.4"
   }
 }

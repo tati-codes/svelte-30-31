@@ -25,12 +25,12 @@
     <TaskEdit/>
     {/if}
   </main>
-  <!-- <div class="asidecontainer">
+  <div class="asidecontainer">
     <input class="float" type="checkbox" bind:checked={checked}/>
-    {#if checked}
+    {#if !checked}
       <Debug/>  
     {/if}
-  </div> -->
+  </div>
 </div>
 <style>
   main{
@@ -63,6 +63,6 @@
   padding-bottom: 1%;
   min-height: 100%;
   height:max-content;
-  width: 200%;
+  width: 100%;
 }
 </style>
