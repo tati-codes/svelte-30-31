@@ -10,8 +10,7 @@
   import OldPlayback from "./OldPlayback.svelte"
   import Pause from "./Playback/Pause.svelte"
   import Triangle from "./Playback/Triangle.svelte"
-  $: isPlaying = $currentTaskList.isPlaying;
-  $: type = IconRegistry[$currentTask.icon as taskIcon]
+  $: isPlaying = $currentTaskList.status === "TIMER_ACTIVE";
 </script>
 
 {#if isPlaying}
