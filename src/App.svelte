@@ -7,9 +7,8 @@
   $: bsg = bg($light)
   import Debug from "./lib/Debug.svelte"
   import { currentView } from "./Store/settingStore"
-  let checked = false;
-  //@ts-ignore
-  // $: window.document.getElementById("app").style = bg($light)
+  import { currentTaskList } from "./Store/rootStore"
+  $: debugMode = $currentTaskList.name === "$DEBUG$"
 </script>
 
 <div class="container" style={bsg} >
@@ -25,12 +24,11 @@
     <TaskEdit/>
     {/if}
   </main>
-  <div class="asidecontainer">
-    <input class="float" type="checkbox" bind:checked={checked}/>
-    {#if !checked}
-      <Debug/>  
-    {/if}
-  </div>
+  {#if debugMode}
+    <div class="asidecontainer">
+        <Debug/>  
+    </div>
+  {/if}
 </div>
 <style>
   main{
@@ -48,9 +46,6 @@
     height:fit-content; 
     flex-shrink: 1;
   }
-  
-
-
 
 
 .bgt{
