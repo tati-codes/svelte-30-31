@@ -53,8 +53,7 @@
 }
 .container {
   display: grid; 
-  grid-template-columns: 5fr 5fr; 
-  gap: 0px 0px; 
+  grid-template-columns: 1fr; 
   padding-bottom: 1%;
   min-height: 100%;
   height:max-content;
