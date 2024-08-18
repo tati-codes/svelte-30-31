@@ -20,13 +20,11 @@ export const markDone = () => {
     tasks.push(tasks.shift()!)
     if (!taskList.looping) {
       taskList.status = "DONE"
-      playClearSound()
       return $root
     }
   }
 
   if (taskList.status === "TIMER_ACTIVE") {
-    playTaskDoneSound()
     return $root
   }
 
@@ -36,5 +34,7 @@ export const markDone = () => {
   if (get(currentTaskList).status == "TIMER_ACTIVE") {
     playTaskDoneSound()
     start();
+  } else if (get(currentTaskList).status == "DONE") {
+    playClearSound()
   }
 }
