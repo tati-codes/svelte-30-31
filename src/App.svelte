@@ -12,7 +12,6 @@
 </script>
 
 <div class="container" style={bsg} >
-
   <main class="bgt">
     {#if $currentView == "TIMER"}
     <TimerView/>
