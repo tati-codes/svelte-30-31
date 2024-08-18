@@ -10,7 +10,7 @@ export const copy = (id: string) => {
     let currentIndex = taskList.tasks.findIndex(task => task.id === id)
     if (!tasks[currentIndex]) return $root
     let currentTask = taskList.tasks[currentIndex]
-    tasks.splice(currentIndex+1,0, new Task(currentTask.name, currentTask.length, currentTask.icon))
+    tasks.splice(currentIndex+1,0, new Task(currentTask.name, currentTask.length/60, currentTask.icon))
     return $root
   })
 }
