@@ -14,7 +14,7 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "types": ["svelte"]
+    "types": ["svelte","vite-plugin-pwa/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/Views/TimerView/TaskCard/IconComponent/icons/taskCardIcons/IconRegistry.ts", "types.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
