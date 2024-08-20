@@ -8,3 +8,4 @@
    -  [ ] when it is out of storage
    -  [ ] [?] button in settings
 - [ ] s://cohost.org/haraiva person know its done
+- [x] showDuration bug
