@@ -1,10 +1,10 @@
--  [x] 350 width mode
--  [x] CENTER ON IPAD
-   -  [ ] CHECK ROTATION?
--  [ ] PWA
+-  [x] PWA
    -  [ ] ![alt text](image.png)
-   -  [ ] cache ontrol
+      -  [ ] cache ontrol  
 -  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
--  [x] SAVE STATE
-   -  [x] RELOAD ON OPEN
-s://cohost.org/haraiva person know its done
+-  [ ] notifications 
+   -  [ ] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push
+-  [ ] helpful modal 
+   -  [ ] when it is out of storage
+   -  [ ] [?] button in settings
+- [ ] s://cohost.org/haraiva person know its done

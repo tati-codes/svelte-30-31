@@ -7,7 +7,7 @@
   import { dndzone, SOURCES, TRIGGERS	 } from 'svelte-dnd-action';
 	import { flip } from 'svelte/animate';
   import { reorder } from "../../../Store/actions/taskList/reorder"
-  import { dragDisabled } from "../dragStore"
+  import { dragDisabled } from "./dragStore"
   import Dragger from "./Innards/Dragger.svelte"
 
 	const flipDurationMs = 200;

@@ -3,7 +3,7 @@
   import { fromStr } from "../../../../Store/color"
   import { currentTask } from "../../../../Store/rootStore"
   import { currentLayout } from "../../../../Store/settingStore"
-  import { dragDisabled } from "../../dragStore"
+  import { dragDisabled } from "../dragStore"
   export let color;
 	$: modern = fromStr($currentTask.color).light;
 	$: classic = fromStr(color).light;
