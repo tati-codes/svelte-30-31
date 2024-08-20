@@ -14,7 +14,7 @@
 
   function handleConsider(e) {
 		const {items: newItems, info: {source, trigger}} = e.detail;
-    reorder(newItems)
+    reorder(newItems, false)
     // Ensure dragging is stopped on drag finish via keyboard
 		if (source === SOURCES.KEYBOARD && trigger === TRIGGERS.DRAG_STOPPED) {
 			$dragDisabled = true;
@@ -22,7 +22,7 @@
 	}
 	function handleFinalize(e) {
 		const {items: newItems, info: {source}} = e.detail;
-    reorder(newItems)
+    reorder(newItems, true)
 		// Ensure dragging is stopped on drag finish via pointer (mouse, touch)
 		if (source === SOURCES.POINTER) {
 			$dragDisabled = true;

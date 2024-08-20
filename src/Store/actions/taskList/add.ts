@@ -6,4 +6,4 @@ export const addTask = (task: Task) => root.update($root => {
   let break_index = taskList.tasks.findIndex((task) => task.name === "_BREAK") 
   taskList.tasks.splice(break_index, 0, task)
   return $root
-})
+}, true)
