@@ -2,6 +2,8 @@ import moment from "moment";
 import { root } from "../../rootStore";
 import { set_timer } from "./set_timer";
 import { start_tick } from "../../computed";
+import { clearInterval } from 'worker-timers';
+
 
 export const start = () => root.update($root => {
   let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;  if (taskList.timer) clearInterval(taskList.timer)

@@ -3,6 +3,7 @@ import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
 import { playClearSound, playTaskDoneSound } from "../task/playAudio";
+import { clearInterval } from 'worker-timers';
 
 //TODO 
 //[ ] add persist 
@@ -10,7 +11,7 @@ import { playClearSound, playTaskDoneSound } from "../task/playAudio";
 export const markDone = () => {
   root.update($root => {
   let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
-  clearInterval(taskList.timer || undefined)
+  clearInterval(taskList.timer || -1)
   taskList.timer = null
   let tasks = taskList.tasks
   tasks[0].remaining_seconds = tasks[0].length

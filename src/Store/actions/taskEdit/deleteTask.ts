@@ -2,6 +2,8 @@ import { get } from "svelte/store";
 import { currentTaskList, root } from "../../rootStore";
 import { editStore, editingTask } from "../../taskEdit";
 import type { taskIcon } from "../../typeValidators/taskIcon";
+import { clearInterval } from 'worker-timers';
+
 
 export const deleteTask = (id: string) => root.update($root => {
   let tasklist = $root.taskLists.find(task => task.id == $root.selectedId)!;

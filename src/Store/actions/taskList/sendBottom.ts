@@ -2,13 +2,15 @@ import { get } from "svelte/store";
 import { currentTaskList, root } from "../../rootStore";
 import { pause } from "../task/pause";
 import { start } from "./start";
+import { clearInterval } from 'worker-timers';
+
 //TODO 
 //[ ] add persist 
 
 export const sendToBottom = (id: string) => {
   root.update($root => {
     let taskList = $root.taskLists.find(task => task.id == $root.selectedId)!;
-    clearInterval(taskList.timer || undefined)
+    clearInterval(taskList.timer || -1)
     taskList.timer = null
     let tasks = taskList.tasks
     let currentIndex = taskList.tasks.findIndex(task => task.id === id)
