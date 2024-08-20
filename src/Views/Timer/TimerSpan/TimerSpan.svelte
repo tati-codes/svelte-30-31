@@ -20,11 +20,10 @@
 {/if}
   <style>
   .totalLength {
-  
   letter-spacing: -4px;
   font-weight: bolder;
   padding-top: 1px;
-  padding-top: 0.5vmax;
+  padding-top: 2%;
   font-size: 2.5rem;
   transition: color 0.325s linear;
   color: black;
@@ -33,10 +32,9 @@
   .topBar {
   scale: 0.9;
   position: absolute;
-  top: 3vmax;
+  top: 5.5%;
 }
  :global(.topBar > .clockIcon) {
   margin-right: -5%;
-
 }
 </style>
