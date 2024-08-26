@@ -14,6 +14,7 @@ export interface rootStore {
   showClockIcon: boolean
   FX: boolean
   oldPlayback: false
+  notificationsPermissions: boolean
 }
 
 let tasklist = defaultTaskList();
@@ -34,6 +35,7 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   FX: true,
   selectedId: tasklist.id,
   showClockIcon: false,
+  notificationsPermissions: window.Notification.permission === "granted",
   oldPlayback: false
 }, 
 conditionalSetter,
@@ -45,6 +47,7 @@ export let currentTask = derived(currentTaskList, ($list) => $list.tasks[0])
 export let tasklists = derived(root, ($root) => $root.taskLists)
 export let onAddedTaskList = derived(tasklists, t => t.length)
 export let onAddedTask = derived(currentTaskList, list => list.tasks.length)
+export let notifsAllowed = derived(root, $root => $root.notificationsPermissions)
 
 onAddedTask.subscribe(root.persist)
 onAddedTaskList.subscribe(root.persist)

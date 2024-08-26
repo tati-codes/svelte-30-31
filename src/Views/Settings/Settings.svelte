@@ -1,16 +1,18 @@
 <script lang="ts">
   import { medium, bg } from "../../Store/color"
   import { clockOn, FXOn, isLooping, isMuted } from "../../Store/settingStore"
+  import HelpModal from "../HelpModal.svelte"
   import Graphics from "./Graphics.svelte"
   import LayoutBtn from "./LayoutBtn.svelte"
   import LoopBtn from "./LoopBtn.svelte"
+  import NotificationsBtn from "./NotificationsBtn.svelte"
   import SecondaryClock from "./SecondaryClock.svelte"
   import SettingsTopBar from "./SettingsTopBar.svelte"
   import VolumeBtn from "./VolumeBtn.svelte"
 </script>
 
 <SettingsTopBar/>
-<div class="fadeIn settingsView" style={bg($medium)}>
+<div class="fadeIn settingsView" style={bg($medium)} >
   <div class="innerSettings">
     <span>{$isMuted ? "unmute" : "mute" }</span>
     <span>button layout</span>
@@ -25,10 +27,20 @@
   </div>
   <div class="innerSettings "> 
     <span>{$clockOn ? "hide duration" : "show duration"}</span>
+    <span></span>
+    <span></span>
+
+    <span>notifications</span>
   </div>
   <div class="innerSettings singleColumn">
     <SecondaryClock />
+    <span />
+    <span />
+    <NotificationsBtn/>
   </div>
+</div>
+<div class="fadeIn settingsView" style={bg($medium)}>
+  <HelpModal/>
 </div>
 
 <style>
