@@ -1,11 +1,12 @@
 -  [x] PWA
-   -  [ ] ![alt text](image.png)
-      -  [ ] cache ontrol  
+   -  [ ] cache ontrol  
 -  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
--  [ ] notifications 
-   -  [ ] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push
--  [ ] helpful modal 
-   -  [ ] when it is out of storage
-   -  [ ] [?] button in settings
+   -  [ ] list
+   -  [ ] timer
+   -  [ ] settings
+   -  [ ] edit
+   -  [ ] ariaStore
+-  [x] notifications 
+   -  [x] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push
 - [ ] s://cohost.org/haraiva person know its done
-- [x] showDuration bug
+- [ ] tatiana.codes move
