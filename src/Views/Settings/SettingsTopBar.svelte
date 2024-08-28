@@ -10,7 +10,7 @@
 
 <div class="topBar">
   <GoListPicker/>
-  <div style={bg($medium)} class="tName bgT fadeIn" on:click={goTimer}>
+  <div tabindex={1} style={bg($medium)} class="tName bgT fadeIn" on:click={goTimer}>
     <span>Settings</span>
   </div>
     <GoSettings/>

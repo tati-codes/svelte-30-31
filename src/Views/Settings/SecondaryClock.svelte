@@ -8,7 +8,7 @@
   import { clockOn } from "../../Store/settingStore"
 </script>
 
-<SettingsBtn cb={toggleClock}  anim>
+<SettingsBtn ariaIndex={8} cb={toggleClock}  anim>
   {#if $clockOn}
   <HiddenClock hue={$light}/>
   {:else}

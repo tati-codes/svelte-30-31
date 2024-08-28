@@ -5,7 +5,7 @@
   import { FXOn } from "../../Store/settingStore"
 </script>
 
-<SettingsBtn cb={toggleFX} anim> 
+<SettingsBtn ariaIndex={7} cb={toggleFX} anim> 
   <h1>{$FXOn ? "LOW" : "HIGH"} FX</h1>
 </SettingsBtn >
 

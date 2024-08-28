@@ -25,7 +25,7 @@
   }
 </script>
 
-<SettingsBtn cb={toggle} anim>
+<SettingsBtn ariaIndex={9} cb={toggle} anim>
   {#if $root.notificationsPermissions}
     <Bell hue={$light} />
   {:else}

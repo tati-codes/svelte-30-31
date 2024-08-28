@@ -5,7 +5,7 @@
   $: opposite = $currentLayout === "CLASSIC" ? "MODERN" : "CLASSIC"
 </script>
 
-<SettingsBtn cb={toggleLayout}  anim> 
+<SettingsBtn ariaIndex={5} cb={toggleLayout}  anim> 
   <h1 class="fadeIn">{opposite}</h1>
 </SettingsBtn >
 

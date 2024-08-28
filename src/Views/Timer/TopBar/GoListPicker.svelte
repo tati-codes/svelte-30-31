@@ -6,7 +6,7 @@
   import { light } from "../../../Store/color";
   import { currentTaskList } from "../../../Store/rootStore"
   const goPicker = () => { 
-    if ($currentTaskList.isPlaying) {
+    if ($currentTaskList.status === "TIMER_ACTIVE") {
       pause();
     }
     setView("PICKER");
@@ -15,7 +15,7 @@
 </script>
 
 
-<SettingsBtn cb={goPicker} >
+<SettingsBtn ariaIndex={1} cb={goPicker} >
   <FolderIcon fill={$light}/>
 </SettingsBtn>
 

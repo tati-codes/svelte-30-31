@@ -10,6 +10,6 @@
 
 </script>
 
-<SettingsBtn cb={isSettings ? goTimer : goSettings}>
+<SettingsBtn ariaIndex={3} cb={isSettings ? goTimer : goSettings}>
   <GearIcon fill={$light}/>
 </SettingsBtn>
