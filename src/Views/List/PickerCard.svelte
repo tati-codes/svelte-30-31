@@ -10,7 +10,7 @@
   import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import PickerLabel from "./PickerLabel.svelte"
-  
+  export let index: number;
   export let name = ""
   export let id: string = "";
   let select = () => { 
@@ -24,10 +24,10 @@
   
 </script>
 
-<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={select} >
+<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={select} tabindex={index} >
   <ListIcon/>
   <span style={colorp("white")}>{name}</span>
-  <div class="iconWrap" on:click={pollo}>
+  <div class="iconWrap" on:click={pollo} tabindex={index+1}>
     <CloseIconWrapped/>
   </div>
 </div>

@@ -1,5 +1,4 @@
-<script lang="ts">
-
+  <script lang="ts">
   import Name from "./TaskEdit/Name.svelte"
   import Time from "./TaskEdit/Time.svelte"
   import { editingTask, editStore } from "../../Store/taskEdit"

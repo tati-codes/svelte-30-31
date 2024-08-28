@@ -7,15 +7,14 @@
   // let { taskLists, dispatch } = useTaskListPickerStore((state) => state)
   // let select = (id: string) => () => (dispatch("select", id), swap())
   // let del = (id: string) => () => dispatch("delete", {id, changes: null})
-  
 </script>
 
 <TopBarTaskListPicker/>
 <div class="pickerView dark-background fadeIn"  style={bg($medium)}>
   {#each $tasklists as list, i}
-    <PickerCard name={list.name} id={list.id} />
+    <PickerCard name={list.name} id={list.id} index={(i+2)*2}/>
   {/each}
-    <AddListBtn/>
+    <AddListBtn />
 </div>
 
 <style>
