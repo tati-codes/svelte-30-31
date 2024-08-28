@@ -32,7 +32,7 @@
 </script>
 
 <div class="card fadeIn"
-use:dndzone="{{ items: $currentTaskList.tasks, dragDisabled: $dragDisabled, flipDurationMs, zoneItemTabIndex: -1, dropTargetStyle: {}}}"
+use:dndzone="{{ items: $currentTaskList.tasks, dragDisabled: $dragDisabled, flipDurationMs, zoneItemTabIndex: -1, zoneTabIndex: -1, dropTargetStyle: {}}}"
 on:consider="{handleConsider}"
 on:finalize="{handleFinalize}"
 >
@@ -43,8 +43,8 @@ on:finalize="{handleFinalize}"
     <LineIcon/>
     {/if}
     {:else}
-    <TaskCard {task} >
-      <Dragger color={task.color}/>
+    <TaskCard {task} index={(i+2)*2} >
+      <Dragger color={task.color} index={((i+2)*2)+1}/>
     </TaskCard>
     {/if}
   </div>

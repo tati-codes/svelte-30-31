@@ -5,6 +5,7 @@
   import { currentLayout } from "../../../../Store/settingStore"
   import { dragDisabled } from "../dragStore"
   export let color;
+	export let index;
 	$: modern = fromStr($currentTask.color).light;
 	$: classic = fromStr(color).light;
 	function startDrag(e) {
@@ -18,7 +19,7 @@
   //TODO [x] modern layout
 </script>
 
-<svg tabindex={dragDisabled? 0 : -1} 
+<svg tabindex={dragDisabled? index : -1} 
 aria-label="drag-handle"
 viewBox="0 0 25 25" 
 width="55"

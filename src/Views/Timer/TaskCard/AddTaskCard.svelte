@@ -4,16 +4,17 @@
   import CoolAddButton from "../../../lib/Shared/CoolAddButton.svelte"
   import { Task } from "../../../Store/Task"
   import { setEditID } from "../../../Store/taskEdit"
-  import TaskBarIcons from "./taskCardIcons/TaskBarIcons.svelte"
+  import { currentTaskList } from "../../../Store/rootStore"
   const addTaskHandler = () => {
     let newTask = new Task("New Task", 5)
     addTask(newTask)
     setEditID(newTask.id)
     setView("TASK_EDIT")
   }
+  $: lastIndex = (($currentTaskList.tasks.length + 1) * 2)
 </script>
 
-<CoolAddButton cb={addTaskHandler}/>
+<CoolAddButton ariaIndex={lastIndex} cb={addTaskHandler}/>
 
 <style>
 

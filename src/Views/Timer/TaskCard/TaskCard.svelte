@@ -9,7 +9,6 @@
   import { setView } from "../../../Store/actions/root/setView"
   import { currentTask } from "../../../Store/rootStore"
   import { currentLayout } from "../../../Store/settingStore"
-  export let task: Task;
   import {
     composedGesture,
   } from './Innards/gestures';
@@ -21,7 +20,9 @@
   import { sendToTop } from "../../../Store/actions/taskList/sendToTop"
   import { copy } from "../../../Store/actions/taskList/copy"
   import { type PressCustomEvent } from "./Innards/gestures"
-
+  
+  export let task: Task;
+  export let index: number;
   $: bsg = bg(fromStr(task.color).dark);
   $: currentbsg = bg(fromStr($currentTask.color).dark);
 
@@ -58,6 +59,7 @@ use:composedGesture={combined}
 on:press={longPressHandler}
 on:swipe={swipeh}
 on:multi={multih}
+tabindex={index}
 class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} >
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
