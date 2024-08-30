@@ -62,7 +62,8 @@ on:keyup={onEnter(longPressHandler)}
 on:swipe={swipeh}
 on:multi={multih}
 tabindex={index}
-class="taskCard fadeIn" style={$currentLayout === "CLASSIC" ? bsg : currentbsg} >
+class="taskCard fadeIn" 
+style={$currentLayout === "CLASSIC" ? bsg : currentbsg} >
   <Icon type={task.icon || "book"}/>
   <ComputedTime id={task.id} len={task.length}/>
   <TaskName name={task.name}/>
