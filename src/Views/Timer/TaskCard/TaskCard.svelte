@@ -20,6 +20,7 @@
   import { sendToTop } from "../../../Store/actions/taskList/sendToTop"
   import { copy } from "../../../Store/actions/taskList/copy"
   import { type PressCustomEvent } from "./Innards/gestures"
+  import { onEnter } from "../../../lib/Shared/onEnter"
   
   export let task: Task;
   export let index: number;
@@ -57,6 +58,7 @@
 <div 
 use:composedGesture={combined}
 on:press={longPressHandler}
+on:keyup={onEnter(longPressHandler)}   
 on:swipe={swipeh}
 on:multi={multih}
 tabindex={index}
