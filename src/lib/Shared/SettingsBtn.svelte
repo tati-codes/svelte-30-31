@@ -6,6 +6,7 @@
   import { LightenDarkenColor } from "./lightenColor"
   export let cb;
   //anim handler
+  export let ariaIndex: number;
   export let anim: boolean = false;
   let playAnim = false;
   let addAnimCB = () => {
@@ -33,6 +34,7 @@ on:mouseleave={onOut}
 on:click={anim ? addAnimCB : cb}  
 class={"settingsBtn fadeIn" + (playAnim ? " anim" : "")} 
 on:animationend={takeAwayAnim}
+tabindex={ariaIndex}
 >
 
   <slot />
