@@ -13,7 +13,7 @@
 </script>
 
 <div class="modal" on:keypress={(e) => (len = onNumPress(e, len))}>
-  <div class="modalTopBar" tabindex="0" >
+  <div class="modalTopBar" tabindex="-1" >
     <Name/>
     <Time {len}/>
   </div>
