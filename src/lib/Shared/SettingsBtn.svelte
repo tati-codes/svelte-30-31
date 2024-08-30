@@ -4,6 +4,7 @@
   import { set_timer } from "../../Store/actions/taskList/set_timer"
   import { bg, light, medium } from "../../Store/color"
   import { LightenDarkenColor } from "./lightenColor"
+  import { onEnter } from "./onEnter"
   export let cb;
   //anim handler
   export let ariaIndex: number;
@@ -18,7 +19,7 @@
   }
   //hover anim
   let isHovered = false;
-  let onEnter = () => { isHovered = true;}
+  let onMouseEnter = () => { isHovered = true;}
   let onOut = () => { isHovered = false;}
   //background colors
   $: bgT = bg($medium);
@@ -28,9 +29,9 @@
 <div
 style={isHovered ? darkbgT : bgT} 
 
-on:mouseenter={onEnter}
+on:mouseenter={onMouseEnter}
+on:keyup={onEnter(addAnimCB)}   
 on:mouseleave={onOut}
-
 on:click={anim ? addAnimCB : cb}  
 class={"settingsBtn fadeIn" + (playAnim ? " anim" : "")} 
 on:animationend={takeAwayAnim}
