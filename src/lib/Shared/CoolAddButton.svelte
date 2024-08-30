@@ -1,11 +1,16 @@
 <script lang="ts">
   import Icon from "../Icons/Icon.svelte"
   import { bg, combineStyles, dark, light, medium } from "../../Store/color"
+  import { onEnter } from "./onEnter"
   export let cb: Function;
   export let ariaIndex: number;
 </script>
 
-<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={() => cb()} tabindex={ariaIndex} >
+<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} 
+class="taskListCard fillT" 
+on:click={() => cb()} 
+on:keydown={onEnter(cb)}   
+tabindex={ariaIndex} >
   <Icon x={0} y={0} width={48} height={48} viewbox={"0 0 24 24"} classNames="addIcon">
     <rect fill={"transparent"} x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
     <line x1="12" y1="8" x2="12" y2="16"></line>

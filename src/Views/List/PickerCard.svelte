@@ -7,6 +7,7 @@
   import CloseIconWrapped from "../../lib/Icons/icons/CloseIconWrapped.svelte"
 
   import ListIcon from "../../lib/Icons/icons/ListIcon.svelte"
+  import { onEnter } from "../../lib/Shared/onEnter"
   import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import PickerLabel from "./PickerLabel.svelte"
@@ -24,10 +25,19 @@
   
 </script>
 
-<div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} class="taskListCard fillT" on:click={select} tabindex={index} >
+<div 
+style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} 
+class="taskListCard fillT" 
+on:click={select}
+on:keyup={onEnter(select)} 
+tabindex={index} >
   <ListIcon/>
   <span style={colorp("white")}>{name}</span>
-  <div class="iconWrap" on:click={pollo} tabindex={index+1}>
+  <div 
+  class="iconWrap" 
+  on:click={pollo} 
+  on:keyup={onEnter(pollo)}   
+  tabindex={index+1}>
     <CloseIconWrapped/>
   </div>
 </div>
