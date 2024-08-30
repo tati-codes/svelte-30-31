@@ -9,7 +9,7 @@
 <div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} 
 class="taskListCard fillT" 
 on:click={() => cb()} 
-on:keydown={onEnter(cb)}   
+on:keyup={onEnter(cb)}   
 tabindex={ariaIndex} >
   <Icon x={0} y={0} width={48} height={48} viewbox={"0 0 24 24"} classNames="addIcon">
     <rect fill={"transparent"} x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>

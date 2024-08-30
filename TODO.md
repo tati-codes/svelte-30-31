@@ -1,11 +1,9 @@
--  [x] PWA
-   -  [ ] cache ontrol  
 -  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
-   -  [ ] list
-   -  [ ] timer
-   -  [ ] settings
+   -  [x] list
+   -  [x] timer
+   -  [x] settings
    -  [ ] edit
-   -  [ ] ariaStore
+   -  [] functionality attched
 -  [x] notifications 
    -  [x] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push
 - [ ] s://cohost.org/haraiva person know its done

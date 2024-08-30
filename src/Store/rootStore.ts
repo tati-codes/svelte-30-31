@@ -48,6 +48,13 @@ export let tasklists = derived(root, ($root) => $root.taskLists)
 export let onAddedTaskList = derived(tasklists, t => t.length)
 export let onAddedTask = derived(currentTaskList, list => list.tasks.length)
 export let notifsAllowed = derived(root, $root => $root.notificationsPermissions)
+// export let ariaStore = derived(root, $root => {
+//   switch ($root.currentView) {
+//     case "TIMER":
+//     case "PICKER":
+//     case "SETTINGS":
+//   }
+// })
 
 onAddedTask.subscribe(root.persist)
 onAddedTaskList.subscribe(root.persist)
