@@ -3,5 +3,5 @@
   $: bsg = bg($medium);
   </script>
 
-<div role="button" aria-label="confirm task time" style={bsg} class="numpadItem" >
+<div role="button" aria-label="confirm task time" style={bsg} >
 </div>

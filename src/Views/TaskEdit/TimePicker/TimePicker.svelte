@@ -1,5 +1,6 @@
 <script lang="ts">
   import { handleTimePickerChange } from "../../../Store/actions/taskEdit/handleTimePickerChange"
+  import { bg, medium } from "../../../Store/color"
   import BackspaceBtn from "./BackspaceBtn.svelte"
   import CheckmarkBtn from "./CheckmarkBtn.svelte"
   import NumpadBtn from "./NumpadBtn.svelte"
@@ -26,9 +27,11 @@
       handleChange(Number(e.key))
     } 
 }
+$: bsg = bg($medium);
+
 </script>
 
-<ul role="tabpanel" id="time=panel" aria-labelledby="numpad"  class="numpad fadeIn" on:keypress={onNumPress}>
+<ul role="tabpanel" id="time=panel" aria-labelledby="numpad" style={bsg}  class="numpad fadeIn" on:keypress={onNumPress}>
   {#each labels as item}
     {#if typeof item == "number"}
       <NumpadBtn label={item} cb={() => handleChange(item)}/>
@@ -46,8 +49,9 @@
   height: 400px;
   width: 480px;
   margin-left: 25px;
-  border-radius: 10px;
+  padding-top:10px;
   display: grid;
+  gap:5px;
   grid-template-columns: repeat(3, 1fr);
   /* border: 3px solid rgba(0, 0, 0, 0.2); */
 
