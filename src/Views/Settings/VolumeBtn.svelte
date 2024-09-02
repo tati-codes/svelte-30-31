@@ -7,7 +7,7 @@
   import { isMuted } from "../../Store/settingStore"
 </script>
 
-<SettingsBtn ariaIndex={4} cb={toggleMute} anim>
+<SettingsBtn label={$isMuted ? "turn on sound" : "mute sounds"} ariaIndex={4} cb={toggleMute} anim>
   {#if $isMuted}
   <VolumeIcon x={10} y={10} fill={$light}/>
   {:else}

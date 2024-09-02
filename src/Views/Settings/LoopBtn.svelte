@@ -10,7 +10,7 @@
   // let toggleLoop = () => dispatch("toggleLoop", null)
 </script>
 
-<SettingsBtn ariaIndex={6} cb={toggleLoop} anim>
+<SettingsBtn label={$isLooping ? "stop looping tasks" : "loop tasks"} ariaIndex={6} cb={toggleLoop} anim>
     {#if $isLooping}
     <NoLoopIcon x={15} y={6}  fill={$light}/> 
     {:else}

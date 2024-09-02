@@ -10,7 +10,6 @@
 6. drag a task by the :: handle to reorder the list 
 */
 </script>
-
   <h1>Gestures</h1>
   <div class="inner">
     <ol type="1">

@@ -25,8 +25,8 @@
   }
 </script>
 
-<SettingsBtn ariaIndex={9} cb={toggle} anim>
-  {#if $root.notificationsPermissions}
+<SettingsBtn label={$root.notificationsPermissions ? "turn off notifications" : "turn on notifications"} ariaIndex={9} cb={toggle} anim>
+  {#if !$root.notificationsPermissions}
     <Bell hue={$light} />
   {:else}
     <RemoveBell hue={$light} />
