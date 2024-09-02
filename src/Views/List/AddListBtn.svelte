@@ -8,4 +8,4 @@
   $: lastIndex = (($tasklists.length + 2) * 2)
 </script>
 
-<CoolAddButton ariaIndex={lastIndex} cb={addlist}/>
+<CoolAddButton label="create new list" ariaIndex={lastIndex} cb={addlist}/>

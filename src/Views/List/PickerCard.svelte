@@ -30,11 +30,15 @@ style={combineStyles(bg($medium),`border: 2px solid ${$light};`)}
 class="taskListCard fillT" 
 on:click={select}
 on:keyup={onEnter(select)} 
+role="button"
+aria-label="select list"
 tabindex={index} >
   <ListIcon/>
   <span style={colorp("white")}>{name}</span>
   <div 
   class="iconWrap" 
+  role="button"
+  aria-label="delete list"
   on:click={pollo} 
   on:keyup={onEnter(pollo)}   
   tabindex={index+1}>

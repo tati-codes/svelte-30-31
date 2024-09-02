@@ -1,11 +1,12 @@
 -  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
    -  [x] list
-   -  [ ] timer
+   -  [x] timer
    -  [x] settings
-   -  [ ] edit
-   -  [ ] tasklist
-   -  [] functionality attched
+   -  [x] edit
+   -  [x] tasklist
+   -  [x] functionality attched
+   -  [ ] ARIA ROLES 
 -  [x] notifications 
    -  [x] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push
 - [ ] s://cohost.org/haraiva person know its done
-- [ ] tatiana.codes move
+- [x] tatiana.codes move

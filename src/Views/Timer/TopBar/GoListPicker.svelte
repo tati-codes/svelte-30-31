@@ -15,7 +15,7 @@
 </script>
 
 
-<SettingsBtn ariaIndex={1} cb={goPicker} >
+<SettingsBtn ariaIndex={1} cb={goPicker} label="go to tasklist picker">
   <FolderIcon fill={$light}/>
 </SettingsBtn>
 
