@@ -113,7 +113,7 @@ html > * {
 }
 
 *:focus-visible{
-  outline: 5px solid #0e64d4;
+  outline: 5px solid #0e64d4; 
 }
 
 .topBar {

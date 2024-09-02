@@ -72,17 +72,17 @@ export const storage = <T>(
     //   }
     // });
 
-    // addEventListener("visibilitychange", (event) => {
-    //   if (document.hidden) {
-    //   } else if (conditionalSetter(get(store))) {
-    //     const storedValueStr = localStorage.getItem(key);
-    //     if (storedValueStr == null) return;
-    //     if (storedValueStr !== JSON.stringify(get(store))) { 
-    //       let newStore = JSON.parse(storedValueStr)
-    //       store.set(sanitizer(newStore));
-    //     }
-    //   }
-    // });
+    addEventListener("visibilitychange", (event) => {
+      if (document.hidden) {
+      } else if (conditionalSetter(get(store))) {
+        const storedValueStr = localStorage.getItem(key);
+        if (storedValueStr == null) return;
+        if (storedValueStr !== JSON.stringify(get(store))) { 
+          let newStore = JSON.parse(storedValueStr)
+          store.set(sanitizer(newStore));
+        }
+      }
+    });
 
     // addEventListener("storage", (event) => {
     //   if (document.hidden) { 
