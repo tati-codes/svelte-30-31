@@ -14,7 +14,6 @@
     changeName(input.value.slice(0,18))
     console.log(input.value.slice(0,18))
   }
-//FIXME ADD FUNCTIONALITY + TABINDEX
 </script>
 {#if editing}
 <div style={bg($medium)} class="tName bgT fadeIn">
@@ -31,7 +30,7 @@ class={`taskListNameEditField `}
 </div>
 
 {:else}
-<div style={bg($medium)} class="tName bgT fadeIn" on:click={toggleEditing}>
+<div style={bg($medium)} class="tName bgT fadeIn" on:click={toggleEditing} on:keyup={onEnter(toggleEditing)} tabindex={2}>
   <span>{$currentTaskList.name}</span>
 </div>
 {/if}
