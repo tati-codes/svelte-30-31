@@ -10,10 +10,12 @@
   let colors: Color[] = Object.keys(colorStrings) as Color[]
 </script>
 <!-- <-on:keyup={() => null} -->
-<ul id="colorPicker" style={bsg} class="colorPicker">
+<ul id="color-panel" aria-labelledby="colors" role="tabpanel" style={bsg} class="colorPicker">
   {#each colors as color, i}
   <li
-  role="tab"
+  role="button"
+  aria-label={`select ${color}`}
+  aria-selected={color === currentColor}
   id={`color-${color}`}
       on:keyup={onEnter(() => editColor(color))}
       on:click={() => editColor(color)}

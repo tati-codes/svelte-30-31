@@ -4,13 +4,15 @@
   import { editIcon } from "../../../Store/actions/taskEdit/editIcon"
   import type { taskIcon } from "../../../Store/typeValidators/taskIcon"
 
-export let selected: boolean, icon: taskIcon, tabIndex: number;
+export let selected: boolean, icon: taskIcon, tabIndex: number, label:string;
 </script>
 
 <div
 class={`iconItem  ${selected ? "selectedIcon" : ""} fadeIn`}
 role="button"
+aria-selected={selected}
 {tabIndex}
+aria-label={label}
 for={`${icon}-icon`}
 on:keyup={onEnter(() => editIcon(icon))}
 on:click={editIcon(icon)}

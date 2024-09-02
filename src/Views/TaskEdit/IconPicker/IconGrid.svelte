@@ -22,9 +22,12 @@
   
 <div 
 style={bsg}
+id="icon-panel"
+role="tabpanel"
+aria-labelledby="icons"
 class="iconPicker">
 {#each keys as key, i}
-  <IconItem selected={key == $editingTask?.icon} icon={key} tabIndex={i+3}>
+  <IconItem label={`select ${key} icon`} selected={key == $editingTask?.icon} icon={key} tabIndex={i+3}>
     <Icon style={stg}  width={18} height={18} viewbox="0 0 24 24">
       <svelte:component this={IconRegistry[key]}/>
     </Icon>

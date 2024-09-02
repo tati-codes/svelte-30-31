@@ -12,7 +12,7 @@
   let keygo = onEnter(go)
 </script>
 
-<div class="timeBtn innerTask" role="button" tabindex="2" style={bsg} on:click={go} on:keyup={keygo}>
+<div id="numpad" class="timeBtn innerTask" role="tab" aria-controls="time-panel" tabindex="2" style={bsg} on:click={go} on:keyup={keygo}>
   <div class="deep" >
       <ClockIcon x={20} y={-100}/>
   </div>

@@ -12,7 +12,7 @@
   let len = seconds_to_hhmmss($editingTask!.length)
 </script>
 
-<div class="modal" on:keypress={(e) => (len = onNumPress(e, len))}>
+<div class="modal" role="tablist"  on:keypress={(e) => (len = onNumPress(e, len))}>
   <div class="modalTopBar" tabindex="-1" >
     <Name/>
     <Time {len}/>

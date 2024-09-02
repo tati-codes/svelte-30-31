@@ -28,7 +28,7 @@
 }
 </script>
 
-<ul class="numpad fadeIn" on:keypress={onNumPress}>
+<ul role="tabpanel" id="time=panel" aria-labelledby="numpad"  class="numpad fadeIn" on:keypress={onNumPress}>
   {#each labels as item}
     {#if typeof item == "number"}
       <NumpadBtn label={item} cb={() => handleChange(item)}/>

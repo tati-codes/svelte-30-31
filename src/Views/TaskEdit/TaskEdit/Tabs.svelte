@@ -7,7 +7,7 @@ import { bg, medium } from "../../../Store/color"
 </script>
 
 <div class="bottomBar">
-  <li class="tab-li marginright" tabindex="2"on:click={() => swap("ICON")}
+  <li class="tab-li marginright"  tabindex="2"on:click={() => swap("ICON")}
   on:keyup={onEnter(() => swap("ICON"))}
   >
     <div
@@ -17,6 +17,7 @@ import { bg, medium } from "../../../Store/color"
     }`}
     role="tab"
     aria-controls={"icon-panel"}
+    id="icons"
     >
     Icon
     </div>
@@ -31,6 +32,7 @@ import { bg, medium } from "../../../Store/color"
     }`}
     role="tab"
     aria-controls={"color-panel"}
+    id="colors"
     >
     Color
     </div>
