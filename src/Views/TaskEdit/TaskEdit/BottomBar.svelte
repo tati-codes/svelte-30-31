@@ -21,9 +21,8 @@
     <div
       class={`background-darken innerSettings`}
       style={bsg}
-      role="tab"
-      aria-selected="true"
-      aria-controls={"icon-panel"}
+      role="button"
+      aria-label="delete task and return to timer"
       on:click={doDelete}
       on:keypress={handleDeleteKey}
       tabIndex={60}
@@ -35,9 +34,8 @@
     <div
       style={bsg}
       class={` background-darken innerSettings`}
-      role="tab"
-      aria-selected="true"
-      aria-controls={"icon-panel"}
+      role="button"
+      aria-label="accept task and return to timer"
       tabIndex={61}
       on:click={doBack}
       on:keypress={handleGoBackKey}

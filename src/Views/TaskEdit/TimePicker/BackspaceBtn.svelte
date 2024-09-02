@@ -7,7 +7,7 @@
   $: stg = stroke($medium)
 </script>
 
-<div style={bsg} class="numpadItem" on:click={() => cb()}>
+<div role="button" aria-label="delete last number" class="numpadItem" on:click={() => cb()}>
   <Icon  stroke={$dark} fill={"transparent"} viewbox="0 0 24 24">
     <BackspaceIcon/>
   </Icon>

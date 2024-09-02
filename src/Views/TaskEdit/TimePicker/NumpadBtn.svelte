@@ -7,6 +7,8 @@
 
 <li
 style={bsg}
+role="button"
+aria-label={"press number " + label}
 tabindex={label+offset}
 class="numpadItem"
 on:click={() => cb()}

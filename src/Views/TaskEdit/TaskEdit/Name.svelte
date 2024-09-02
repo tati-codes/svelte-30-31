@@ -9,6 +9,7 @@ let name = $editingTask?.name || ""
 <input
   style={bsg}
   type="text"
+  aria-label="change task name"
   tabindex="1"
   class="nameEditField fadeIn"
   bind:value={name}
