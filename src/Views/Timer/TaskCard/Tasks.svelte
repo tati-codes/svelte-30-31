@@ -43,8 +43,8 @@ on:finalize="{handleFinalize}"
     <LineIcon/>
     {/if}
     {:else}
-    <TaskCard {task} index={(i+2)*2} >
-      <Dragger color={task.color} index={((i+2)*2)+1}/>
+    <TaskCard {task} index={(i+11)*2} >
+      <Dragger color={task.color} index={((i+11)*2)+1}/>
     </TaskCard>
     {/if}
   </div>

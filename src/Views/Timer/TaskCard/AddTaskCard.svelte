@@ -11,7 +11,7 @@
     setEditID(newTask.id)
     setView("TASK_EDIT")
   }
-  $: lastIndex = (($currentTaskList.tasks.length + 1) * 2)
+  $: lastIndex = (($currentTaskList.tasks.length + 12) * 2)
 </script>
 
 <CoolAddButton ariaIndex={lastIndex} cb={addTaskHandler}/>
