@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onEnter } from "../../../../lib/Shared/onEnter"
   import { stroke, light } from "../../../../Store/color"
 
   $: style = stroke($light)
@@ -27,7 +28,7 @@ let positions: { [key in TimerPositions]: [number, number] } = {
 export let position: TimerPositions;
 export let classes: string = "";
 export let cb: () => void
-
+export let index: number;
 
 let [x, y] = positions[position]
 
@@ -37,11 +38,20 @@ let [x, y] = positions[position]
     <slot />
     <circle
     {style}
+    tabindex={index}
+    on:keyup={onEnter(cb)}
     fill="transparent"
-    class={`circle ${classes}`}
+    class={`circle ${classes} roundFocus`}
     r="62.5"
     cx={x}
     cy={y}
     stroke-width="8"
     on:click={cb}
   ></circle>
+
+  <style>
+    .roundFocus:focus-visible {
+      border-radius: 50%;
+      outline: 5px solid #0e64d4;
+    }
+  </style>

@@ -14,13 +14,13 @@
   $: sendtobot = () => sendToBottom($currentTask.id)
 </script>
 
-<TimerBtn position="midLeft" cb={addTime}>
-  <BtnLabel style={fillg} label={`+${label}m`} x={522} y={262} size={label > 5 ? "40px" : "48px"} />
-</TimerBtn>
-<TimerBtn position="midRight" cb={takeTime}>
+<TimerBtn position="midRight" cb={takeTime} index={6}>
   <BtnLabel style={fillg} x={48} y={262} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
 </TimerBtn>
+<TimerBtn position="midLeft" cb={addTime} index={9}>
+  <BtnLabel style={fillg} label={`+${label}m`} x={522} y={262} size={label > 5 ? "40px" : "48px"} />
+</TimerBtn>
 
-<TimerBtn position="bottom" cb={sendtobot}>
+<TimerBtn position="bottom" cb={sendtobot} index={10}>
   <SendToBottomIcon style={$light} x={284} y={534} />
 </TimerBtn>
