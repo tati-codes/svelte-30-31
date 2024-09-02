@@ -29,7 +29,7 @@ export let position: TimerPositions;
 export let classes: string = "";
 export let cb: () => void
 export let index: number;
-
+export let label: string;
 let [x, y] = positions[position]
 
 </script>
@@ -38,6 +38,8 @@ let [x, y] = positions[position]
     <slot />
     <circle
     {style}
+    role="button"
+    aria-label={label}
     tabindex={index}
     on:keyup={onEnter(cb)}
     fill="transparent"

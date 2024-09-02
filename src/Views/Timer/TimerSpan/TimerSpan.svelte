@@ -13,7 +13,7 @@
 {#if $clockOn}
 <div class="topBar">
   <ClockIcon/>
-  <span class="totalLength" style={colorp($medium)}>
+  <span role="timer" class="totalLength" style={colorp($medium)}>
         {hhmmss}
   </span>
 </div>

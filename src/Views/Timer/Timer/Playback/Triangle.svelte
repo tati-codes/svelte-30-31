@@ -5,7 +5,7 @@ import { dark, fill } from "../../../../Store/color"
 $: filg = fill($dark)
 </script>
 
-<g on:click={start} class="innerTask roundFocus" tabindex="7" on:keyup={onEnter(start)}>
+<g role="button" aria-label="start timer"  on:click={start} class="innerTask roundFocus" tabindex="7" on:keyup={onEnter(start)}>
   <path
     class="fillT "
     style={filg}

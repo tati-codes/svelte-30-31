@@ -24,6 +24,7 @@ viewBox="0 0 25 25"
 width="55"
 height="55"
 fill="none"
+role="button"
 class="handle" 
 style={dragDisabled ? 'cursor: grab' : 'cursor: grabbing'}
 on:mousedown={startDrag} 

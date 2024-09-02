@@ -14,7 +14,7 @@
   $: lastIndex = (($currentTaskList.tasks.length + 12) * 2)
 </script>
 
-<CoolAddButton ariaIndex={lastIndex} cb={addTaskHandler}/>
+<CoolAddButton label="add new task" ariaIndex={lastIndex} cb={addTaskHandler}/>
 
 <style>
 

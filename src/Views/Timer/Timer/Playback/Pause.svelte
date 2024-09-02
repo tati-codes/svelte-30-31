@@ -7,7 +7,7 @@ $: filg = fill($dark)
 
 </script>
 
-<g on:click={pause} class="innerTask roundFocus"  tabindex="7" on:keyup={onEnter(pause)}>
+<g role="button" aria-label="pause timer" on:click={pause} class="innerTask roundFocus"  tabindex="7" on:keyup={onEnter(pause)}>
   <path
     class="fillT "
     style={filg}

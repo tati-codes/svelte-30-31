@@ -30,7 +30,7 @@ class={`taskListNameEditField `}
 </div>
 
 {:else}
-<div style={bg($medium)} class="tName bgT fadeIn" on:click={toggleEditing} on:keyup={onEnter(toggleEditing)} tabindex={2}>
+<div style={bg($medium)} role="button" aria-label="click or press enter to edit name" class="tName bgT fadeIn" on:click={toggleEditing} on:keyup={onEnter(toggleEditing)} tabindex={2}>
   <span>{$currentTaskList.name}</span>
 </div>
 {/if}

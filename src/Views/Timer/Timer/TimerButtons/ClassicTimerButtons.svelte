@@ -26,25 +26,25 @@ $: sendtobot = () => sendToBottom($currentTask.id)
 </script>
 
 
-<TimerBtn position="top" cb={markDone} index={4}>
+<TimerBtn position="top" cb={markDone} index={4} label="mark task done">
   <CheckMarkIcon fill={$light} x={300} y={45} />
 </TimerBtn>
 
-<TimerBtn position="topLeft" cb={sendtobot} index={5}>
+<TimerBtn position="topLeft" cb={sendtobot} index={5} label="send task to the bottom of the list">
   <SendToBottomIcon  style={$light} x={115} y={97} />
 </TimerBtn>
 
 {#if isLocked}
-  <TimerBtn position="topRight" cb={del} index={6}>
+  <TimerBtn position="topRight" cb={del} index={6} label="delete task">
     <TrashIcon style={fillg}  x={462} y={110}  />
   </TimerBtn>
 {/if}
 
-<TimerBtn position="bottomLeft" cb={takeTime} index={8}>
+<TimerBtn position="bottomLeft" cb={takeTime} index={8} label={`decrease remaining time by ${label} min`}>
   <BtnLabel style={fillg} x={label > 5 ? 45 : 50} y={label > 5 ? 415 : 420} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
 </TimerBtn>
 
-<TimerBtn position="bottom" cb={toggleLock} index={10}>
+<TimerBtn position="bottom" cb={toggleLock} index={10} label={isLocked ? "lock task" : "unlock task"}>
 {#if isLocked}
   <LockIcon x={300} style={fillg} y={537} height={70}/>
 {:else}
@@ -52,7 +52,7 @@ $: sendtobot = () => sendToBottom($currentTask.id)
 {/if}
 </TimerBtn>
 
-<TimerBtn position="bottomRight" cb={addTime} index={9}>
+<TimerBtn position="bottomRight" cb={addTime} index={9} label={`increase remaining time by ${label} min`}>
 
   <BtnLabel style={fillg} label={`+${label}m`} x={label > 5 ? 522.5 : 525} y={label > 5 ? 415 : 420} size={label > 5 ? "40px" : "48px"}/>
 </TimerBtn>

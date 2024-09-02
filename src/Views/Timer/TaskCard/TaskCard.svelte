@@ -62,6 +62,8 @@ on:keyup={onEnter(longPressHandler)}
 on:swipe={swipeh}
 on:multi={multih}
 tabindex={index}
+role="button"
+aria-label="edit task"
 class="taskCard fadeIn" 
 style={$currentLayout === "CLASSIC" ? bsg : currentbsg} >
   <Icon type={task.icon || "book"}/>

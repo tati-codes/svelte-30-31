@@ -15,7 +15,7 @@ y={isHour ? "425" : "455"}
 class={`${isHour ? "hourTimerText" : "minuteTimerText"} fillT fadeIn"`}
 style={bsg}
 >
-<tspan x={isHour ? "177" : "190"} y={isHour ? "425" : "455"} stroke-width="0.265">
+<tspan role="timer" x={isHour ? "177" : "190"} y={isHour ? "425" : "455"} stroke-width="0.265">
   {cLen || placeholder}
 </tspan>
 </text>
