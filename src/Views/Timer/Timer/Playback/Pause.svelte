@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onEnter } from "../../../../lib/Shared/onEnter"
   import { pause } from "../../../../Store/actions/task/pause"
   import { dark, fill } from "../../../../Store/color"
 
@@ -6,7 +7,7 @@ $: filg = fill($dark)
 
 </script>
 
-<g on:click={pause} class="innerTask" >
+<g on:click={pause} class="innerTask roundFocus"  tabindex="7" on:keyup={onEnter(pause)}>
   <path
     class="fillT "
     style={filg}
@@ -18,3 +19,11 @@ $: filg = fill($dark)
     d="M345 160h60v160H345zm140 "
   ></path>
 </g>
+
+
+<style>
+  .roundFocus:focus-visible {
+    border-radius: 50%;
+    outline: 5px solid #0e64d4;
+  }
+</style>
