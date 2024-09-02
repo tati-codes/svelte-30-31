@@ -4,10 +4,13 @@
   import { onEnter } from "./onEnter"
   export let cb: Function;
   export let ariaIndex: number;
+  export let label:string;
 </script>
 
 <div style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} 
 class="taskListCard fillT" 
+role="button"
+aria-label={label}
 on:click={() => cb()} 
 on:keyup={onEnter(cb)}   
 tabindex={ariaIndex} >

@@ -9,6 +9,7 @@
   //anim handler
   export let ariaIndex: number;
   export let anim: boolean = false;
+  export let label:string;
   let playAnim = false;
   let addAnimCB = () => {
     playAnim = true;
@@ -28,7 +29,8 @@
 
 <div
 style={isHovered ? darkbgT : bgT} 
-
+role="button"
+aria-label={label}
 on:mouseenter={onMouseEnter}
 on:keyup={onEnter(addAnimCB)}   
 on:mouseleave={onOut}
