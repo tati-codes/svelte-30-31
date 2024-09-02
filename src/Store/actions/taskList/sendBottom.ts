@@ -4,8 +4,6 @@ import { pause } from "../task/pause";
 import { start } from "./start";
 import { clearInterval } from 'worker-timers';
 
-//TODO 
-//[ ] add persist 
 
 export const sendToBottom = (id: string) => {
   root.update($root => {

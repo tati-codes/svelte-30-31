@@ -14,7 +14,7 @@
     changeName(input.value.slice(0,18))
     console.log(input.value.slice(0,18))
   }
-//TODO ADD FUNCTIONALITY + TABINDEX
+//FIXME ADD FUNCTIONALITY + TABINDEX
 </script>
 {#if editing}
 <div style={bg($medium)} class="tName bgT fadeIn">

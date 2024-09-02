@@ -1,8 +1,9 @@
 -  [ ] ARIA BUTTONS COUNTING AND SUCH / KEYBOARD NAVIGATION
    -  [x] list
-   -  [x] timer
+   -  [ ] timer
    -  [x] settings
    -  [ ] edit
+   -  [ ] tasklist
    -  [] functionality attched
 -  [x] notifications 
    -  [x] https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Re-engageable_Notifications_Push

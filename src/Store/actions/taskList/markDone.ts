@@ -6,8 +6,6 @@ import { playClearSound, playTaskDoneSound } from "../task/playAudio";
 import { clearInterval } from 'worker-timers';
 import { sendNotif } from "../task/sendNotif";
 
-//TODO 
-//[ ] add persist 
 
 export const markDone = () => {
   let oldTaskName = "";
