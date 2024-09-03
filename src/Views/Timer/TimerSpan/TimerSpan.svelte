@@ -3,14 +3,14 @@
   import { seconds_to_hhmmss } from "../../../lib/Shared/time"
   import { colorp, medium } from "../../../Store/color"
   import { currentTaskList } from "../../../Store/rootStore"
-  import { clockOn, currentLayout } from "../../../Store/settingStore"
+  import { clockOn, currentLayout, currentView } from "../../../Store/settingStore"
   $: length = $currentTaskList.tasks.map((task) => task.remaining_seconds)
                                 .reduce((prev, curr) => prev + curr, 0)
   $: hhmmss = seconds_to_hhmmss(length)
 
 </script>
 
-{#if $clockOn}
+{#if $clockOn && $currentView === "TIMER"}
 <div class="topBar">
   <ClockIcon/>
   <span role="timer" class="totalLength" style={colorp($medium)}>
