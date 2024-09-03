@@ -77,6 +77,17 @@
   }
 }
 
+@media only screen 
+and (device-width : 375px) 
+and
+(orientation:portrait)
+{ 
+  main, #dnd-action-dragged-el > * {
+    scale: 0.58;
+  translate: -22% -21%;
+}
+}
+
 
   @media only screen and (width <= 375px)  { 
     /* 375x812  */
@@ -119,7 +130,7 @@ outline: 5px solid #0e64d4;
 
 *:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 1px 1px 5px  rgba(1, 1, 0, .7);
+  box-shadow: 1px 1px 5px 10px rgba(1, 1, 0, .7);
 }
 
 .topBar {
