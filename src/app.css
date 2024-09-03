@@ -130,7 +130,7 @@ outline: 5px solid #0e64d4;
 
 *:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 1px 1px 5px 10px rgba(1, 1, 0, .7);
+  /* box-shadow: 1px 1px 1px  rgba(1, 1, 0, .3); */
 }
 
 .topBar {
