@@ -5,6 +5,7 @@ import type { Views } from "./typeValidators/Views"
 import { defaultTaskList } from "./Tasklist"
 import { seconds_to_mmss } from "../lib/Shared/time"
 import {storage, type PersistentWritable} from "../lib/Shared/storage"
+import { requestWakeLock, turnLockOff } from "./actions/taskList/wakeLock"
 export interface rootStore {
   muted: boolean
   layout: Layout
@@ -36,7 +37,7 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   selectedId: tasklist.id,
   showClockIcon: true,
   notificationsPermissions: window.Notification !== undefined && window.Notification.permission === "granted",
-  oldPlayback: false
+  oldPlayback: false,
 }, 
 conditionalSetter,
 hydrationSanitizer)
@@ -48,6 +49,14 @@ export let tasklists = derived(root, ($root) => $root.taskLists)
 export let onAddedTaskList = derived(tasklists, t => t.length)
 export let onAddedTask = derived(currentTaskList, list => list.tasks.length)
 export let notifsAllowed = derived(root, $root => $root.notificationsPermissions)
+export let awakeLockHandler = derived(currentTaskList, ($current => {
+  if ($current.status !== "TIMER_ACTIVE") {
+    turnLockOff();
+  } else {
+    requestWakeLock()
+  }
+}))
+
 // export let ariaStore = derived(root, $root => {
 //   switch ($root.currentView) {
 //     case "TIMER":
