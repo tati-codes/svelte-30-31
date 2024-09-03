@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { userAllowedWakeLock, wakeLockSupported } from "../../Store/actions/taskList/wakeLock"
   import { medium, bg } from "../../Store/color"
   import { clockOn, FXOn, isLooping, isMuted } from "../../Store/settingStore"
   import HelpModal from "../HelpModal.svelte"
@@ -9,6 +10,7 @@
   import SecondaryClock from "./SecondaryClock.svelte"
   import SettingsTopBar from "./SettingsTopBar.svelte"
   import VolumeBtn from "./VolumeBtn.svelte"
+  import WakeLockButton from "./WakeLockButton.svelte"
 </script>
 
 <SettingsTopBar/>
@@ -27,16 +29,16 @@
   </div>
   <div class="innerSettings "> 
     <span>{$clockOn ? "hide duration" : "show duration"}</span>
-    <span></span>
+    <span>notifications</span>
+    <span>{$wakeLockSupported && $userAllowedWakeLock ? "let screen sleep" : "keep screen awake"}</span>
     <span></span>
 
-    <span>notifications</span>
   </div>
   <div class="innerSettings singleColumn">
     <SecondaryClock />
-    <span />
-    <span />
     <NotificationsBtn/>
+    <WakeLockButton/>
+    <span />
   </div>
 </div>
 <div class="fadeIn settingsView" style={bg($medium)}>
