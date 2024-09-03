@@ -1,5 +1,6 @@
 <script>
-  import { currentTaskList, root, tasklists } from "../Store/rootStore"
+  import { sentinel, userAllowedWakeLock, wakeLockSupported } from "../Store/actions/taskList/wakeLock"
+import { currentTaskList, root, tasklists } from "../Store/rootStore"
 
 
   import DebugStore from "./Shared/debugStore.svelte"
@@ -8,6 +9,7 @@
 <aside class="first">
   <DebugStore obj={$root} title="root"/>
   <DebugStore obj={$currentTaskList} title="tasklist"/>
+  <DebugStore obj={{wakeLockSupported: $wakeLockSupported, userAllowedWakeLock: $userAllowedWakeLock, sentinel: $sentinel}} title="wakelock"/>
 </aside>
 <aside class="second">
   {#each $root.taskLists as list}
