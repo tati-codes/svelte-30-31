@@ -5,12 +5,14 @@ import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
   import { toggleWakeLock, userAllowedWakeLock, wakeLockSupported } from "../../Store/actions/taskList/wakeLock"
   import { light } from "../../Store/color"
 </script>
-
+{#if $wakeLockSupported}
 <SettingsBtn label={$wakeLockSupported ? $userAllowedWakeLock ? "keep screen awake" : "turn screen off" : ""} ariaIndex={4} cb={toggleWakeLock} anim={$wakeLockSupported}>
-  {#if $wakeLockSupported && $userAllowedWakeLock}
+  {#if $userAllowedWakeLock}
   <Moon hue={$light}/>
-  {:else if $wakeLockSupported && !$userAllowedWakeLock}
+  {:else if !$userAllowedWakeLock}
   <Sun hue={$light}/>
   {/if}
 </SettingsBtn>
-
+{:else}
+  <span/>
+{/if}

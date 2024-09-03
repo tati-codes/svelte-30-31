@@ -1,4 +1,4 @@
-import { derived, writable, type Writable } from "svelte/store"
+import { derived, get, writable, type Writable } from "svelte/store"
 import { colorStrings } from "./colorStrings"
 import type { Color, cssColor } from "../../types"
 import { editingTask } from "./taskEdit"
@@ -18,3 +18,10 @@ export const fill = (clr: string) => `fill: ${clr}`
 export const colorp = (clr: string) => `color: ${clr}`
 export const bg = (clr: string) => `background-color: ${clr}`
 export const combineStyles = (st1: string, st2:string) => `${st1};${st2}`
+
+color.subscribe($color => {
+  for (let el of document.getElementsByClassName("root")) {
+    //@ts-ignore
+    el.style = `background-color: ${get(light)}`
+  }
+})

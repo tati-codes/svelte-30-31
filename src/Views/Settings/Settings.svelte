@@ -30,7 +30,7 @@
   <div class="innerSettings "> 
     <span>{$clockOn ? "hide duration" : "show duration"}</span>
     <span>notifications</span>
-    <span>{$wakeLockSupported && $userAllowedWakeLock ? "let screen sleep" : "keep screen awake"}</span>
+    <span>{$wakeLockSupported ? $userAllowedWakeLock ? "let screen sleep" : "keep screen awake" : ""}</span>
     <span></span>
 
   </div>
