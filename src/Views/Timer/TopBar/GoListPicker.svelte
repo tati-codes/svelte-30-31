@@ -5,6 +5,7 @@
   import { pause } from "../../../Store/actions/task/pause"
   import { light } from "../../../Store/color";
   import { currentTaskList } from "../../../Store/rootStore"
+  import TimerSpan from "../TimerSpan/TimerSpan.svelte"
   const goPicker = () => { 
     if ($currentTaskList.status === "TIMER_ACTIVE") {
       pause();
@@ -18,4 +19,5 @@
 <SettingsBtn ariaIndex={1} cb={goPicker} label="go to tasklist picker">
   <FolderIcon fill={$light}/>
 </SettingsBtn>
+<TimerSpan/>
 

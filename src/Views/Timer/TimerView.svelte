@@ -6,7 +6,6 @@
 </script>
 
 <TopBar/>
-<TimerSpan/>
 <Timer/>
 <Tasks/>
 
