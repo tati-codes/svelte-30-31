@@ -16,6 +16,7 @@ export interface rootStore {
   FX: boolean
   oldPlayback: false
   notificationsPermissions: boolean
+  version: number
 }
 
 let tasklist = defaultTaskList();
@@ -38,6 +39,7 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   showClockIcon: true,
   notificationsPermissions: window.Notification !== undefined && window.Notification.permission === "granted",
   oldPlayback: false,
+  version: 0.2
 }, 
 conditionalSetter,
 hydrationSanitizer)
