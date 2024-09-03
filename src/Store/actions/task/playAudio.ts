@@ -1,8 +1,8 @@
 import { get } from "svelte/store"
 import { isMuted } from "../../settingStore"
 
-const taskSound = new Audio("https://tatiana.moe/assets/task_done.mp3")
-const listSound = new Audio("https://tatiana.moe/assets/clear.mp3")
+const taskSound = new Audio("https://tati.codes/assets/task_done.mp3")
+const listSound = new Audio("https://tati.codes/assets/clear.mp3")
 
 
 export const playTaskDoneSound = () => {
