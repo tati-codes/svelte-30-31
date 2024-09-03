@@ -34,7 +34,7 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   taskLists: [tasklist],
   FX: true,
   selectedId: tasklist.id,
-  showClockIcon: false,
+  showClockIcon: true,
   notificationsPermissions: window.Notification !== undefined && window.Notification.permission === "granted",
   oldPlayback: false
 }, 
