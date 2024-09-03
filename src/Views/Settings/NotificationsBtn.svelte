@@ -5,6 +5,7 @@
   import { light } from "../../Store/color"
   import { root } from "../../Store/rootStore"
   let toggle = () => {
+    if (window.Notification === undefined) return;
     if (window.Notification.permission !== "granted") {
       Notification.requestPermission().then((result) => {
         if (result === "granted") {
