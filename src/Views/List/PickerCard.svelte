@@ -8,6 +8,7 @@
 
   import ListIcon from "../../lib/Icons/icons/ListIcon.svelte"
   import { onEnter } from "../../lib/Shared/onEnter"
+  import { withAudio } from "../../lib/Shared/withAudio"
   import CloseIcon from "../Timer/TaskCard/taskCardIcons/CloseIcon.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import PickerLabel from "./PickerLabel.svelte"
@@ -28,8 +29,8 @@
 <div 
 style={combineStyles(bg($medium),`border: 2px solid ${$light};`)} 
 class="taskListCard fillT" 
-on:click={select}
-on:keyup={onEnter(select)} 
+on:click={withAudio(select)}
+on:keyup={onEnter(withAudio(select))} 
 role="button"
 aria-label="select list"
 tabindex={index} >
@@ -39,8 +40,8 @@ tabindex={index} >
   class="iconWrap" 
   role="button"
   aria-label="delete list"
-  on:click={pollo} 
-  on:keyup={onEnter(pollo)}   
+  on:click={withAudio(pollo)} 
+  on:keyup={onEnter(withAudio(pollo))}   
   tabindex={index+1}>
     <CloseIconWrapped/>
   </div>
