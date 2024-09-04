@@ -1,8 +1,10 @@
 <script lang="ts">
   import { userAllowedWakeLock, wakeLockSupported } from "../../Store/actions/taskList/wakeLock"
   import { medium, bg } from "../../Store/color"
+  import { allowClicks } from "../../Store/rootStore"
   import { clockOn, FXOn, isLooping, isMuted } from "../../Store/settingStore"
   import HelpModal from "../HelpModal.svelte"
+  import ClicksBtn from "./ClicksBtn.svelte"
   import Graphics from "./Graphics.svelte"
   import LayoutBtn from "./LayoutBtn.svelte"
   import LoopBtn from "./LoopBtn.svelte"
@@ -31,14 +33,14 @@
     <span>{$clockOn ? "hide duration" : "show duration"}</span>
     <span>notifications</span>
     <span>{$wakeLockSupported ? $userAllowedWakeLock ? "let screen sleep" : "keep screen awake" : ""}</span>
-    <span></span>
+    <span>{$allowClicks ? "mute clicks" : "allow clicks"}</span>
 
   </div>
   <div class="innerSettings singleColumn">
     <SecondaryClock />
     <NotificationsBtn/>
     <WakeLockButton/>
-    <span />
+    <ClicksBtn/>
   </div>
 </div>
 <div class="fadeIn settingsView" style={bg($medium)}>
