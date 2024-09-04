@@ -22,10 +22,16 @@ export const turnLockOff = () => sentinel.update($sentinel => {
   if ($sentinel !== null) {
     $sentinel.release()
     .then(() => {
+      console.log("wakelock off")
       $sentinel = null;
     })
   }
   return $sentinel;
+})
+
+userAllowedWakeLock.subscribe($allowed => {
+  if ($allowed) requestWakeLock()
+  else turnLockOff()
 })
 
 const handleVisibilityChange = () => {

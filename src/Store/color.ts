@@ -19,9 +19,9 @@ export const colorp = (clr: string) => `color: ${clr}`
 export const bg = (clr: string) => `background-color: ${clr}`
 export const combineStyles = (st1: string, st2:string) => `${st1};${st2}`
 
-export const pollo = derived(light, $light => {
+light.subscribe($color => {
   for (let el of document.getElementsByClassName("root")) {
     //@ts-ignore
-    el.style = `background-color: ${$light}`
+    el.style = `background-color: ${$color}`
   }
 })

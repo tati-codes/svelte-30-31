@@ -214,10 +214,12 @@ outline: 5px solid #0e64d4;
 body {
   min-height: auto;
   height: 100%;
+  transition: background-color 0.325s linear;
+
 }
 #app {
   font-family: "Oswald";
   min-height: 100%;
   height: 100%;
-  
+
 }
