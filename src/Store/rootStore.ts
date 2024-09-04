@@ -17,6 +17,7 @@ export interface rootStore {
   oldPlayback: false
   notificationsPermissions: boolean
   version: number
+  allowClicks: boolean
 }
 
 let tasklist = defaultTaskList();
@@ -39,7 +40,8 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   showClockIcon: true,
   notificationsPermissions: window.Notification !== undefined && window.Notification.permission === "granted",
   oldPlayback: false,
-  version: 0.2
+  version: 0.3,
+  allowClicks: true
 }, 
 conditionalSetter,
 hydrationSanitizer)
@@ -58,7 +60,7 @@ export let awakeLockHandler = derived(currentTaskList, ($current => {
     requestWakeLock()
   }
 }))
-
+export let allowClicks = derived(root, ($root) => $root.allowClicks)
 // export let ariaStore = derived(root, $root => {
 //   switch ($root.currentView) {
 //     case "TIMER":
