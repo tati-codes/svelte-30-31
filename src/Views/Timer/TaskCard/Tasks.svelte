@@ -9,12 +9,14 @@
   import { reorder } from "../../../Store/actions/taskList/reorder"
   import { dragDisabled } from "./dragStore"
   import Dragger from "./Innards/Dragger.svelte"
+  import { playClick } from '../../../Store/actions/task/playAudio'
 
 	const flipDurationMs = 200;
 
   function handleConsider(e) {
 		const {items: newItems, info: {source, trigger}} = e.detail;
     reorder(newItems, false)
+    playClick()
     // Ensure dragging is stopped on drag finish via keyboard
 		if (source === SOURCES.KEYBOARD && trigger === TRIGGERS.DRAG_STOPPED) {
 			$dragDisabled = true;
@@ -23,6 +25,7 @@
 	function handleFinalize(e) {
 		const {items: newItems, info: {source}} = e.detail;
     reorder(newItems, true)
+    playClick()
 		// Ensure dragging is stopped on drag finish via pointer (mouse, touch)
 		if (source === SOURCES.POINTER) {
 			$dragDisabled = true;

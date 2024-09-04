@@ -1,13 +1,17 @@
 <script lang="ts">
   import { onEnter } from "../../../../lib/Shared/onEnter"
   import { pause } from "../../../../Store/actions/task/pause"
+  import { playClick } from "../../../../Store/actions/task/playAudio"
   import { dark, fill } from "../../../../Store/color"
 
 $: filg = fill($dark)
-
+const pauseCB = () => {
+  pause();
+  playClick()
+}
 </script>
 
-<g role="button" aria-label="pause timer" on:click={pause} class="innerTask roundFocus"  tabindex="7" on:keyup={onEnter(pause)}>
+<g role="button" aria-label="pause timer" on:click={pauseCB} class="innerTask roundFocus"  tabindex="7" on:keyup={onEnter(pause)}>
   <path
     class="fillT "
     style={filg}

@@ -21,6 +21,7 @@
   import { copy } from "../../../Store/actions/taskList/copy"
   import { type PressCustomEvent } from "./Innards/gestures"
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   
   export let task: Task;
   export let index: number;
@@ -57,10 +58,10 @@
 
 <div 
 use:composedGesture={combined}
-on:press={longPressHandler}
-on:keyup={onEnter(longPressHandler)}   
-on:swipe={swipeh}
-on:multi={multih}
+on:press={withAudio(longPressHandler)}
+on:keyup={onEnter(withAudio(longPressHandler))}   
+on:swipe={withAudio(swipeh)}
+on:multi={withAudio(multih)}
 tabindex={index}
 role="button"
 aria-label="edit task"
