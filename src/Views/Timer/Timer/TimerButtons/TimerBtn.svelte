@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onEnter } from "../../../../lib/Shared/onEnter"
+  import { playClick } from "../../../../Store/actions/task/playAudio"
   import { stroke, light } from "../../../../Store/color"
 
   $: style = stroke($light)
@@ -31,7 +32,10 @@ export let cb: () => void
 export let index: number;
 export let label: string;
 let [x, y] = positions[position]
-
+const withAudio = () => {
+  playClick()
+  cb()
+}
 </script>
 
 
@@ -41,14 +45,14 @@ let [x, y] = positions[position]
     role="button"
     aria-label={label}
     tabindex={index}
-    on:keyup={onEnter(cb)}
+    on:keyup={onEnter(withAudio)}
     fill="transparent"
     class={`circle ${classes} roundFocus`}
     r="62.5"
     cx={x}
     cy={y}
     stroke-width="8"
-    on:click={cb}
+    on:click={withAudio}
   ></circle>
 
   <style>

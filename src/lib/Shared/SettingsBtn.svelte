@@ -5,6 +5,7 @@
   import { bg, light, medium } from "../../Store/color"
   import { LightenDarkenColor } from "./lightenColor"
   import { onEnter } from "./onEnter"
+  import { withAudio } from "./withAudio"
   export let cb;
   //anim handler
   export let ariaIndex: number;
@@ -32,9 +33,9 @@ style={isHovered ? darkbgT : bgT}
 role="button"
 aria-label={label}
 on:mouseenter={onMouseEnter}
-on:keyup={onEnter(addAnimCB)}   
+on:keyup={onEnter(withAudio(addAnimCB))}   
 on:mouseleave={onOut}
-on:click={anim ? addAnimCB : cb}  
+on:click={anim ? withAudio(addAnimCB) : withAudio(cb)}  
 class={"settingsBtn fadeIn" + (playAnim ? " anim" : "")} 
 on:animationend={takeAwayAnim}
 tabindex={ariaIndex}
