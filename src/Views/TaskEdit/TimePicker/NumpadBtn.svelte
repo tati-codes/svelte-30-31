@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { bg, medium } from "../../../Store/color"
   export let label: number, cb: Function
   $: bsg = bg($medium);
@@ -12,8 +13,8 @@ role="button"
 aria-label={"press number " + label}
 tabindex={label+offset}
 class="numpad-item"
-on:keyup={onEnter(cb)}
-on:click={() => cb()}
+on:keyup={onEnter(withAudio(cb))}
+on:click={withAudio(cb)}
 >
 {label}
 </li>

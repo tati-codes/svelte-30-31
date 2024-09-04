@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { handleTimePickerChange } from "../../../Store/actions/taskEdit/handleTimePickerChange"
   import { bg, medium } from "../../../Store/color"
   import BackspaceBtn from "./BackspaceBtn.svelte"
@@ -24,7 +25,7 @@
     console.log(e.key)
     let nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
     if (nums.includes(e.key)) {
-      handleChange(Number(e.key))
+      withAudio(() => handleChange(Number(e.key)))
     } 
 }
 $: bsg = bg($medium);
