@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from "../../../lib/Icons/Icon.svelte"
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { stroke, bg, medium, dark, light } from "../../../Store/color"
   import BackspaceIcon from "../../Timer/TaskCard/taskCardIcons/BackspaceIcon.svelte"
   export let cb: Function
@@ -8,7 +9,7 @@
   $: stg = stroke($medium)
 </script>
 
-<div role="button" aria-label="delete last number" tabindex="14" style={bsg} class="numpad-item" on:click={() => cb()} on:keyup={onEnter(cb)}>
+<div role="button" aria-label="delete last number" tabindex="14" style={bsg} class="numpad-item" on:click={withAudio(cb)} on:keyup={onEnter(withAudio(cb))}>
   <Icon  stroke={$dark} fill={"transparent"} viewbox="0 0 24 24">
     <BackspaceIcon/>
   </Icon>

@@ -3,6 +3,7 @@
   import ClockIcon from "../../../lib/Icons/icons/ClockIcon.svelte"
   import { onEnter } from "../../../lib/Shared/onEnter"
   import { seconds_to_hhmmss } from "../../../lib/Shared/time"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { bg, medium } from "../../../Store/color"
   import { editingTask } from "../../../Store/taskEdit";
   import { editView, swapEditView as swap } from "../../../Store/taskEdit"
@@ -12,7 +13,7 @@
   let keygo = onEnter(go)
 </script>
 
-<div id="numpad" class="timeBtn innerTask" role="tab" aria-controls="time-panel" tabindex="2" style={bsg} on:click={go} on:keyup={keygo}>
+<div id="numpad" class="timeBtn innerTask" role="tab" aria-controls="time-panel" tabindex="2" style={bsg} on:click={withAudio(go)} on:keyup={withAudio(keygo)}>
   <div class="deep" >
       <ClockIcon x={20} y={-100}/>
   </div>

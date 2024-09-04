@@ -5,6 +5,7 @@
   import { editingTask } from "../../Store/taskEdit"
   import { editColor } from "../../Store/actions/taskEdit/editColor"
   import { onEnter } from "../../lib/Shared/onEnter"
+  import { withAudio } from "../../lib/Shared/withAudio"
   $: bsg = bg($medium);
   $: currentColor = $editingTask?.color;
   let colors: Color[] = Object.keys(colorStrings) as Color[]
@@ -17,8 +18,8 @@
   aria-label={`select ${color}`}
   aria-selected={color === currentColor}
   id={`color-${color}`}
-      on:keyup={onEnter(() => editColor(color))}
-      on:click={() => editColor(color)}
+      on:keyup={onEnter(withAudio(() => editColor(color)))}
+      on:click={withAudio(() => editColor(color))}
       tabIndex={i+20}
       style={bg(colorStrings[color].dark)}
       class={`colorSquare background-darken  ${

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { withAudio } from "../../../lib/Shared/withAudio"
 import { editName } from "../../../Store/actions/taskEdit/editName"
 import { bg, medium } from "../../../Store/color"
 import { editingTask } from "../../../Store/taskEdit"
@@ -13,7 +14,7 @@ let name = $editingTask?.name || ""
   tabindex="1"
   class="nameEditField fadeIn"
   bind:value={name}
-  on:change={() => editName(name)}
+  on:change={withAudio(() => editName(name))}
 />  
 
 <style>

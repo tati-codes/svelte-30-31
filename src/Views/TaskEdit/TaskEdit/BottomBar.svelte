@@ -3,6 +3,7 @@
   import ReplySolidIcon from "../../../lib/Icons/icons/ReplySolidIcon.svelte"
   import TrashIcon from "../../../lib/Icons/icons/TrashIcon.svelte"
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { setView } from "../../../Store/actions/root/setView"
   import { deleteTask } from "../../../Store/actions/taskEdit/deleteTask"
   import { bg, dark, medium, stroke } from "../../../Store/color"
@@ -23,8 +24,8 @@
       style={bsg}
       role="button"
       aria-label="delete task and return to timer"
-      on:click={doDelete}
-      on:keypress={handleDeleteKey}
+      on:click={withAudio(doDelete)}
+      on:keypress={withAudio(handleDeleteKey)}
       tabIndex={60}
     >
       <TrashIcon x={0} y={0} height={35} width={40} stroke={$dark} fill={$dark}/>
@@ -37,8 +38,8 @@
       role="button"
       aria-label="accept task and return to timer"
       tabIndex={61}
-      on:click={doBack}
-      on:keypress={handleGoBackKey}
+      on:click={withAudio(doBack)}
+      on:keypress={withAudio(handleGoBackKey)}
     >
       <ReplySolidIcon x={0} y={0} height={35} stroke={$dark} fill={$dark}/>
     </div>

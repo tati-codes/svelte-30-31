@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
 import { bg, medium } from "../../../Store/color"
   import { editView, swapEditView as swap } from "../../../Store/taskEdit"
   $: bsg = bg($medium);
@@ -8,7 +9,7 @@ import { bg, medium } from "../../../Store/color"
 
 <div class="bottomBar">
   <li class="tab-li marginright"  tabindex="2"on:click={() => swap("ICON")}
-  on:keyup={onEnter(() => swap("ICON"))}
+  on:keyup={onEnter(withAudio(() => swap("ICON")))}
   >
     <div
     style={bsg}
@@ -23,7 +24,7 @@ import { bg, medium } from "../../../Store/color"
     </div>
   </li>
   <li class="tab-li" tabindex="3"  on:click={() => swap("COLOR")}
-    on:keyup={onEnter(() => swap("COLOR"))}>
+    on:keyup={onEnter(withAudio(() => swap("COLOR")))}>
     
     <div
     style={bsg}

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { TASKBAR_ITEM } from "../../../../types"
   import { onEnter } from "../../../lib/Shared/onEnter"
+  import { withAudio } from "../../../lib/Shared/withAudio"
   import { editIcon } from "../../../Store/actions/taskEdit/editIcon"
   import type { taskIcon } from "../../../Store/typeValidators/taskIcon"
 
@@ -11,11 +12,11 @@ export let selected: boolean, icon: taskIcon, tabIndex: number, label:string;
 class={`iconItem  ${selected ? "selectedIcon" : ""} fadeIn`}
 role="button"
 aria-selected={selected}
-{tabIndex}
+tabindex={tabIndex}
 aria-label={label}
 for={`${icon}-icon`}
-on:keyup={onEnter(() => editIcon(icon))}
-on:click={editIcon(icon)}
+on:keyup={onEnter(withAudio(() => editIcon(icon)))}
+on:click={withAudio(() => editIcon(icon))}
 >
 <slot/>
 </div>
