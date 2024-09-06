@@ -1,8 +1,8 @@
 import { playClick } from "../../Store/actions/task/playAudio";
 
 export const withAudio = (curried: Function) => {
-  return () => {
+  return (e: any) => {
       playClick()
-      curried();
+      curried(e);
   }
 }
