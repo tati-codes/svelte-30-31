@@ -14,12 +14,10 @@
   import { deleteTask } from "../../../../Store/actions/taskEdit/deleteTask"
   import { sendToBottom } from "../../../../Store/actions/taskList/sendBottom"
   import { markDone } from "../../../../Store/actions/taskList/markDone"
-//TODO lock should prevent all deletions
+
+  
 $: fillg = fill($light)
-let isLocked = true;
-const toggleLock = () => {
-  isLocked = !isLocked
-};
+import { isLocked, toggleLocked } from "./lockedStore"
 $: del = () => deleteTask($currentTask.id);
 $: label = labelMaker($currentTask.remaining_seconds)
 $: sendtobot = () => sendToBottom($currentTask.id)
@@ -44,8 +42,8 @@ $: sendtobot = () => sendToBottom($currentTask.id)
   <BtnLabel style={fillg} x={label > 5 ? 45 : 50} y={label > 5 ? 415 : 420} label={`-${label}m`} size={label > 5 ? "40px" : "48px"} />
 </TimerBtn>
 
-<TimerBtn position="bottom" cb={toggleLock} index={10} label={isLocked ? "lock task" : "unlock task"}>
-{#if isLocked}
+<TimerBtn position="bottom" cb={toggleLocked} index={10} label={$isLocked ? "lock task" : "unlock task"}>
+{#if $isLocked}
   <LockIcon x={300} style={fillg} y={537} height={70}/>
 {:else}
   <OpenLockIcon x={295} style={fillg} y={537} height={70}/>
