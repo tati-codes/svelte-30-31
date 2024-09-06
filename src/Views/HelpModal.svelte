@@ -18,8 +18,11 @@
       <li><u>swipe right</u> to <b>delete</b> a task</li>
       <li><u> two finger tap</u>  to send a task to the <u> top</u> </li>
       <li><u> three finger tap</u>  to <u> copy</u>  a task</li>
-      <li><u> drag</u>  a task by <u> the :: handle</u>  to reorder</li>
+      <li><u> drag</u>  a task by <u> the ⋮⋮ handle</u>  to reorder</li>
     </ol>
+  </div>
+  <div class="inner">
+    <h3>Made by <a href="https://github.com/tati-codes">Tati. Leave a <a href="https://ko-fi.com/taticodes">tip</a> if you like this.</a></h3>
   </div>
 
 <style>
