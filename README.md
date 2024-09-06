@@ -1,5 +1,4 @@
-# ![](./public/android/android-launchericon-192-192.png) 
-# TaTimer
+# ![](./public/android/android-launchericon-192-192.png)  TaTimer
 
 Timer inspired by the old 30/30 timer app. Without that timeboxing/pomodoro/time-tracker app I wouldn't have gotten through college because of my undiagnosed ADHD at the time, so I recreated it as an homage and for my own personal use (it easily quadruples my output per measure of effort).
 
