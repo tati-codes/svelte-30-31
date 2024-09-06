@@ -6,7 +6,9 @@ This was made with Svelte + Typescript, vite, and specific features were impleme
 
 ## How to install/use
 
-If you want to build it yourself, just clone the repo, run ```npm install && npm run build`` then serve the /dist folder (eg. ```npx serve /dist``` )
+If you want to build it yourself, just clone the repo, run ```npm install && npm run build`` then serve the /dist folder (eg. ```npx serve /dist``` ).
+
+Or you can go to https://tati.codes/timer/
 
 ## What's New!
   - Svelte
