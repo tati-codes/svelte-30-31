@@ -2,11 +2,21 @@ import { get } from "svelte/store"
 import { isMuted } from "../../settingStore"
 import { allowClicks, root } from "../../rootStore"
 
-const taskSound = new Audio("https://tati.codes/assets/task_done.mp3")
+let real = "https://tati.codes/assets/task_done.mp3"
+const taskSound = new Audio("https://tati.codes/assets/click.mp3")
+
+
 const listSound = new Audio("https://tati.codes/assets/clear.mp3")
 const clicks: HTMLAudioElement[] = []
 for (let index = 0; index < 19; index++) {
   clicks.push(new Audio(`https://tati.codes/assets/clicks/click${index+1}.mp3`))
+}
+
+export const firstPlay = () => {
+  taskSound.play()
+  setTimeout(() => {
+    taskSound.src = real
+  }, 2000)
 }
 
 export const playTaskDoneSound = () => {

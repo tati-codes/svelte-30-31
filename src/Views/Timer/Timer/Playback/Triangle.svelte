@@ -1,12 +1,18 @@
 <script lang="ts">
   import { onEnter } from "../../../../lib/Shared/onEnter"
-  import { playClick } from "../../../../Store/actions/task/playAudio"
+  import { firstPlay, playClick } from "../../../../Store/actions/task/playAudio"
   import { start } from "../../../../Store/actions/taskList/start"
 import { dark, fill } from "../../../../Store/color"
+  import { firstPlayDone, isFirstPlay } from "./isFirstPlay"
 $: filg = fill($dark)
 const triangleCB = () => {
   start();
-  playClick()
+  if ($isFirstPlay) {
+    firstPlay();
+    firstPlayDone();
+  } else {
+    playClick();
+  }
 }
 </script>
 
