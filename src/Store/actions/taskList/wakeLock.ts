@@ -7,13 +7,11 @@ export let sentinel: Writable<WakeLockSentinel | null> = writable(null)
 export const toggleWakeLock = () => userAllowedWakeLock.update($lock => !$lock)
 
 export const requestWakeLock = async () => {
-  if (!wakeLockSupported || !userAllowedWakeLock) return;
+  if (!get(wakeLockSupported) || !userAllowedWakeLock) return;
   try {
-    console.log("wakelock requested")
     let wakelock = await window.navigator.wakeLock.request('screen');
     sentinel.set(wakelock)
   } catch (err) {
-    console.log("no wakelock")
     console.error(err)
   }
 }
@@ -22,7 +20,6 @@ export const turnLockOff = () => sentinel.update($sentinel => {
   if ($sentinel !== null) {
     $sentinel.release()
     .then(() => {
-      console.log("wakelock off")
       $sentinel = null;
     })
   }
