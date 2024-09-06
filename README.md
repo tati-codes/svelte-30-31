@@ -24,5 +24,4 @@ Or you can go to https://tati.codes/timer/
     - FIXME: Tab behaviour in the Task Edit screen does not follow ARIA standards yet
   - Working Obsidian plugin version.
   - Warning IOS **⚠** : 
-    - Because of iOS limitations, the iOS PWA version needs you to tap the checkmark at the top of the timer **once** before using so it can actually play the "Task Done" sounds. 
     - "TaskList cleared" sound not available in iOS. 
