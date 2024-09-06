@@ -1,6 +1,6 @@
 import { get } from "svelte/store"
 import { isMuted } from "../../settingStore"
-import { root } from "../../rootStore"
+import { allowClicks, root } from "../../rootStore"
 
 const taskSound = new Audio("https://tati.codes/assets/task_done.mp3")
 const listSound = new Audio("https://tati.codes/assets/clear.mp3")
@@ -20,7 +20,7 @@ export const playClearSound = () => {
 }
 
 export const playClick = () => {
-  if (get(isMuted)) return
+  if (get(isMuted) || !get(allowClicks)) return
   else {
     clicks[clicks.length * Math.random() | 0].play()
   }
