@@ -14,7 +14,7 @@
   import { deleteTask } from "../../../../Store/actions/taskEdit/deleteTask"
   import { sendToBottom } from "../../../../Store/actions/taskList/sendBottom"
   import { markDone } from "../../../../Store/actions/taskList/markDone"
-
+//TODO lock should prevent all deletions
 $: fillg = fill($light)
 let isLocked = true;
 const toggleLock = () => {
