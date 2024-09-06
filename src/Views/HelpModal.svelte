@@ -21,9 +21,7 @@
       <li><u> drag</u>  a task by <u> the ⋮⋮ handle</u>  to reorder</li>
     </ol>
   </div>
-  <div class="inner">
-    <h3>Made by <a href="https://github.com/tati-codes">Tati. Leave a <a href="https://ko-fi.com/taticodes">tip</a> if you like this.</a></h3>
-  </div>
+
 
 <style>
   b{
@@ -48,7 +46,6 @@
     text-align: left;
     width: 75%;
   font-size: 30px;
-
     margin: auto;
   }
 </style>
