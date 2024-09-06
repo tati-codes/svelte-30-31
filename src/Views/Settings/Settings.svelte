@@ -31,26 +31,29 @@
   </div>
   <div class="innerSettings "> 
     <span>{$clockOn ? "hide duration" : "show duration"}</span>
+    <span>{$wakeLockSupported && $userAllowedWakeLock ? "let screen sleep" : "keep screen on"}</span>
     <span>notifications</span>
-    <span>{$wakeLockSupported ? $userAllowedWakeLock ? "let screen sleep" : "keep screen awake" : ""}</span>
     <span>{$allowClicks ? "mute clicks" : "allow clicks"}</span>
-
   </div>
-  <div class="innerSettings singleColumn">
+  <div class="innerSettings ">
     <SecondaryClock />
-    <NotificationsBtn/>
     <WakeLockButton/>
+    <NotificationsBtn/>
     <ClicksBtn/>
   </div>
 </div>
 <div class="fadeIn settingsView" style={bg($medium)}>
   <HelpModal/>
 </div>
+<div class="fadeIn settingsView" style={bg($medium)}>
+  <h1>Made by <a href="https://github.com/tati-codes">Tati</a>. Leave a <a href="https://ko-fi.com/taticodes">tip</a> if you like this.</h1>
+</div>
 
 <style>
   span{
     flex:1;
   }
+
 .settingsView {
   border-radius: 10px;
   text-align: center;
