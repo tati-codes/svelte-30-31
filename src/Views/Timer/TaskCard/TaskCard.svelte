@@ -62,6 +62,7 @@ on:press={withAudio(longPressHandler)}
 on:keyup={onEnter(withAudio(longPressHandler))}   
 on:swipe={withAudio(swipeh)}
 on:multi={withAudio(multih)}
+on:dblclick={withAudio(longPressHandler)}
 tabindex={index}
 role="button"
 aria-label="edit task"
