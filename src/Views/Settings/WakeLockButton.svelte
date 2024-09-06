@@ -3,16 +3,16 @@
   import Sun from "../../lib/Icons/icons/Sun.svelte"
 import SettingsBtn from "../../lib/Shared/SettingsBtn.svelte"
   import { toggleWakeLock, userAllowedWakeLock, wakeLockSupported } from "../../Store/actions/taskList/wakeLock"
-  import { light } from "../../Store/color"
+  import { colors, light } from "../../Store/color"
+  import { colorStrings } from "../../Store/colorStrings"
 </script>
-{#if $wakeLockSupported}
 <SettingsBtn label={$wakeLockSupported ? $userAllowedWakeLock ? "keep screen awake" : "turn screen off" : ""} ariaIndex={4} cb={toggleWakeLock} anim={$wakeLockSupported}>
-  {#if $userAllowedWakeLock}
+  {#if $wakeLockSupported}
+    {#if $userAllowedWakeLock}
   <Moon hue={$light}/>
-  {:else if !$userAllowedWakeLock}
+    {:else if !$userAllowedWakeLock}
   <Sun hue={$light}/>
+    {/if}  
   {/if}
 </SettingsBtn>
-{:else}
   <span/>
-{/if}
