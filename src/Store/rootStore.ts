@@ -6,6 +6,7 @@ import { defaultTaskList } from "./Tasklist"
 import { seconds_to_mmss } from "../lib/Shared/time"
 import {storage, type PersistentWritable} from "../lib/Shared/storage"
 import { requestWakeLock, turnLockOff } from "./actions/taskList/wakeLock"
+import { compatChecker } from "../lib/Shared/arrayCheck"
 export interface rootStore {
   muted: boolean
   layout: Layout
@@ -21,16 +22,7 @@ export interface rootStore {
 }
 
 let tasklist = defaultTaskList();
-
-let conditionalSetter = ($root: rootStore) => $root.taskLists.find(tl => tl.id === $root.selectedId)!.status !== "TIMER_ACTIVE" && !$root.taskLists.find(tl => tl.id === $root.selectedId)!.timer
-let hydrationSanitizer = (newVal: rootStore) => {
-  newVal.currentView = "TIMER"
-  newVal.taskLists.map(list => list.status = "IDLE")
-  newVal.taskLists.map(list => list.timer = null)
-  return newVal;
-}
-
-export let root: PersistentWritable<rootStore> = storage("TaTimer", {
+let defaultRoot: rootStore = {
   muted: false,
   layout: "CLASSIC",
   currentView: "TIMER",
@@ -42,9 +34,27 @@ export let root: PersistentWritable<rootStore> = storage("TaTimer", {
   oldPlayback: false,
   version: 0.3,
   allowClicks: true
-}, 
-conditionalSetter,
-hydrationSanitizer)
+}
+let conditionalSetter = ($root: rootStore) => $root.taskLists.find(tl => tl.id === $root.selectedId)!.status !== "TIMER_ACTIVE" && !$root.taskLists.find(tl => tl.id === $root.selectedId)!.timer
+let hydrationSanitizer = (newVal: rootStore) => {
+  if (compatChecker(defaultRoot, newVal)) {
+    if (defaultRoot.version === newVal.version) {
+      newVal.currentView = "TIMER"
+      newVal.taskLists.map(list => list.status = "IDLE")
+      newVal.taskLists.map(list => list.timer = null)
+      return newVal;
+    } else {
+      //conversion
+      return {
+        ...defaultRoot,
+        ...newVal,
+        version: defaultRoot.version
+      }
+    }
+  } 
+}
+
+export let root: PersistentWritable<rootStore> = storage("TaTimer", defaultRoot, conditionalSetter, hydrationSanitizer)
 
 
 export let currentTaskList = derived(root, ($root) => $root.taskLists.find(tl => tl.id === $root.selectedId)!)
