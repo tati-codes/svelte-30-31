@@ -2,7 +2,7 @@
   import { changeName } from "../../../Store/actions/taskList/changeName"
   import { medium, bg, light, colorp, combineStyles } from "../../../Store/color";
   import { currentTaskList } from "../../../Store/rootStore"
-  import { onEnter } from "../../../lib/Shared/onEnter"
+  import { nameBarOnEnter, onEnter } from "../../../lib/Shared/onEnter"
   let editing = false;
   let toggleEditing = () => editing = !editing
     // {editing ? <EditName def={label} toggle={toggleEditing} change={change} color={color} /> : }
@@ -22,8 +22,8 @@ type="text"
 autofocus
 bind:value={label}
 on:change={change}
-on:blur={toggleEditing}
-on:keyup={() => onEnter(() => { changeName(label.slice(0,18)); toggleEditing(); })}
+on:blur={editing ? toggleEditing : () => null}
+on:keyup={nameBarOnEnter(() => { changeName(label.slice(0,18)); toggleEditing(); })}
 style={combineStyles(bg($medium), colorp($light))}
 class={`taskListNameEditField `}
 />
